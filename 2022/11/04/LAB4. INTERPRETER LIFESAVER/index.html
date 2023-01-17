@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="The objective is to read commands from a txt file, parse these commands and output the results line by line. Just like what MATLAB does.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LAB4--Interpreter Lifesaver">
+<meta property="og:url" content="http://example.com/2022/11/04/LAB4.%20INTERPRETER%20LIFESAVER/index.html">
+<meta property="og:site_name" content="Lee&#39;s Blog">
+<meta property="og:description" content="The objective is to read commands from a txt file, parse these commands and output the results line by line. Just like what MATLAB does.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/Users/lijiawen/Desktop/lab4.README/%E5%9C%A8%E7%BA%BF%E5%B9%B3%E5%8F%B0%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AF.png">
+<meta property="article:published_time" content="2022-11-04T04:12:28.229Z">
+<meta property="article:modified_time" content="2023-01-17T08:05:28.502Z">
+<meta property="article:author" content="Leejiawen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/Users/lijiawen/Desktop/lab4.README/%E5%9C%A8%E7%BA%BF%E5%B9%B3%E5%8F%B0%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AF.png">
+
+
+<link rel="canonical" href="http://example.com/2022/11/04/LAB4.%20INTERPRETER%20LIFESAVER/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2022/11/04/LAB4.%20INTERPRETER%20LIFESAVER/","path":"2022/11/04/LAB4. INTERPRETER LIFESAVER/","title":"LAB4--Interpreter Lifesaver"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>LAB4--Interpreter Lifesaver | Lee's Blog</title>
+  
+
+
+
+
+
+
+  <script async defer data-website-id="" src=""></script>
+
+  <script defer data-domain="" src=""></script>
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Lee's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">And so the adventure begins...</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-photos"><a href="/photos/" rel="section"><i class="fa fa-camera fa-fw"></i>photos</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">写在前面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stack%E7%9A%84%E6%93%8D%E4%BD%9C%E4%B8%8E%E5%AE%9A%E4%B9%89"><span class="nav-number">2.</span> <span class="nav-text">stack的操作与定义</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%88%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="nav-number">2.1.</span> <span class="nav-text">栈的性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#push%EF%BC%88%E5%8E%8B%E6%A0%88%EF%BC%89pop%EF%BC%88%E5%BC%B9%E6%A0%88%EF%BC%89%EF%BC%9A"><span class="nav-number">2.2.</span> <span class="nav-text">push（压栈）pop（弹栈）：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Sample-Code%EF%BC%9A"><span class="nav-number">2.2.1.</span> <span class="nav-text">Sample Code：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stack%E5%9C%A8%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F%E4%B8%AD%E7%9A%84%E5%AE%9E%E6%88%98"><span class="nav-number">3.</span> <span class="nav-text">stack在逆波兰表达式中的实战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E8%BE%BE%E5%BC%8FRPE%EF%BC%88Reverse-Polish-Expression%EF%BC%89"><span class="nav-number">3.1.</span> <span class="nav-text">逆波兰表达式RPE（Reverse Polish Expression）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E8%BD%AC%E5%8C%96"><span class="nav-number">3.2.</span> <span class="nav-text">逆波兰表达式的转化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%84%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="nav-number">3.2.1.</span> <span class="nav-text">预备工作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%80%E5%A7%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">3.2.2.</span> <span class="nav-text">开始转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.2.3.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Debug"><span class="nav-number">3.2.4.</span> <span class="nav-text">Debug</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="nav-number">3.3.</span> <span class="nav-text">逆波兰表达式的计算</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A8%E7%A1%AE%E4%BF%9D%E6%AD%A3%E7%A1%AE%E7%9A%84%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%90%8E%EF%BC%8C%E8%AE%A1%E7%AE%97%E5%88%99%E7%9B%B8%E5%AF%B9%E7%AE%80%E5%8D%95%E4%B8%8D%E5%AE%B9%E6%98%93%E5%87%BA%E9%94%99%E3%80%82%E6%89%8B%E5%8A%A8%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95%E5%A6%82%E4%B8%8B%EF%BC%9A"><span class="nav-number">3.3.1.</span> <span class="nav-text">在确保正确的逆波兰表达式后，计算则相对简单不容易出错。手动计算方法如下：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%A5%E6%B3%95%E5%88%86%E6%9E%90%EF%BC%88parsing%EF%BC%89"><span class="nav-number">3.3.2.</span> <span class="nav-text">句法分析（parsing）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">3.3.3.</span> <span class="nav-text">类型转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-4-%E8%AE%A1%E7%AE%97"><span class="nav-number">3.3.4.</span> <span class="nav-text">2.3.4 计算</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%87%86%E5%A4%87"><span class="nav-number">3.3.4.1.</span> <span class="nav-text">基本准备</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E8%B4%9F%E6%95%B0%E5%A4%84%E7%90%86"><span class="nav-number">3.3.4.2.</span> <span class="nav-text">负数处理</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%8F%98%E9%87%8F%E5%A4%84%E7%90%86"><span class="nav-number">4.</span> <span class="nav-text">3. 变量处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93struct"><span class="nav-number">4.1.</span> <span class="nav-text">结构体struct</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%89%E5%8F%B7%E5%B7%A6%E8%BE%B9%E7%9A%84%E5%8F%98%E9%87%8F"><span class="nav-number">4.2.</span> <span class="nav-text">等号左边的变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%89%E5%8F%B7%E5%8F%B3%E8%BE%B9%E7%9A%84%E5%8F%98%E9%87%8F"><span class="nav-number">4.3.</span> <span class="nav-text">等号右边的变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%88%E7%AB%A0"><span class="nav-number">5.</span> <span class="nav-text">终章</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Leejiawen"
+      src="/images/touxiang.JPG">
+  <p class="site-author-name" itemprop="name">Leejiawen</p>
+  <div class="site-description" itemprop="description">UM-SJTUer 26‘</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="mailto:david_lee@sjtu.edu.cn" title="E-Mail → mailto:david_lee@sjtu.edu.cn" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/11/04/LAB4.%20INTERPRETER%20LIFESAVER/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.JPG">
+      <meta itemprop="name" content="Leejiawen">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lee's Blog">
+      <meta itemprop="description" content="UM-SJTUer 26‘">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="LAB4--Interpreter Lifesaver | Lee's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LAB4--Interpreter Lifesaver
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2022-11-04 12:12:28" itemprop="dateCreated datePublished" datetime="2022-11-04T12:12:28+08:00">2022-11-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-01-17 16:05:28" itemprop="dateModified" datetime="2023-01-17T16:05:28+08:00">2023-01-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Programming/" itemprop="url" rel="index"><span itemprop="name">Programming</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>The objective is to read commands from a txt file, parse these commands and output the results line by line. Just like what MATLAB does.</p>
+<span id="more"></span>
+
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a><strong>写在前面</strong></h2><p>首先不要被interpreter吓到，这只是一个功能基本的小程序，远没有到写编译器（compiler）的程度！不要慌，这是可以实现的！</p>
+<p>整个实现过程是<strong>由小到大，由少到多</strong>的，基本流程如下：</p>
+<ul>
+<li><input disabled="" type="checkbox"> 实现读写数据</li>
+<li><input disabled="" type="checkbox"> 实现逆波兰加减乘除</li>
+<li><input disabled="" type="checkbox"> 实现逆波兰括号</li>
+<li><input disabled="" type="checkbox"> 实现逆波兰式完整转化</li>
+<li><input disabled="" type="checkbox"> 实现分割操作符与操作数</li>
+<li><input disabled="" type="checkbox"> 实现逆波兰式的计算</li>
+<li><input disabled="" type="checkbox"> 实现对负数的识别与计算</li>
+<li><input disabled="" type="checkbox"> 实现对任意表达式的计算（Milestone）</li>
+<li><input disabled="" type="checkbox"> 实现变量赋值式的转化</li>
+<li><input disabled="" type="checkbox"> 实现变量的识别</li>
+<li><input disabled="" type="checkbox"> 实现变量的数值存储与使用</li>
+<li><input disabled="" type="checkbox"> 实现有变量式子的计算</li>
+<li><input disabled="" type="checkbox"> 实现变量值变化后式子的计算</li>
+<li><input disabled="" type="checkbox"> 实现分号功能</li>
+<li><input disabled="" type="checkbox"> 通过JOJ！</li>
+</ul>
+<p>然而本文档并不会每一步给出指导（懒）只会给出一些关键问题的解答，如果还有疑惑，请首先使用你的大脑，再使用搜索引擎，再使用TA，最后使用你的倒霉室友。</p>
+<p>注：本文档中的大部分代码是伪代码（seudo code），仅作为基本的示范，不可直接复制黏贴！请你理解后模仿写出属于自己的代码！</p>
+<h2 id="stack的操作与定义"><a href="#stack的操作与定义" class="headerlink" title="stack的操作与定义"></a><strong><code>stack</code>的操作与定义</strong></h2><h3 id="栈的性质"><a href="#栈的性质" class="headerlink" title="栈的性质"></a>栈的性质</h3><p>栈是一种特殊的数组，数组中的元素<strong>先进后出，后进先出</strong>，可以类比为一个羽毛球桶，先进去的羽毛球最后面才能拿出来。为了体现“先进后出，后进先出”的重要特性，我们规定<code>push</code>与<code>pop</code>两种操作。<code>push</code>将元素塞入数组最上方，<code>pop</code>将数组最上方的元素弹走。</p>
+<h3 id="push（压栈）pop（弹栈）："><a href="#push（压栈）pop（弹栈）：" class="headerlink" title="push（压栈）pop（弹栈）："></a>push（压栈）pop（弹栈）：</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">push</span><span class="params">(<span class="type">char</span> *<span class="built_in">stack</span>, <span class="type">int</span> top, <span class="type">char</span> element)</span>;       <span class="comment">// push char</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">push_d</span><span class="params">(<span class="type">double</span> *<span class="built_in">stack</span>, <span class="type">int</span> top, <span class="type">double</span> element)</span>; <span class="comment">// push double</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">pop</span><span class="params">(<span class="type">char</span> *<span class="built_in">stack</span>, <span class="type">int</span> top)</span>;                      <span class="comment">// pop char</span></span><br><span class="line"><span class="type">int</span> <span class="title function_">pop_d</span><span class="params">(<span class="type">double</span> *<span class="built_in">stack</span>, <span class="type">int</span> top)</span>;                  <span class="comment">// pop double</span></span><br></pre></td></tr></table></figure>
+
+<p>考虑到<code>pop</code>与<code>push</code>均为栈的常用操作，因此通过自定义函数来实现。</p>
+<p>自定义时注意以下三点：</p>
+<ol>
+<li><code>pop/push</code> 完后，<strong>top</strong>在哪？</li>
+<li><code>pop/push</code> 的<strong>对象元素</strong>是谁？</li>
+<li><code>pop/push</code> 的<strong>目标数组</strong>是谁？</li>
+<li>栈的<strong>数据类型</strong>？</li>
+<li>将以上问题的答案作为你的函数参数&#x2F;输出。</li>
+</ol>
+<h4 id="Sample-Code："><a href="#Sample-Code：" class="headerlink" title="Sample Code："></a><strong>Sample Code：</strong></h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">push</span><span class="params">(<span class="type">char</span> *<span class="built_in">stack</span>, <span class="type">int</span> top, <span class="type">char</span> input)</span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>[top++] = input;</span><br><span class="line">    <span class="keyword">return</span> top;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">pop</span><span class="params">(<span class="type">char</span> *<span class="built_in">stack</span>, <span class="type">int</span> top)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (top == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    out1 = <span class="built_in">stack</span>[--top];</span><br><span class="line">    <span class="keyword">return</span> top;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>自定义好<code>stack</code>操作函数后，开一个新的<code>practice.c</code> 熟练你的<code>stack</code>操作！</p>
+<p>修改自己的<code>pop</code>与<code>push</code>函数，使其符合自己的思维习惯与逻辑。</p>
+<p>注意：只有你知道你的<code>stack</code>应该怎么操作！</p>
+<p><strong>Sample Code：</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">char</span> out;</span><br><span class="line"><span class="type">int</span> <span class="title function_">push</span><span class="params">(<span class="type">char</span> *<span class="built_in">stack</span>, <span class="type">int</span> top, <span class="type">char</span> element)</span>;</span><br><span class="line"><span class="type">int</span> <span class="title function_">pop</span><span class="params">(<span class="type">char</span> *<span class="built_in">stack</span>, <span class="type">int</span> top)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> stack1[<span class="number">120</span>];</span><br><span class="line">    <span class="type">char</span> stack2[<span class="number">120</span>];</span><br><span class="line">    <span class="type">int</span> top1 = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> top2 = <span class="number">0</span>;<span class="comment">//top初始值为0，否则会越界</span></span><br><span class="line">    top1 = push(stack1, top1, <span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">    top1 = push(stack1, top1, <span class="string">&#x27;b&#x27;</span>);</span><br><span class="line">    top2 = push(stack2, top2, <span class="string">&#x27;c&#x27;</span>);</span><br><span class="line">    top1 = pop(stack1, top1);</span><br><span class="line">    top2 = pop(stack2, top2);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%c\n&quot;</span>, stack1[top1]);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%c\n&quot;</span>, stack2[top1]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">push</span><span class="params">(<span class="type">char</span>*<span class="built_in">stack</span>, <span class="type">int</span> top, <span class="type">char</span> input)</span>&#123;</span><br><span class="line">    <span class="built_in">stack</span>[top++] = input;<span class="comment">//注意：这里的top++与++top天差地别！自己思考为什么！</span></span><br><span class="line">    <span class="keyword">return</span> top;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">pop</span><span class="params">(<span class="type">char</span>*<span class="built_in">stack</span>, <span class="type">int</span> top)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (top == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    out = <span class="built_in">stack</span>[--top];<span class="comment">//注意：这里的--top与top--天差地别！自己思考为什么！</span></span><br><span class="line">    <span class="keyword">return</span> top;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="stack在逆波兰表达式中的实战"><a href="#stack在逆波兰表达式中的实战" class="headerlink" title="stack在逆波兰表达式中的实战"></a><strong><code>stack</code>在逆波兰表达式中的实战</strong></h2><h3 id="逆波兰表达式RPE（Reverse-Polish-Expression）"><a href="#逆波兰表达式RPE（Reverse-Polish-Expression）" class="headerlink" title="逆波兰表达式RPE（Reverse Polish Expression）"></a><strong>逆波兰表达式RPE（Reverse Polish Expression）</strong></h3><p>毫无疑问，lab4的description在放屁。如果你仍然对RPE有不解之处，或者你无法熟练地人工写出一个正常表达式的逆波兰表达式，请你先理解逆波兰表达式的操作后再开始coding！</p>
+<p>逆波兰表达式由某个波兰人发明，由于发明者名字太难读，所以取名“Polish”。逆波兰表达式的本质是将一个<em>*中缀表达式(infix)<strong>，i.e.操作符（operator）前后连接两个操作数（operand）</strong>（e.g. (0 &#x2F;a+ 0 &#x2F; 1+ 0&#x2F;3 + 0&#x2F;a + b * 2.5)* b^(-2)）</em>*变为**后缀表达式(postfix)**，i.e.，操作符在操作数的后面 <strong>（e.g. ,0,a,&#x2F;,0,1,&#x2F;,+,0,3,&#x2F;,+,0,a,&#x2F;,+,b,2.5,,+,b,0,2,-,^,）</strong>由此便可以通过栈的数据结构便于计算机的运算与操作。</p>
+<h3 id="逆波兰表达式的转化"><a href="#逆波兰表达式的转化" class="headerlink" title="逆波兰表达式的转化"></a>逆波兰表达式的转化</h3><h4 id="预备工作"><a href="#预备工作" class="headerlink" title="预备工作"></a>预备工作</h4><p>要实现逆波兰表达式的转换，你需要三个数组：</p>
+<ol>
+<li>待转换式子的数组	<code>infix</code></li>
+<li>放符号的load栈        <code>load_stack</code></li>
+<li><code>print</code>最终转换后结果的输出栈    <code>RPE</code></li>
+</ol>
+<h4 id="开始转换"><a href="#开始转换" class="headerlink" title="开始转换"></a>开始转换</h4><p>从左至右扫描中缀表达式。</p>
+<p>遇到操作数时，将其压入转换后结果的输出栈<code>RPE</code>。</p>
+<p>遇到运算符时，比较其与 <code>load_stack</code>栈顶运算符的优先级：</p>
+<ol>
+<li><p>如果<code>load_stack</code>为空，或栈顶运算符为左括号<code>(</code>，则直接将此运算符入栈。</p>
+</li>
+<li><p>否则，若优先级小于或等于栈顶运算符优先级，将<code>load_stack</code>栈顶的运算符弹出并压入到<code>RPE</code>中。将当前运算符压入栈中<code>load_stack</code>中</p>
+</li>
+<li><p>再次转到 1 与<code>load_stack</code>中新的栈顶运算符相比较。</p>
+</li>
+</ol>
+<p>遇到括号时：</p>
+<ol start="4">
+<li><p>如果是左括号<code>(</code>，则直接压入<code>load_stack</code>。</p>
+</li>
+<li><p>如果是右括号<code>)</code>，则依次弹出<code>load_stack</code>栈顶的运算符，并压入<code>RPE</code>，直到遇到左括号为止，此时将这一对括号丢弃；<br>重复步骤2至5，直到表达式的最右边。</p>
+</li>
+<li><p>将<code>load_stack</code>中剩余的运算符依次弹出并压入RPE。</p>
+</li>
+</ol>
+<p>整个流程都非常抽象，表格法并不直观。所以强烈建议看视频或者动图进行直观理解。</p>
+<p>可参考资源：</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yuan_xw/article/details/104436091">https://blog.csdn.net/yuan_xw/article/details/104436091</a></p>
+<p><a target="_blank" rel="noopener" href="https://youtu.be/7ha78yWRDlE">https://youtu.be/7ha78yWRDlE</a></p>
+<p>完美的逆波兰表达式应该只有数字与加减乘除等，<strong>没有括号</strong>！</p>
+<h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><p>在基本理解转换过程后，拿几个式子进行人工计算！可用这个网站<a target="_blank" rel="noopener" href="https://www.mathblog.dk/tools/infix-postfix-converter/">https://www.mathblog.dk/tools/infix-postfix-converter/</a> 进行检验。</p>
+<p>感觉自己基本掌握了之后，就开始coding吧！</p>
+<p>在转换之前，请你首先解决这个不难但是总是实现不了的问题：</p>
+<p>如何将读写txt文本的数据？</p>
+<ol>
+<li>推荐以下函数：</li>
+</ol>
+<p><code>fopen()</code>, <code>feof()</code>  ,<code>fgets()</code></p>
+<p>他们的具体功能与使用请自己搜索（真的不难！）</p>
+<ol start="2">
+<li><strong>文本数据可以存放在一个二维数组中：</strong></li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> data[LINE][LENGTH]</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>然后你就应该知道怎么办啦！</li>
+</ol>
+<p><strong>编程时思考以下问题：</strong></p>
+<ol>
+<li>你眼前有三个数组，分别给他们取上你喜欢并且易于识别的名字</li>
+<li>这三个数组哪两个是<code>stack</code>？每个<code>stack</code>的<code>top</code>又如何设定？</li>
+<li>符号的优先级该如何比较？hint：写一个比较优先级的函数。</li>
+<li>括号的操作应该怎么办？弹出<code>load_stack</code>元素时会不会弹空？</li>
+<li>别忘记最后清空！</li>
+</ol>
+<h4 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h4><p>转化过程中，你将会碰到各种bug报错，以下列举一些常见报错：</p>
+<ol>
+<li><p><code>segmentation fault</code>：分割错误，一般可以诊断为死循环。</p>
+</li>
+<li><p>如图错误：</p>
+</li>
+</ol>
+<p>![截屏2022-11-01 19.27.41](&#x2F;Users&#x2F;lijiawen&#x2F;Desktop&#x2F;截屏2022-11-01 19.27.41.png)</p>
+<p>Explanation: <code>index -1</code>意思就是你的数组指针指到-1的位置，这是非常危险的，因为-1位置可能是别的数组！所以仔细查看报错行的循环&#x2F;数组是否存在越界行为。一般容易发生在括号的处理中。</p>
+<ol start="3">
+<li>如图错误</li>
+</ol>
+<p><img src="/Users/lijiawen/Desktop/lab4.README/%E5%9C%A8%E7%BA%BF%E5%B9%B3%E5%8F%B0%E6%8A%A5%E9%94%99%E4%BF%A1%E6%81%AF.png" alt="在线平台报错信息"></p>
+<p>Explanation: 可以诊断为某个数组越界。根本原因是你的输入文件名和joj的输入文件名不一样！很傻逼的报错。</p>
+<ol start="4">
+<li>其他报错</li>
+</ol>
+<p>如果碰到其他抽象的错误，可以通过注释法查找。</p>
+<p>注释法：把你觉得可能有问题的代码注释掉，看看还有没有相同类型的报错。</p>
+<h3 id="逆波兰表达式的计算"><a href="#逆波兰表达式的计算" class="headerlink" title="逆波兰表达式的计算"></a>逆波兰表达式的计算</h3><h4 id="在确保正确的逆波兰表达式后，计算则相对简单不容易出错。手动计算方法如下："><a href="#在确保正确的逆波兰表达式后，计算则相对简单不容易出错。手动计算方法如下：" class="headerlink" title="在确保正确的逆波兰表达式后，计算则相对简单不容易出错。手动计算方法如下："></a>在确保正确的逆波兰表达式后，计算则相对简单不容易出错。手动计算方法如下：</h4><ol>
+<li><p>找到一个操作符</p>
+</li>
+<li><p>找该操作符前两个操作数</p>
+</li>
+<li><p>将这两个操作数按照该操作符进行计算，得出结果</p>
+</li>
+<li><p>将这两个操作数与操作符删掉，替换成3中计算的结果</p>
+</li>
+</ol>
+<p><strong>如何让计算机实现以上操作过程？</strong></p>
+<p>但是聪明的你应该想到，要想计算必须要<strong>让计算机认识哪个是操作符，哪个是操作数</strong></p>
+<p>因此我们不得不进行<em><strong>句法分析</strong></em></p>
+<h4 id="句法分析（parsing）"><a href="#句法分析（parsing）" class="headerlink" title="句法分析（parsing）"></a>句法分析（parsing）</h4><p>句法分析，顾名思义就是让计算机能够识别字符串中的合法的词句。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Eg1：一个<span class="built_in">string</span>：iloveprettygirls </span><br><span class="line"></span><br><span class="line">你的眼里：i love pretty girls</span><br><span class="line"></span><br><span class="line">计算机眼里：i l o v e p r e t t y g i r l s </span><br><span class="line"></span><br><span class="line">Eg2：一个<span class="built_in">string</span>：<span class="number">25</span>+<span class="number">36</span>/<span class="number">0.23</span>-(<span class="number">34</span><span class="number">-3</span>)</span><br><span class="line"></span><br><span class="line">你的眼里：<span class="number">25</span>+<span class="number">36</span>/<span class="number">0.23</span>-(<span class="number">34</span><span class="number">-3</span>)</span><br><span class="line"></span><br><span class="line">计算机眼里：<span class="number">2</span> <span class="number">5</span> + <span class="number">3</span> <span class="number">6</span> / <span class="number">0</span> . <span class="number">2</span> <span class="number">3</span> - ( <span class="number">3</span> <span class="number">4</span> - <span class="number">3</span> ) </span><br></pre></td></tr></table></figure>
+
+<p>所以，我们的目的就是让计算机眼里看出来的和我们人类眼里看出来的是一样的，这就是句法分析。</p>
+<p>那如何句法分析呢？在这里给出一个hint：在push符号的时候，顺便push一个分隔符进去；push数字、小数点时就不push分隔符。</p>
+<p>我想其他细节应该你可以解决！</p>
+<p><strong>Sample Code:</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> char_RPE[<span class="number">1200</span>] = &#123;<span class="number">0</span>&#125;;   <span class="comment">// RPE=Reverse Polish Expression; 转换后的逆波兰表达式；字符类型</span></span><br><span class="line"><span class="type">char</span> <span class="built_in">stack</span>[<span class="number">1200</span>] = &#123;<span class="number">0</span>&#125;;      <span class="comment">//存放符号的stack</span></span><br><span class="line"><span class="type">int</span> top_stack = <span class="number">0</span>;    <span class="comment">// stack 指针</span></span><br><span class="line"><span class="type">int</span> top_char_RPE = <span class="number">0</span>; <span class="comment">// RPE指针</span></span><br><span class="line">top_char_RPE = push(char_RPE, top_char_RPE, <span class="string">&#x27;|&#x27;</span>); <span class="comment">//push&#x27;|&#x27;作为分隔符，分割数字与符号，头尾都有分隔符</span></span><br><span class="line">top_char_RPE = push(char_RPE, top_char_RPE, pop(<span class="built_in">stack</span>));</span><br></pre></td></tr></table></figure>
+
+<h4 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h4><p>在计算时，你一定注意到了计算机不可能拿着字符去计算，所以我们还需要把分割好的词句变为double。</p>
+<p>在前面的基础上，我们可以通过分隔符获得相应的字符串，然后通过这个式子<code>double_RPE[i] = strtod([分割后的一个字符串], NULL)</code>进行转化！</p>
+<p>P.S. <code>strtod</code>的具体功能与语法请自行搜索</p>
+<p>但是，这样转换就会带来问题，操作符进行<code>	strtod</code>后便会变成<code>0.00000</code>！这无疑影响我们后续计算！</p>
+<p>所以，我们引入辅助数组<code>helper[ ]</code>来判断这个字符串是数字还是操作符。</p>
+<p><strong>Sample Code:</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> helper[<span class="number">1200</span>] = &#123;<span class="number">0</span>&#125;;             <span class="comment">//辅助数组 用来判断double_RPE中的数字与符号</span></span><br><span class="line"><span class="keyword">if</span> ((char_RPE[i] &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; char_RPE[i] &lt;= <span class="string">&#x27;9&#x27;</span>) || (char_RPE[i] == <span class="string">&#x27;.&#x27;</span>))</span><br><span class="line">&#123;</span><br><span class="line">      get_string[m] = char_RPE[i];</span><br><span class="line">      m = m + <span class="number">1</span>;</span><br><span class="line">      helper[j] = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (char_RPE[x] == <span class="string">&#x27;+&#x27;</span>)</span><br><span class="line">&#123;</span><br><span class="line">  	  helper[i] = <span class="number">2</span>;</span><br><span class="line">                &#125;</span><br><span class="line">We wish to get:</span><br><span class="line">double_RPE[<span class="number">120</span>]=&#123;<span class="number">1.3</span>,<span class="number">4.5</span>,<span class="number">0.00</span>,<span class="number">3.1</span>,<span class="number">6</span>,<span class="number">0.00</span>,<span class="number">0.00</span>&#125;;</span><br><span class="line">		helper[<span class="number">120</span>]=&#123;<span class="number">1</span>  ,<span class="number">1</span>  ,<span class="number">2</span>   ,<span class="number">1</span>  ,<span class="number">1</span>,<span class="number">3</span>   ,<span class="number">5</span>&#125;;<span class="comment">//2~5分别表示加减乘除乘方</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-3-4-计算"><a href="#2-3-4-计算" class="headerlink" title="2.3.4 计算"></a>2.3.4 计算</h4><h5 id="基本准备"><a href="#基本准备" class="headerlink" title="基本准备"></a>基本准备</h5><p>为了贯彻栈的“先进后出”的思想，我们不妨先把得到的<code>double_RPE</code>与对应的<code>helper</code>逆序排列。同时，我们准备好计算时的缓冲栈<code>load_cal_stack</code>与计算栈<code>cal_stack</code>.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">double</span> RPE_Reverse[<span class="number">120</span>] = &#123;<span class="number">0.0</span>&#125;; 						<span class="comment">//逆序RPE 便于计算</span></span><br><span class="line"><span class="type">double</span> helper_Reverse[<span class="number">120</span>] = &#123;<span class="number">1.0</span>&#125;;     		<span class="comment">//逆序辅助数组 便于计算</span></span><br><span class="line"><span class="type">double</span> load_cal_stack[<span class="number">120</span>] = &#123;<span class="number">0.0</span>&#125;;         <span class="comment">//缓存栈 用于存储运算后的结果</span></span><br><span class="line"><span class="type">double</span> cal_stack[<span class="number">120</span>] = &#123;<span class="number">0.0</span>&#125;;    					<span class="comment">//计算栈 用于运算 </span></span><br><span class="line"><span class="type">int</span> top_cal_stack = <span class="number">0</span>;      								<span class="comment">//计算栈指针</span></span><br><span class="line"><span class="type">int</span> top_load_stack = <span class="number">0</span>;     								<span class="comment">//缓冲栈指针</span></span><br><span class="line"><span class="type">int</span> top_helper_and_RPE = MAX_DOUBLE_RPE; 		<span class="comment">// double型逆波兰指针</span></span><br></pre></td></tr></table></figure>
+
+<p>不难发现，我们眼前共有四个数组&#x2F;栈，然后我们手里有三个“指针”(<code>top</code>)，即表示数组中元素坐标的<code>index</code>.</p>
+<p>其中<code>top_helper_and_RPE</code>同时控制<code>RPE</code>与<code>helper</code>,</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">```top_load_stack```控制```load_stack```</span><br><span class="line"></span><br><span class="line">##### 弹栈入栈</span><br><span class="line"></span><br><span class="line">其实就是把2.3.1中的过程以栈的形式体现出来，可参考如下代码：</span><br><span class="line"></span><br><span class="line">**Sample code**</span><br><span class="line"></span><br><span class="line">```c</span><br><span class="line">//将double RPE的元素弹入缓冲栈</span><br><span class="line">top_helper_and_RPE = pop_d(RPE_Reverse, top_helper_and_RPE);</span><br><span class="line">top_load_stack = push_d(load_stack, top_load_stack, out);</span><br><span class="line">//以“+”为例：</span><br><span class="line">//&#x27;+&#x27; 碰到运算符后从缓冲栈中弹三个进入计算栈开始算 算完了弹回缓冲栈 后面同理</span><br><span class="line">if (helper[top_helper] == 2)</span><br><span class="line">&#123;</span><br><span class="line">  	for (int i = 0; i &lt; 3; i++)</span><br><span class="line">    &#123;</span><br><span class="line">         top_load_stack = pop_d(load_stack, top_load_stack);</span><br><span class="line">         top_cal_stack = push_d(calculate_stack, top_cal_stack, out2);</span><br><span class="line">    &#125;</span><br><span class="line">double sum = 0;</span><br><span class="line">sum = cal_stack[top_cal_stack - 1] + cal_stack[top_cal_stack];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>最后<code>load_stack</code>剩下的那个数就是最后结果啦！</p>
+<h5 id="负数处理"><a href="#负数处理" class="headerlink" title="负数处理"></a>负数处理</h5><p>虽然我们已经能够很好地转化并计算一些逆波兰表达式，然而逆波兰表达式先天性存在一个小bug——他不支持负数的运算。按照我们之前的算法，碰到负数，例如-1时，我们会把他分割为<code>&quot;-&quot;,&quot;1&quot;</code>而不是<code>&quot;-1&quot;</code>. 因此在计算时碰到负数会出现缺少一个操作数的情况，从而无法获得结果。所以，我们需要对式子中的负数进行预处理。</p>
+<p>这个问题确实令人烦躁，但是静下心来仔细思考我们会发现，所谓负数无非是这两种情况：</p>
+<ol>
+<li><p>第一个字符为减号</p>
+</li>
+<li><p>括号内第一个字符是减号</p>
+</li>
+</ol>
+<p>那么我们只需分类讨论，逐个击破即可。在解决过程中，我们的目标是让负数的运算能够成立，也即解决“操作数少一个”的问题，因此我们考虑“补上一个操作符0”使得式子能够运算。换言之，我们可以把<code>&quot;-1+2&quot;</code>变为<code>&quot;0-1+2&quot;</code></p>
+<p>思路已经给出，具体地解决那么就靠你的代码了！</p>
+<p><strong>Sample Code</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span> temp0_1[<span class="number">256</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; len; j++)&#123;</span><br><span class="line">    <span class="keyword">if</span> (infix[i][j] == <span class="string">&#x27;(&#x27;</span>)&#123; <span class="comment">//处理括号后有减号的情况</span></span><br><span class="line">      <span class="keyword">for</span> (<span class="type">int</span> s = t + <span class="number">1</span>; s &lt; len; s++)&#123;</span><br><span class="line">           <span class="keyword">if</span> (infix[i][s] == <span class="string">&#x27;-&#x27;</span>)&#123; </span><br><span class="line">               <span class="keyword">for</span> (<span class="type">int</span> k = t + <span class="number">1</span>; k &lt; len; k++)&#123;</span><br><span class="line">                    temp0_1[k] = infix[i][k];<span class="comment">//复制到temp0_1</span></span><br><span class="line">               &#125;</span><br><span class="line">               <span class="keyword">for</span> (<span class="type">int</span> k = t + <span class="number">1</span>; k &lt; len; k++)&#123;</span><br><span class="line">                    infix[i][k + <span class="number">1</span>] = temp0_1[k];<span class="comment">//将数据后移，空出第一个位置</span></span><br><span class="line">               &#125;</span><br><span class="line">               infix[i][t + <span class="number">1</span>] = <span class="string">&#x27;0&#x27;</span>;			 <span class="comment">//补0</span></span><br><span class="line">               <span class="keyword">break</span>;                    </span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-变量处理"><a href="#3-变量处理" class="headerlink" title="3. 变量处理"></a><strong>3. 变量处理</strong></h2><p>恭喜你！你已经能够成功计算简单的数学算式了！然而接下来你还需要处理变量。变量可能出现在等式左边或者右边，并且具有不同的含义，因此我们需要对变量进行一些定义。</p>
+<p>Lab4给出了用数组的方式进行定义，其本质上是三组信息：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> variables[<span class="number">20</span>]				<span class="comment">//1.变量编号</span></span><br><span class="line"><span class="type">char</span> var_names[<span class="number">20</span>]			<span class="comment">//2.变量名称</span></span><br><span class="line"><span class="type">double</span> var_values[<span class="number">20</span>]		<span class="comment">//3.变量值</span></span><br></pre></td></tr></table></figure>
+
+<p>然而我们发现，这三组信息分别有着三个不同的数据类型，之后调用与处理的时候绝对会让你抓狂。To make your life easier, 我们引入另一种数据类型：</p>
+<p><strong><code>结构体 struct</code></strong></p>
+<h3 id="结构体struct"><a href="#结构体struct" class="headerlink" title="结构体struct"></a>结构体struct</h3><p>如果你有一定编程基础，<code>struct</code>可以类比为其他语言中的<code>class</code>，或者是<code>Matlab</code>中的<code>cell</code>。结构体的优点在于可以容纳各种类型的数据，将某一个数据的各种不同类型的信息组合在一起形成一个整体的“结构”。看下面的例子：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Student</span>&#123;</span>  </span><br><span class="line">    <span class="type">char</span> name[<span class="number">50</span>];  		<span class="comment">//姓名  </span></span><br><span class="line">    <span class="type">int</span> num;  			<span class="comment">//学号  </span></span><br><span class="line">    <span class="type">char</span> sex;  			<span class="comment">//性别  </span></span><br><span class="line">    <span class="type">double</span> score;  	<span class="comment">//成绩  </span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">我们一般这样调用：</span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">  <span class="class"><span class="keyword">struct</span> <span class="title">Student</span> <span class="title">David</span>;</span></span><br><span class="line">  David.num = <span class="number">114514</span>;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;num:%d\n&quot;</span>,David.num);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样我们就定义好了Student的结构，我们可以非常轻松的调用struct中国的各种类型的数据。这种定义方式虽然没有问题，在中文互联网十分常见，但是每当我们要调用的时候就要struct XXX，非常麻烦不好看，因此我们普遍采用下面的方法调用：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="type">char</span> name[<span class="number">50</span>];</span><br><span class="line">	<span class="type">int</span> num;</span><br><span class="line">	<span class="type">char</span> sex[<span class="number">5</span>];</span><br><span class="line">	<span class="type">double</span> score;</span><br><span class="line">&#125;Students;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">  Students David; <span class="comment">//不需要在前面写struct了，简洁清楚.</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>所以很自然的，我们可以定义struct Variables来实现我们对变量的操作：</p>
+<p><strong>Sample Code</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="type">char</span> name[<span class="number">120</span>];</span><br><span class="line">    <span class="type">double</span> value;</span><br><span class="line">&#125; variables</span><br><span class="line">  </span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span>&#123;</span><br><span class="line">  Variables variables[<span class="number">20</span>]; 				<span class="comment">//结构体可以组成一个数组</span></span><br><span class="line">  variables[<span class="number">0</span>].name = <span class="string">&quot;abc&quot;</span>;			<span class="comment">//第一个variables结构体的name是abc</span></span><br><span class="line">  varibales[<span class="number">0</span>].value = <span class="number">114.514</span>;		<span class="comment">//第一个variables结构体的value是114.514</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>结构体的其他操作可以参考视频：<a target="_blank" rel="noopener" href="https://youtu.be/dqa0KMSMx2w">https://youtu.be/dqa0KMSMx2w</a></p>
+<h3 id="等号左边的变量"><a href="#等号左边的变量" class="headerlink" title="等号左边的变量"></a>等号左边的变量</h3><p>对于一个等式，等号左边的变量应该是被赋值的变量，并且这个变量的值可以在之后被调用。我们首先需要将等式左边的变量名存储到结构体name中，最后把算好的值返回给结构体中的value。在计算时，还需要识别等式右边的变量并找出他对应的值。</p>
+<p>对于等号左边的变量，我们可以非常容易的把他作为字符串提取出来然后写入<code>variables.name</code>，你可能需要用到这个函数：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sprintf</span>([写入的目标], [被写入的内容], <span class="string">&quot;abc&quot;</span>); <span class="comment">//&quot;abc&quot;告诉计算机写入的格式。</span></span><br></pre></td></tr></table></figure>
+
+<p>具体语法请自行搜索。</p>
+<p>最后我们将计算得到的结果赋值给他就好了！</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">variables[i].value = [FinalAnswer];</span><br></pre></td></tr></table></figure>
+
+<h3 id="等号右边的变量"><a href="#等号右边的变量" class="headerlink" title="等号右边的变量"></a>等号右边的变量</h3><p>显然，我们需要识别右边的变量并获得其对应的数值，然后返回给用于计算的<code>double_RPE</code>，然而这个过程看似简单，实则困难重重，请做好debug的心理准备。</p>
+<p>要实现识别的操作，我们需要对2.3.3中的代码进行升级</p>
+<p><strong>Sample Code</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ((char_RPE[x] &gt;= <span class="string">&#x27;0&#x27;</span> &amp;&amp; char_RPE[x] &lt;= <span class="string">&#x27;9&#x27;</span>) || (char_RPE[x] == <span class="string">&#x27;.&#x27;</span>) || (char_RPE[x] &gt;= <span class="string">&#x27;a&#x27;</span> &amp;&amp; char_RPE[x] &lt;= <span class="string">&#x27;z&#x27;</span>))&#123;</span><br><span class="line">    temp[m] = char_RPE[x];</span><br><span class="line">    m = m + <span class="number">1</span>;</span><br><span class="line">    helper[l] = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//变量的识别与转化（难点）由于temp中可能因为各种原因而没有元素导致之后strcmp失效，所以采取temp赋值和空字符判断</span></span><br><span class="line"><span class="type">int</span> a = <span class="number">0</span>;</span><br><span class="line"><span class="type">int</span> var_position;</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> t = <span class="number">0</span>; t &lt; i; t++)&#123;</span><br><span class="line">     <span class="keyword">if</span> (<span class="built_in">strcmp</span>(temp, variable[t].var_name) == <span class="number">0</span>)</span><br><span class="line">         a = a + <span class="number">1</span>;<span class="comment">//变量判断</span></span><br><span class="line">         var_position = t;</span><br><span class="line">     <span class="keyword">if</span> (<span class="built_in">strcmp</span>(temp, variable[t].var_name) != <span class="number">0</span>)</span><br><span class="line">         <span class="keyword">continue</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (a &gt;= <span class="number">1</span>)   </span><br><span class="line">      double_RPE[y] = variable[var_position].var_value;</span><br><span class="line">      y = y + <span class="number">1</span>;</span><br><span class="line"><span class="comment">//找到了之前的变量 采用之前存储的数据</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (a == <span class="number">0</span>)</span><br><span class="line">      double_RPE[y] = strtod(temp, <span class="literal">NULL</span>);</span><br><span class="line">      y = y + <span class="number">1</span>;</span><br><span class="line"> <span class="comment">//没找到 一定是数字（如果是新变量则不合法）</span></span><br></pre></td></tr></table></figure>
+
+<p>我们使用<code>strcmp</code>函数进行字符串的比较，用来查找右边变量对应的数值。注意，改代码直接复制不可能运行，你需要理解每一步后自己仿照这敲出来！</p>
+<p>如果你发现结果完全不符合预期，强烈建议你使用<code>printf</code>来观察计算机到底在算写什么。难点在于后面四个if的条件应该怎么写。</p>
+<p><strong>Sample Code</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;temp:%s		variable:%s\n&quot;</span>,temp,variable[t].varname);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;True of Flase: %d\n&quot;</span>, a);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="终章"><a href="#终章" class="headerlink" title="终章"></a>终章</h2><p>如果你勤于动脑，勤于动手打代码，勇于运行调试，那么到这里你应该能基本上有个比较漂亮的输出了。虽然很有可能你的结果还有错误，你的joj还告诉你runtime error，但你先别急，仔细检查你的while循环、if语句判断条件、你的top值，通过printf来观察计算机的行为并且找出错误！这一定非常煎熬，但是只要be patient，就一定可以找出对应的错误。</p>
+<p>这里直接给出JOJ的测试点：</p>
+<p><strong>Sample Test</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//盗取JOJ测试点的方法</span></span><br><span class="line">上传一个程序，实现将<span class="string">&quot;commands.txt&quot;</span>打印下来即可；</span><br><span class="line">Then you can get:</span><br><span class="line">a = <span class="number">1</span> + <span class="number">1</span></span><br><span class="line">b= <span class="number">10</span>^(<span class="number">-2</span>)</span><br><span class="line">c =(<span class="number">0</span> /a+ <span class="number">0</span> / <span class="number">1</span>+ <span class="number">0</span>/<span class="number">3</span> + <span class="number">0</span>/a + b * <span class="number">2.5</span>)* b^(<span class="number">-2</span>)</span><br><span class="line">d=a^( a^  <span class="number">2</span>) /(<span class="number">4</span>*<span class="number">8</span>)</span><br><span class="line">e   =<span class="number">-8</span>+ (<span class="number">6</span>+c)^<span class="number">1</span>+<span class="number">3.04</span>/(<span class="number">3.04</span>^(a*d)* d)</span><br><span class="line">a=    b*c + d - e + e^(b^(<span class="number">-1</span>) / <span class="number">50</span>)</span><br><span class="line">f = (<span class="number">2.5</span>^( <span class="number">-2</span>) -(<span class="number">-23.2</span>)/(<span class="number">5.8</span>)^(b^<span class="number">0</span>) - <span class="number">0.16</span>)^(a ^ <span class="number">0</span>+b ^ <span class="number">0</span>+e ^ <span class="number">0</span>)</span><br><span class="line">a = (((<span class="number">200</span>*b)^<span class="number">2</span>)^(<span class="number">1</span>+f^(e^<span class="number">0</span>/<span class="number">3</span>)/<span class="number">2</span>)*<span class="number">60</span>/<span class="number">2</span>+<span class="number">1</span>)*<span class="number">3</span>+<span class="number">10624</span>/f^<span class="number">0.5</span></span><br><span class="line">tenlengthv=<span class="number">-3.2</span>+(<span class="number">8</span><span class="number">-2</span>^<span class="number">2</span>) + <span class="number">1</span>^<span class="number">100</span>/((<span class="number">2</span>^<span class="number">0.5</span>)* (<span class="number">4</span>^<span class="number">0.25</span>)) + (<span class="number">-0.25</span>)+ <span class="number">1</span> - <span class="number">0.6</span> / <span class="number">0.4</span> + <span class="number">16</span>^ (<span class="number">1</span>/<span class="number">0.25</span>/<span class="number">16</span>)</span><br><span class="line">result1234=((((((a<span class="number">-7081</span>)))))-(((( ((b^(<span class="number">-2</span>)))))))*(((( (((<span class="number">1</span>))))))-((((((<span class="number">0</span>)))) )))/(((((<span class="number">-1</span>)^<span class="number">2</span>))) * ((((<span class="number">-2</span>)^<span class="number">2</span>))) ))</span><br><span class="line">ans = result1234 * b + tenlengthv</span><br></pre></td></tr></table></figure>
+
+<p>如果这些测试点能够通过，最后加上分号的功能即可！（真的很简单！）</p>
+<div align='center'><font size='5'><b>最后，祝福你能够在ddl前顺利Accepted！</font></div>
+
+
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2022/11/29/Should-we-pay-for-the-knowledge-%E2%80%9Cprotected%E2%80%9D-by-copyright-laws/" rel="next" title="Should we pay for the knowledge “protected” by copyright laws?">
+                  Should we pay for the knowledge “protected” by copyright laws? <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Leejiawen</span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-generator-searchdb/1.4.1/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+  <script class="next-config" data-name="pdf" type="application/json">{"object_url":{"url":"https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.min.js","integrity":"sha256-tu9j5pBilBQrWSDePOOajCUdz6hWsid/lBNzK4KgEPM="},"url":"/lib/pdf/web/viewer.html"}</script>
+  <script src="/js/third-party/tags/pdf.js"></script>
+
+  <script class="next-config" data-name="mermaid" type="application/json">{"enable":true,"theme":{"light":"default","dark":"dark"},"js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mermaid/9.3.0/mermaid.min.js","integrity":"sha256-QdTG1YTLLTwD3b95jLqFxpQX9uYuJMNAtVZgwKX4oYU="}}</script>
+  <script src="/js/third-party/tags/mermaid.js"></script>
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
