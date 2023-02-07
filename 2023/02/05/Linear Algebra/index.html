@@ -20,16 +20,16 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="It’s a little bit strange to put linear algebra and functions of multiple variables together. However, they are highly related in their essence. Functions of multiple variables take advantage of deri">
+    <meta name="description" content="It&#39;s a little bit strange to put linear algebra and functions of multiple variables together. However, they are highly related in their essence. Functions of multiple variables take advantage of deri">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linear Algebra and Functions of Multiple Variables(Part I.)">
 <meta property="og:url" content="http://example.com/2023/02/05/Linear%20Algebra/index.html">
 <meta property="og:site_name" content="Lee&#39;s Blog">
-<meta property="og:description" content="It’s a little bit strange to put linear algebra and functions of multiple variables together. However, they are highly related in their essence. Functions of multiple variables take advantage of deri">
+<meta property="og:description" content="It&#39;s a little bit strange to put linear algebra and functions of multiple variables together. However, they are highly related in their essence. Functions of multiple variables take advantage of deri">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://raw.githubusercontent.com/leeJiawen/blog-img/main/1200px-Linear_subspaces_with_shading.svg.png">
 <meta property="article:published_time" content="2023-02-04T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-02-07T13:04:43.167Z">
+<meta property="article:modified_time" content="2023-02-07T13:07:21.751Z">
 <meta property="article:author" content="Leejiawen">
 <meta property="article:tag" content="Maths">
 <meta name="twitter:card" content="summary">
@@ -145,7 +145,9 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Solving-Linear-Equations"><span class="nav-number">1.</span> <span class="nav-text">Solving Linear Equations</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linear-Equations"><span class="nav-number">1.1.</span> <span class="nav-text">Linear Equations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Row-Picture"><span class="nav-number">1.1.1.</span> <span class="nav-text">Row Picture</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Column-Picture"><span class="nav-number">1.1.2.</span> <span class="nav-text">Column Picture</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Matrix"><span class="nav-number">1.2.</span> <span class="nav-text">Matrix</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Definition-of-Matrices"><span class="nav-number">1.2.1.</span> <span class="nav-text">Definition of Matrices</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-idea-of-elimination"><span class="nav-number">1.3.</span> <span class="nav-text">The idea of elimination</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Elementary-Row-Transformation"><span class="nav-number">1.3.1.</span> <span class="nav-text">Elementary Row Transformation</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#solving-linear-equations"><span class="nav-number">1.</span> <span class="nav-text">Solving Linear Equations</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#linear-equations"><span class="nav-number">1.1.</span> <span class="nav-text">Linear Equations</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#row-picture"><span class="nav-number">1.1.1.</span> <span class="nav-text">Row Picture</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#column-picture"><span class="nav-number">1.1.2.</span> <span class="nav-text">Column Picture</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#matrix"><span class="nav-number">1.2.</span> <span class="nav-text">Matrix</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#definition-of-matrices"><span class="nav-number">1.2.1.</span> <span class="nav-text">Definition of
+Matrices</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#the-idea-of-elimination"><span class="nav-number">1.3.</span> <span class="nav-text">The idea of elimination</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#elementary-row-transformation"><span class="nav-number">1.3.1.</span> <span class="nav-text">Elementary Row
+Transformation</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -239,7 +241,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-02-07 21:04:43" itemprop="dateModified" datetime="2023-02-07T21:04:43+08:00">2023-02-07</time>
+      <time title="Modified: 2023-02-07 21:07:21" itemprop="dateModified" datetime="2023-02-07T21:07:21+08:00">2023-02-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -265,7 +267,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>4.2k</span>
+      <span>4.7k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -284,22 +286,45 @@
     
     <div class="post-body" itemprop="articleBody">
         <p><img src="https://raw.githubusercontent.com/leeJiawen/blog-img/main/1200px-Linear_subspaces_with_shading.svg.png" style="zoom:50%;" /></p>
-<p>It’s a little bit strange to put linear algebra and functions of multiple variables together. However, they are highly related in their essence. Functions of multiple variables take advantage of derivative to change a complicated function into a linear one, which can be further analyzed with linear algebra. </p>
-<p>And so the adventure begins…</p>
+<p>It's a little bit strange to put linear algebra and functions of
+multiple variables together. However, they are highly related in their
+essence. Functions of multiple variables take advantage of derivative to
+change a complicated function into a linear one, which can be further
+analyzed with linear algebra.</p>
+<p>And so the adventure begins...</p>
 <span id="more"></span>
-<h2 id="Solving-Linear-Equations"><a href="#Solving-Linear-Equations" class="headerlink" title="Solving Linear Equations"></a>Solving Linear Equations</h2><h3 id="Linear-Equations"><a href="#Linear-Equations" class="headerlink" title="Linear Equations"></a>Linear Equations</h3><p>A <strong>linear equation</strong> with $n$ unknowns is an eaquation like this:</p>
-<script type="math/tex; mode=display">
-a_1x_1+a_2x_2+\cdots+a_nx_n=b</script><p>The unknowns should be multiplied by only numbers and never will we see $xy$ or $x^2$. Therefore, we can see that: $4x_1-5x_2=x_1x_2$ and $x_2=2\sqrt{x_1}-6$ are <strong>not</strong> linear equations as the former has $x_1x_2$, while the latter  has $\sqrt{x_1}$.</p>
-<p>We can get a linear equation system by combining several linear equations together. Let’s start from this example:</p>
-<script type="math/tex; mode=display">
+<h2 id="solving-linear-equations">Solving Linear Equations</h2>
+<h3 id="linear-equations">Linear Equations</h3>
+<p>A <strong>linear equation</strong> with <span
+class="math inline">\(n\)</span> unknowns is an eaquation like this:
+<span class="math display">\[
+a_1x_1+a_2x_2+\cdots+a_nx_n=b
+\]</span> The unknowns should be multiplied by only numbers and never
+will we see <span class="math inline">\(xy\)</span> or <span
+class="math inline">\(x^2\)</span>. Therefore, we can see that: <span
+class="math inline">\(4x_1-5x_2=x_1x_2\)</span> and <span
+class="math inline">\(x_2=2\sqrt{x_1}-6\)</span> are
+<strong>not</strong> linear equations as the former has <span
+class="math inline">\(x_1x_2\)</span>, while the latter has <span
+class="math inline">\(\sqrt{x_1}\)</span>.</p>
+<p>We can get a linear equation system by combining several linear
+equations together. Let's start from this example: <span
+class="math display">\[
 \begin{aligned}
-x-2y&=1 \\\
-3x+2y&=11
-\end{aligned}</script><h4 id="Row-Picture"><a href="#Row-Picture" class="headerlink" title="Row Picture"></a>Row Picture</h4><p>The row picture of linear equations can be seen as <strong>lines</strong> in a coordinate；</p>
-<h4 id="Column-Picture"><a href="#Column-Picture" class="headerlink" title="Column Picture"></a>Column Picture</h4><p>The column picture sees <strong>vectors</strong> instead of numbers. </p>
-<script type="math/tex; mode=display">
-\begin{pmatrix}1\\3\end{pmatrix}x+\begin{pmatrix}-2\\2\end{pmatrix}y=\begin{pmatrix}1\\11\end{pmatrix}</script><p>We can get a <strong>linear combination</strong> if we take $x=3,y=1$.</p>
-<script type="math/tex; mode=display">
+x-2y&amp;=1 \\\
+3x+2y&amp;=11
+\end{aligned}
+\]</span></p>
+<h4 id="row-picture">Row Picture</h4>
+<p>The row picture of linear equations can be seen as
+<strong>lines</strong> in a coordinate；</p>
+<h4 id="column-picture">Column Picture</h4>
+<p>The column picture sees <strong>vectors</strong> instead of numbers.
+<span class="math display">\[
+\begin{pmatrix}1\\3\end{pmatrix}x+\begin{pmatrix}-2\\2\end{pmatrix}y=\begin{pmatrix}1\\11\end{pmatrix}
+\]</span> We can get a <strong>linear combination</strong> if we take
+<span class="math inline">\(x=3,y=1\)</span>. <span
+class="math display">\[
 3
 \begin{pmatrix}
 1\\
@@ -310,114 +335,157 @@ x-2y&=1 \\\
 =
 \begin{pmatrix}
 1
-\\11\end{pmatrix}</script><h3 id="Matrix"><a href="#Matrix" class="headerlink" title="Matrix"></a>Matrix</h3><p>The main information in a linear system can be represented by a <strong>matrix</strong>, a chart of numbers.</p>
-<p>If we put the coefficients together, then we have a <strong>coefficient matrix</strong>:</p>
-<script type="math/tex; mode=display">
+\\11\end{pmatrix}
+\]</span></p>
+<h3 id="matrix">Matrix</h3>
+<p>The main information in a linear system can be represented by a
+<strong>matrix</strong>, a chart of numbers.</p>
+<p>If we put the coefficients together, then we have a
+<strong>coefficient matrix</strong>: <span class="math display">\[
 \left [
 \begin{array}{rrrr}
-1&-2\\
-3&2\\
+1&amp;-2\\
+3&amp;2\\
 \end{array}
-\right ]</script><p>If we include the numbers on the right hand side of the equations, we will have an <strong>augumented matrix</strong>:</p>
-<script type="math/tex; mode=display">
+\right ]
+\]</span> If we include the numbers on the right hand side of the
+equations, we will have an <strong>augumented matrix</strong>: <span
+class="math display">\[
 \left [
 \begin{array}{rrrr}
-1&-2&1\\
-3&2&11\\
+1&amp;-2&amp;1\\
+3&amp;2&amp;11\\
 \end{array}
-\right ]</script><p>The rigiorous definition of a matrix can be written as follows:</p>
-<div class="note "><h4 id="Definition-of-Matrices"><a href="#Definition-of-Matrices" class="headerlink" title="Definition of Matrices"></a><strong>Definition of Matrices</strong></h4><p>Let $m$ and $n$ denote positive integers. An $m$-by-$n$ <strong><em>matrix A</em></strong> is a rectangular array of elements of $\mathbf{F}$ with $m$ rows and $n$ columns:</p>
-<script type="math/tex; mode=display">
+\right ]
+\]</span> The rigiorous definition of a matrix can be written as
+follows:</p>
+<div class="note "><h4 id="definition-of-matrices"><strong>Definition of
+Matrices</strong></h4>
+<p>Let <span class="math inline">\(m\)</span> and <span
+class="math inline">\(n\)</span> denote positive integers. An <span
+class="math inline">\(m\)</span>-by-<span
+class="math inline">\(n\)</span> <strong><em>matrix A</em></strong> is a
+rectangular array of elements of <span
+class="math inline">\(\mathbf{F}\)</span> with <span
+class="math inline">\(m\)</span> rows and <span
+class="math inline">\(n\)</span> columns: <span class="math display">\[
 A=\begin{bmatrix}
-a_{11}&...&a_{1n}\\
-\vdots&\ddots&\vdots\\
-a_{m1}&...&a_{mn}
-\end{bmatrix}</script><p>And the notation $A_{jk}$ denotes the entry in row $j$,column $k$ of $A$.</p>
+a_{11}&amp;...&amp;a_{1n}\\
+\vdots&amp;\ddots&amp;\vdots\\
+a_{m1}&amp;...&amp;a_{mn}
+\end{bmatrix}
+\]</span> And the notation <span class="math inline">\(A_{jk}\)</span>
+denotes the entry in row <span class="math inline">\(j\)</span>,column
+<span class="math inline">\(k\)</span> of <span
+class="math inline">\(A\)</span>.</p>
 </div>
-<p>The real meaning of matrices is more abstract and comlicated  than just a simple “rectangular array of elements”. Anyway, we will talk it later.</p>
-<h3 id="The-idea-of-elimination"><a href="#The-idea-of-elimination" class="headerlink" title="The idea of elimination"></a>The idea of elimination</h3><p>To slove linear equations, the main idea is <strong>elimination</strong>. Before elimination, $x$ and $y$ Appear in both equations. After elimintaion, $y$  has disappeared leaving $x$ alone. </p>
+<p>The real meaning of matrices is more abstract and comlicated than
+just a simple "rectangular array of elements". Anyway, we will talk it
+later.</p>
+<h3 id="the-idea-of-elimination">The idea of elimination</h3>
+<p>To slove linear equations, the main idea is
+<strong>elimination</strong>. Before elimination, <span
+class="math inline">\(x\)</span> and <span
+class="math inline">\(y\)</span> Appear in both equations. After
+elimintaion, <span class="math inline">\(y\)</span> has disappeared
+leaving <span class="math inline">\(x\)</span> alone.</p>
 <p>There are three ways to deal with linear equations:</p>
-<div class="note "><h4 id="Elementary-Row-Transformation"><a href="#Elementary-Row-Transformation" class="headerlink" title="Elementary Row Transformation"></a>Elementary Row Transformation</h4><ol>
-<li>(multiply and add) substitue an equation with the sum of itself and another equation multiplied with a scalar.</li>
+<div class="note "><h4 id="elementary-row-transformation">Elementary Row
+Transformation</h4>
+<ol type="1">
+<li>(multiply and add) substitue an equation with the sum of itself and
+another equation multiplied with a scalar.</li>
 <li>(exchange) change the position of two equations.</li>
 <li>(multiply) multiply an equation with a non-zero scalar.</li>
 </ol>
 </div>
-<div class="note info no-icon"><p><strong>Example 1. Solve linear equations:</strong></p>
-<script type="math/tex; mode=display">
+<div class="note info no-icon"><p><strong>Example 1. Solve linear equations:</strong> <span
+class="math display">\[
 \begin{aligned}
-x-2y+z&=0\\
-2y-8z&=8\\
--4x+5y+9z&=-9\\
-\end{aligned}</script></div>
-<p>Our goal is to produce an upper trianglar system like this:</p>
-<script type="math/tex; mode=display">
+x-2y+z&amp;=0\\
+2y-8z&amp;=8\\
+-4x+5y+9z&amp;=-9\\
+\end{aligned}
+\]</span></p>
+</div>
+<p>Our goal is to produce an upper trianglar system like this: <span
+class="math display">\[
 \begin{bmatrix}
-1&0&0&s_1\\
-0&1&0&s_2\\
-0&0&1&s_3\\
-\end{bmatrix}</script><div class="note success"><p><strong>Solution:</strong></p>
-<script type="math/tex; mode=display">
+1&amp;0&amp;0&amp;s_1\\
+0&amp;1&amp;0&amp;s_2\\
+0&amp;0&amp;1&amp;s_3\\
+\end{bmatrix}
+\]</span> <div class="note success"><p><strong>Solution:</strong> <span class="math display">\[
 \left[ \begin{array}{rrrr}
-1&-2&1&0\\
-0&2&-8&8\\
--4&5&9&-9\\
+1&amp;-2&amp;1&amp;0\\
+0&amp;2&amp;-8&amp;8\\
+-4&amp;5&amp;9&amp;-9\\
 \end{array} \right]
 \overset{row4=4\times row1+row4}{=\!=\!=\!=\!=\!=\!=\!=\!=\!=\!=}
 \left[ \begin{array}{rrrr}
-1&-2&1&0\\
-0&2&-8&8\\
-0&-3&13&-9\\
-\end{array} \right]</script><script type="math/tex; mode=display">
-\left[ \begin{array}{rrrr}
-1&-2&1&0\\
-0&2&-8&8\\
-0&-3&13&-9\\
+1&amp;-2&amp;1&amp;0\\
+0&amp;2&amp;-8&amp;8\\
+0&amp;-3&amp;13&amp;-9\\
 \end{array} \right]
-
-\overset{row4=\frac{3}{2}\times row2+row4}{=\!=\!=\!=\!=\!=\!=\!=\!=\!=\!=}
-
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
 \left[ \begin{array}{rrrr}
-1&-2&1&0\\
-0&2&-8&8\\
-0&0&1&3\\
+1&amp;-2&amp;1&amp;0\\
+0&amp;2&amp;-8&amp;8\\
+0&amp;-3&amp;13&amp;-9\\
+\end{array} \right]
+\overset{row4=\frac{3}{2}\times
+row2+row4}{=\!=\!=\!=\!=\!=\!=\!=\!=\!=\!=}
+\left[ \begin{array}{rrrr}
+1&amp;-2&amp;1&amp;0\\
+0&amp;2&amp;-8&amp;8\\
+0&amp;0&amp;1&amp;3\\
 \end{array} \right]
 \overset{row2=\frac{1}{2}\times row2}{=\!=\!=\!=\!=\!=\!=\!=\!=\!=\!=}
 \left[ \begin{array}{rrrr}
-1&-2&1&0\\
-0&1&-4&4\\
-0&0&1&3\\
-\end{array} \right]</script><script type="math/tex; mode=display">
+1&amp;-2&amp;1&amp;0\\
+0&amp;1&amp;-4&amp;4\\
+0&amp;0&amp;1&amp;3\\
+\end{array} \right]
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
 \left[ \begin{array}{rrrr}
-1&-2&1&0\\
-0&1&-4&4\\
-0&0&1&3\\
+1&amp;-2&amp;1&amp;0\\
+0&amp;1&amp;-4&amp;4\\
+0&amp;0&amp;1&amp;3\\
 \end{array} \right]
 \overset{row2=4\times row3+row2}{=\!=\!=\!=\!=\!=\!=\!=\!=\!=\!=}
 \left[ \begin{array}{rrrr}
-1&-2&1&0\\
-0&1&0&16\\
-0&0&1&3\\
+1&amp;-2&amp;1&amp;0\\
+0&amp;1&amp;0&amp;16\\
+0&amp;0&amp;1&amp;3\\
 \end{array} \right]
 \overset{row1=-1\times row3+row1}{=\!=\!=\!=\!=\!=\!=\!=\!=\!=\!=}
 \left[ \begin{array}{rrrr}
-1&-2&0&-3\\
-0&1&0&16\\
-0&0&1&3\\
-\end{array} \right]</script><script type="math/tex; mode=display">
+1&amp;-2&amp;0&amp;-3\\
+0&amp;1&amp;0&amp;16\\
+0&amp;0&amp;1&amp;3\\
+\end{array} \right]
+\]</span></p>
+<p><span class="math display">\[
 \left[ \begin{array}{rrrr}
-1&-2&0&-3\\
-0&1&0&16\\
-0&0&1&3\\
+1&amp;-2&amp;0&amp;-3\\
+0&amp;1&amp;0&amp;16\\
+0&amp;0&amp;1&amp;3\\
 \end{array} \right]
 \overset{row1=2\times row2+row1}{=\!=\!=\!=\!=\!=\!=\!=\!=\!=\!=}
 \left[ \begin{array}{rrrr}
-1&0&0&29\\
-0&1&0&16\\
-0&0&1&3\\
-\end{array} \right]</script><p>So the solution is$ (29,16,3)$.</p>
-</div>
-<div class="note info"><p><strong>One principle we can use:</strong> eliminate from bottom to top.</p>
+1&amp;0&amp;0&amp;29\\
+0&amp;1&amp;0&amp;16\\
+0&amp;0&amp;1&amp;3\\
+\end{array} \right]
+\]</span></p>
+<p>So the solution is$ (29,16,3)$.</p>
+</div></p>
+<div class="note info"><p><strong>One principle we can use:</strong> eliminate from bottom to
+top.</p>
 </div>
 
     </div>
@@ -471,7 +539,7 @@ x-2y+z&=0\\
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">40k</span>
+    <span title="Word count total">41k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
