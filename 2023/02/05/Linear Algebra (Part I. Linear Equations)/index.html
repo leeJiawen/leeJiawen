@@ -20,16 +20,16 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="It’s a little bit strange to put linear algebra and functions of multiple variables together. However, they are highly related in their essence. Functions of multiple variables take advantage of deri">
+    <meta name="description" content="It&#39;s a little bit strange to put linear algebra and functions of multiple variables together. However, they are highly related in their essence. Functions of multiple variables take advantage of deri">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linear Algebra (Part I. Linear Equations)">
 <meta property="og:url" content="http://example.com/2023/02/05/Linear%20Algebra%20(Part%20I.%20Linear%20Equations)/index.html">
 <meta property="og:site_name" content="Lee&#39;s Blog">
-<meta property="og:description" content="It’s a little bit strange to put linear algebra and functions of multiple variables together. However, they are highly related in their essence. Functions of multiple variables take advantage of deri">
+<meta property="og:description" content="It&#39;s a little bit strange to put linear algebra and functions of multiple variables together. However, they are highly related in their essence. Functions of multiple variables take advantage of deri">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://raw.githubusercontent.com/leeJiawen/blog-img/main/1200px-Linear_subspaces_with_shading.svg.png">
 <meta property="article:published_time" content="2023-02-04T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-05-09T01:51:56.604Z">
+<meta property="article:modified_time" content="2023-12-29T17:48:02.615Z">
 <meta property="article:author" content="Leejiawen">
 <meta property="article:tag" content="Maths">
 <meta name="twitter:card" content="summary">
@@ -145,7 +145,11 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Solving-Linear-Equations"><span class="nav-number">1.</span> <span class="nav-text">Solving Linear Equations</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linear-Equations"><span class="nav-number">1.1.</span> <span class="nav-text">Linear Equations</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Row-Picture"><span class="nav-number">1.1.1.</span> <span class="nav-text">Row Picture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Column-Picture"><span class="nav-number">1.1.2.</span> <span class="nav-text">Column Picture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Consistent-and-Inconsistent"><span class="nav-number">1.1.3.</span> <span class="nav-text">Consistent and Inconsistent</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Matrix"><span class="nav-number">1.2.</span> <span class="nav-text">Matrix</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Definition-of-Matrices"><span class="nav-number">1.2.1.</span> <span class="nav-text">Definition of Matrices</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-idea-of-elimination"><span class="nav-number">1.3.</span> <span class="nav-text">The idea of elimination</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Elementary-Row-Transformation"><span class="nav-number">1.3.1.</span> <span class="nav-text">Elementary Row Transformation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Matrix-Multiplication"><span class="nav-number">1.4.</span> <span class="nav-text">Matrix Multiplication</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Properties-of-Matrix-Multiplication"><span class="nav-number">1.4.1.</span> <span class="nav-text">Properties of Matrix Multiplication</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Matrix-Equation-Ax-b"><span class="nav-number">1.5.</span> <span class="nav-text">The Matrix Equation $Ax&#x3D;b$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inverse-Matrices"><span class="nav-number">1.6.</span> <span class="nav-text">Inverse Matrices</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Inverse-Matrices"><span class="nav-number">1.6.1.</span> <span class="nav-text">Inverse Matrices</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reverse-of-product"><span class="nav-number">1.6.2.</span> <span class="nav-text">Reverse of product</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-solution-of-Ax-b"><span class="nav-number">1.7.</span> <span class="nav-text">The solution of $Ax&#x3D;b$</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Notes-for-the-solution-A-1"><span class="nav-number">1.7.1.</span> <span class="nav-text">Notes for the solution $A^{-1}$:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gauss-Jordan-Elimination"><span class="nav-number">1.7.2.</span> <span class="nav-text">Gauss-Jordan Elimination</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#solving-linear-equations"><span class="nav-number">1.</span> <span class="nav-text">Solving Linear Equations</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#linear-equations"><span class="nav-number">1.1.</span> <span class="nav-text">Linear Equations</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#row-picture"><span class="nav-number">1.1.1.</span> <span class="nav-text">Row Picture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#column-picture"><span class="nav-number">1.1.2.</span> <span class="nav-text">Column Picture</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#consistent-and-inconsistent"><span class="nav-number">1.1.3.</span> <span class="nav-text">Consistent and Inconsistent</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#matrix"><span class="nav-number">1.2.</span> <span class="nav-text">Matrix</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#definition-of-matrices"><span class="nav-number">1.2.1.</span> <span class="nav-text">Definition of
+Matrices</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#the-idea-of-elimination"><span class="nav-number">1.3.</span> <span class="nav-text">The idea of elimination</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#elementary-row-transformation"><span class="nav-number">1.3.1.</span> <span class="nav-text">Elementary Row
+Transformation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#matrix-multiplication"><span class="nav-number">1.4.</span> <span class="nav-text">Matrix Multiplication</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#properties-of-matrix-multiplication"><span class="nav-number">1.4.1.</span> <span class="nav-text">Properties of Matrix
+Multiplication</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#the-matrix-equation-axb"><span class="nav-number">1.5.</span> <span class="nav-text">The Matrix Equation \(Ax&#x3D;b\)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#inverse-matrices"><span class="nav-number">1.6.</span> <span class="nav-text">Inverse Matrices</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#inverse-matrices"><span class="nav-number">1.6.1.</span> <span class="nav-text">Inverse Matrices</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reverse-of-product"><span class="nav-number">1.6.2.</span> <span class="nav-text">Reverse of product</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#the-solution-of-axb"><span class="nav-number">1.7.</span> <span class="nav-text">The solution of \(Ax&#x3D;b\)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#notes-for-the-solution-a-1"><span class="nav-number">1.7.1.</span> <span class="nav-text">Notes for the solution \(A^{-1}\):</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gauss-jordan-elimination"><span class="nav-number">1.7.2.</span> <span class="nav-text">Gauss-Jordan
+Elimination</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -239,7 +243,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-05-09 09:51:56" itemprop="dateModified" datetime="2023-05-09T09:51:56+08:00">2023-05-09</time>
+      <time title="Modified: 2023-12-30 01:48:02" itemprop="dateModified" datetime="2023-12-30T01:48:02+08:00">2023-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -265,14 +269,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>9.8k</span>
+      <span>7.5k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>9 mins.</span>
+      <span>7 mins.</span>
     </span>
 </div>
 
@@ -285,22 +289,45 @@
     
     <div class="post-body" itemprop="articleBody">
         <p><img src="https://raw.githubusercontent.com/leeJiawen/blog-img/main/1200px-Linear_subspaces_with_shading.svg.png" style="zoom:30%;" /></p>
-<p>It’s a little bit strange to put linear algebra and functions of multiple variables together. However, they are highly related in their essence. Functions of multiple variables take advantage of derivative to change a complicated function into a linear one, which can be further analyzed with linear algebra. </p>
-<p>And so the adventure begins…</p>
+<p>It's a little bit strange to put linear algebra and functions of
+multiple variables together. However, they are highly related in their
+essence. Functions of multiple variables take advantage of derivative to
+change a complicated function into a linear one, which can be further
+analyzed with linear algebra.</p>
+<p>And so the adventure begins...</p>
 <span id="more"></span>
-<h1 id="Solving-Linear-Equations"><a href="#Solving-Linear-Equations" class="headerlink" title="Solving Linear Equations"></a>Solving Linear Equations</h1><h2 id="Linear-Equations"><a href="#Linear-Equations" class="headerlink" title="Linear Equations"></a>Linear Equations</h2><p>A <strong>linear equation</strong> with $n$ unknowns is an eaquation like this:</p>
-<script type="math/tex; mode=display">
-a_1x_1+a_2x_2+\cdots+a_nx_n=b</script><p>The unknowns should be multiplied by only numbers and never will we see $xy$ or $x^2$. Therefore, we can see that: $4x_1-5x_2=x_1x_2$ and $x_2=2\sqrt{x_1}-6$ are <strong>not</strong> linear equations as the former has $x_1x_2$, while the latter  has $\sqrt{x_1}$.</p>
-<p>We can get a linear equation system by combining several linear equations together. Let’s start from this example:</p>
-<script type="math/tex; mode=display">
+<h1 id="solving-linear-equations">Solving Linear Equations</h1>
+<h2 id="linear-equations">Linear Equations</h2>
+<p>A <strong>linear equation</strong> with <span
+class="math inline">\(n\)</span> unknowns is an eaquation like this:
+<span class="math display">\[
+a_1x_1+a_2x_2+\cdots+a_nx_n=b
+\]</span> The unknowns should be multiplied by only numbers and never
+will we see <span class="math inline">\(xy\)</span> or <span
+class="math inline">\(x^2\)</span>. Therefore, we can see that: <span
+class="math inline">\(4x_1-5x_2=x_1x_2\)</span> and <span
+class="math inline">\(x_2=2\sqrt{x_1}-6\)</span> are
+<strong>not</strong> linear equations as the former has <span
+class="math inline">\(x_1x_2\)</span>, while the latter has <span
+class="math inline">\(\sqrt{x_1}\)</span>.</p>
+<p>We can get a linear equation system by combining several linear
+equations together. Let's start from this example: <span
+class="math display">\[
 \begin{aligned}
-x-2y&=1 \\\
-3x+2y&=11
-\end{aligned}</script><h3 id="Row-Picture"><a href="#Row-Picture" class="headerlink" title="Row Picture"></a>Row Picture</h3><p>The row picture of linear equations can be seen as <strong>lines</strong> in a coordinate；</p>
-<h3 id="Column-Picture"><a href="#Column-Picture" class="headerlink" title="Column Picture"></a>Column Picture</h3><p>The column picture sees <strong>vectors</strong> instead of numbers. </p>
-<script type="math/tex; mode=display">
-\begin{pmatrix}1\\3\end{pmatrix}x+\begin{pmatrix}-2\\2\end{pmatrix}y=\begin{pmatrix}1\\11\end{pmatrix}</script><p>We can get a <strong>linear combination</strong> if we take $x=3,y=1$.</p>
-<script type="math/tex; mode=display">
+x-2y&amp;=1 \\\
+3x+2y&amp;=11
+\end{aligned}
+\]</span></p>
+<h3 id="row-picture">Row Picture</h3>
+<p>The row picture of linear equations can be seen as
+<strong>lines</strong> in a coordinate；</p>
+<h3 id="column-picture">Column Picture</h3>
+<p>The column picture sees <strong>vectors</strong> instead of numbers.
+<span class="math display">\[
+\begin{pmatrix}1\\3\end{pmatrix}x+\begin{pmatrix}-2\\2\end{pmatrix}y=\begin{pmatrix}1\\11\end{pmatrix}
+\]</span> We can get a <strong>linear combination</strong> if we take
+<span class="math inline">\(x=3,y=1\)</span>. <span
+class="math display">\[
 3
 \begin{pmatrix}
 1\\
@@ -311,253 +338,309 @@ x-2y&=1 \\\
 =
 \begin{pmatrix}
 1
-\\11\end{pmatrix}</script><h3 id="Consistent-and-Inconsistent"><a href="#Consistent-and-Inconsistent" class="headerlink" title="Consistent and Inconsistent"></a>Consistent and Inconsistent</h3><p>A system of linear equations has</p>
-<ol>
+\\11\end{pmatrix}
+\]</span></p>
+<h3 id="consistent-and-inconsistent">Consistent and Inconsistent</h3>
+<p>A system of linear equations has</p>
+<ol type="1">
 <li>no solution</li>
 <li>only one solution</li>
 <li>infinitely many solutions</li>
 </ol>
 <p><strong>Consistent</strong>：one solution or infinite solutions</p>
 <p><strong>Inconsistent</strong>: No solution</p>
-<h2 id="Matrix"><a href="#Matrix" class="headerlink" title="Matrix"></a>Matrix</h2><p>The main information in a linear system can be represented by a <strong>matrix</strong>, a chart of numbers.</p>
-<p>If we put the coefficients together, then we have a <strong>coefficient matrix</strong>:</p>
-<script type="math/tex; mode=display">
+<h2 id="matrix">Matrix</h2>
+<p>The main information in a linear system can be represented by a
+<strong>matrix</strong>, a chart of numbers.</p>
+<p>If we put the coefficients together, then we have a
+<strong>coefficient matrix</strong>: <span class="math display">\[
 \left [
 \begin{array}{rrrr}
-1&-2\\
-3&2\\
+1&amp;-2\\
+3&amp;2\\
 \end{array}
-\right ]</script><p>If we include the numbers on the right hand side of the equations, we will have an <strong>augumented matrix</strong>:</p>
-<script type="math/tex; mode=display">
+\right ]
+\]</span> If we include the numbers on the right hand side of the
+equations, we will have an <strong>augumented matrix</strong>: <span
+class="math display">\[
 \left [
 \begin{array}{rrrr}
-1&-2&1\\
-3&2&11\\
+1&amp;-2&amp;1\\
+3&amp;2&amp;11\\
 \end{array}
-\right ]</script><p>The rigiorous definition of a matrix can be written as follows:</p>
-<div class="note "><h3 id="Definition-of-Matrices"><a href="#Definition-of-Matrices" class="headerlink" title="Definition of Matrices"></a><strong>Definition of Matrices</strong></h3><p>Let $m$ and $n$ denote positive integers. An $m$-by-$n$ <strong><em>matrix A</em></strong> is a rectangular array of elements of $\mathbf{F}$ with $m$ rows and $n$ columns:</p>
-<script type="math/tex; mode=display">
+\right ]
+\]</span> The rigiorous definition of a matrix can be written as
+follows:</p>
+<div class="note "><h3 id="definition-of-matrices"><strong>Definition of
+Matrices</strong></h3>
+<p>Let <span class="math inline">\(m\)</span> and <span
+class="math inline">\(n\)</span> denote positive integers. An <span
+class="math inline">\(m\)</span>-by-<span
+class="math inline">\(n\)</span> <strong><em>matrix A</em></strong> is a
+rectangular array of elements of <span
+class="math inline">\(\mathbf{F}\)</span> with <span
+class="math inline">\(m\)</span> rows and <span
+class="math inline">\(n\)</span> columns: <span class="math display">\[
 A=\begin{bmatrix}
-a_{11}&...&a_{1n}\\
-\vdots&\ddots&\vdots\\
-a_{m1}&...&a_{mn}
-\end{bmatrix}</script><p>And the notation $A_{jk}$ denotes the entry in row $j$,column $k$ of $A$.</p>
+a_{11}&amp;...&amp;a_{1n}\\
+\vdots&amp;\ddots&amp;\vdots\\
+a_{m1}&amp;...&amp;a_{mn}
+\end{bmatrix}
+\]</span> And the notation <span class="math inline">\(A_{jk}\)</span>
+denotes the entry in row <span class="math inline">\(j\)</span>,column
+<span class="math inline">\(k\)</span> of <span
+class="math inline">\(A\)</span>.</p>
 </div>
-<p>The real meaning of matrices is more abstract and comlicated  than just a simple “rectangular array of elements”. Anyway, we will talk it later.</p>
-<h2 id="The-idea-of-elimination"><a href="#The-idea-of-elimination" class="headerlink" title="The idea of elimination"></a>The idea of elimination</h2><p>To slove linear equations, the main idea is <strong>elimination</strong>. Before elimination, $x$ and $y$ Appear in both equations. After elimintaion, $y$  has disappeared leaving $x$ alone. </p>
+<p>The real meaning of matrices is more abstract and comlicated than
+just a simple "rectangular array of elements". Anyway, we will talk it
+later.</p>
+<h2 id="the-idea-of-elimination">The idea of elimination</h2>
+<p>To slove linear equations, the main idea is
+<strong>elimination</strong>. Before elimination, <span
+class="math inline">\(x\)</span> and <span
+class="math inline">\(y\)</span> Appear in both equations. After
+elimintaion, <span class="math inline">\(y\)</span> has disappeared
+leaving <span class="math inline">\(x\)</span> alone.</p>
 <p>There are three ways to deal with linear equations:</p>
-<div class="note "><h3 id="Elementary-Row-Transformation"><a href="#Elementary-Row-Transformation" class="headerlink" title="Elementary Row Transformation"></a>Elementary Row Transformation</h3><ol>
-<li>(<strong>Replacement</strong>) substitue an equation with the sum of itself and another equation multiplied with a scalar.</li>
-<li>(<strong>Interchange</strong>) change the position of two equations.</li>
-<li>(<strong>Scaling</strong>) multiply an equation with a non-zero scalar.</li>
+<div class="note "><h3 id="elementary-row-transformation">Elementary Row
+Transformation</h3>
+<ol type="1">
+<li>(<strong>Replacement</strong>) substitue an equation with the sum of
+itself and another equation multiplied with a scalar.</li>
+<li>(<strong>Interchange</strong>) change the position of two
+equations.</li>
+<li>(<strong>Scaling</strong>) multiply an equation with a non-zero
+scalar.</li>
 </ol>
 </div>
-<div class="note info no-icon"><p><strong>Example 1. Solve linear equations:</strong></p>
-<script type="math/tex; mode=display">
+<div class="note info no-icon"><strong>Example 1. Solve linear equations:</strong> <span
+class="math display">\[
 \begin{aligned}
-x-2y+z&=0\\
-2y-8z&=8\\
--4x+5y+9z&=-9\\
-\end{aligned}</script><p>Our goal is to produce an upper trianglar system like this:</p>
-<script type="math/tex; mode=display">
+x-2y+z&amp;=0\\
+2y-8z&amp;=8\\
+-4x+5y+9z&amp;=-9\\
+\end{aligned}
+\]</span> Our goal is to produce an upper trianglar system like this:
+<span class="math display">\[
 \begin{bmatrix}
-1&0&0&s_1\\
-0&1&0&s_2\\
-0&0&1&s_3\\
-\end{bmatrix}</script><div class="note success"><p><strong>Solution:</strong></p>
-<script type="math/tex; mode=display">
+1&amp;0&amp;0&amp;s_1\\
+0&amp;1&amp;0&amp;s_2\\
+0&amp;0&amp;1&amp;s_3\\
+\end{bmatrix}
+\]</span>
+<div class="note success">
+<p>
+<strong>Solution:</strong> <span class="math display">[ ]</span>
+</p>
+<p>
+<span class="math display">[
+<span class="math display">\[\begin{aligned}
 \left[ \begin{array}{rrrr}
-1&-2&1&0\\
-0&2&-8&8\\
--4&5&9&-9\\
+1&amp;amp;-2&amp;amp;1&amp;amp;0\\
+0&amp;amp;2&amp;amp;-8&amp;amp;8\\
+0&amp;amp;-3&amp;amp;13&amp;amp;-9\\
 \end{array} \right]
-\overset{row4=4\times row1+row4}{=\!=\!=\!=\!=\!=\!=\!=\!=\!=\!=}
+\overset{row4=\frac{3}{2}\times
+row2+row4}{=\!=\!=\!=\!=\!=\!=\!=\!=\!=\!=}
 \left[ \begin{array}{rrrr}
-1&-2&1&0\\
-0&2&-8&8\\
-0&-3&13&-9\\
-\end{array} \right]</script><script type="math/tex; mode=display">
-\begin{aligned}
-\left[ \begin{array}{rrrr}
-1&-2&1&0\\
-0&2&-8&8\\
-0&-3&13&-9\\
-\end{array} \right]
-\overset{row4=\frac{3}{2}\times row2+row4}{=\!=\!=\!=\!=\!=\!=\!=\!=\!=\!=}
-\left[ \begin{array}{rrrr}
-1&-2&1&0\\
-0&2&-8&8\\
-0&0&1&3\\
+1&amp;amp;-2&amp;amp;1&amp;amp;0\\
+0&amp;amp;2&amp;amp;-8&amp;amp;8\\
+0&amp;amp;0&amp;amp;1&amp;amp;3\\
 \end{array} \right]
 \overset{row2=\frac{1}{2}\times row2}{=\!=\!=\!=\!=\!=\!=\!=\!=\!=\!=}
 \left[ \begin{array}{rrrr}
-1&-2&1&0\\
-0&1&-4&4\\
-0&0&1&3\\
+1&amp;amp;-2&amp;amp;1&amp;amp;0\\
+0&amp;amp;1&amp;amp;-4&amp;amp;4\\
+0&amp;amp;0&amp;amp;1&amp;amp;3\\
 \end{array} \right]
-\end{aligned}</script><script type="math/tex; mode=display">
-\left[ \begin{array}{rrrr}
-1&-2&1&0\\
-0&1&-4&4\\
-0&0&1&3\\
-\end{array} \right]
-\overset{row2=4\times row3+row2}{=\!=\!=\!=\!=\!=\!=\!=\!=\!=\!=}
-\left[ \begin{array}{rrrr}
-1&-2&1&0\\
-0&1&0&16\\
-0&0&1&3\\
-\end{array} \right]
-\overset{row1=-1\times row3+row1}{=\!=\!=\!=\!=\!=\!=\!=\!=\!=\!=}
-\left[ \begin{array}{rrrr}
-1&-2&0&-3\\
-0&1&0&16\\
-0&0&1&3\\
-\end{array} \right]</script><script type="math/tex; mode=display">
-\left[ \begin{array}{rrrr}
-1&-2&0&-3\\
-0&1&0&16\\
-0&0&1&3\\
-\end{array} \right]
-\overset{row1=2\times row2+row1}{=\!=\!=\!=\!=\!=\!=\!=\!=\!=\!=}
-\left[ \begin{array}{rrrr}
-1&0&0&29\\
-0&1&0&16\\
-0&0&1&3\\
-\end{array} \right]</script><p>So the solution is$ (29,16,3)$.</p>
-</div></div>
-<div class="note info"><p><strong>One principle we can use:</strong> determine the <strong>pivot</strong> and make the entry below zero.</p>
+\end{aligned}\]</span>
+]</span>
+</p>
+<p>
+<span class="math display">[ ]</span>
+</p>
+<p>
+<span class="math display">[ ]</span>
+</p>
+<p>
+So the solution is$ (29,16,3)$.
+</p>
 </div>
-<h2 id="Matrix-Multiplication"><a href="#Matrix-Multiplication" class="headerlink" title="Matrix Multiplication"></a>Matrix Multiplication</h2><p>The first thing to do before you multiply two matrices is to check whether they can multiply.</p>
-<script type="math/tex; mode=display">
-A_{m\times n}B_{n\times p}=C_{m\times p}</script><p>Then the output of matrix multiplication can be expressed as follows:</p>
-<p>Each entry in $AB=C$ is a <strong>dot product</strong>: $C_{ij}=$ (row $i$ of $A$)$\cdot$(column $j$ of $B$)</p>
-<p>or you can write it in a more mathematical way:</p>
-<script type="math/tex; mode=display">
-C_{ij}=\sum\limits_{k=1}^nA_{ik}B_{kj}</script><div class="note "><h3 id="Properties-of-Matrix-Multiplication"><a href="#Properties-of-Matrix-Multiplication" class="headerlink" title="Properties of Matrix Multiplication"></a>Properties of Matrix Multiplication</h3><ol>
-<li>$A(BC)=(AB)C$</li>
-<li>$A(B+C)=AB+AC$</li>
-<li>$(B+C)A=BA+CA$</li>
-<li>$\forall r,\space r(AB)=(rA)B=A(rB)$</li>
+</div>
+<div class="note info"><p><strong>One principle we can use:</strong> determine the
+<strong>pivot</strong> and make the entry <strong>below</strong>
+zero.</p>
+</div>
+<h2 id="matrix-multiplication">Matrix Multiplication</h2>
+<p>The first thing to do before you multiply two matrices is to check
+whether they can multiply. <span class="math display">\[
+A_{m\times n}B_{n\times p}=C_{m\times p}
+\]</span> Then the output of matrix multiplication can be expressed as
+follows:</p>
+<p>Each entry in <span class="math inline">\(AB=C\)</span> is a
+<strong>dot product</strong>: <span
+class="math inline">\(C_{ij}=\)</span> (row <span
+class="math inline">\(i\)</span> of <span
+class="math inline">\(A\)</span>)<span
+class="math inline">\(\cdot\)</span>(column <span
+class="math inline">\(j\)</span> of <span
+class="math inline">\(B\)</span>)</p>
+<p>or you can write it in a more mathematical way: <span
+class="math display">\[
+C_{ij}=\sum\limits_{k=1}^nA_{ik}B_{kj}
+\]</span></p>
+<div class="note "><h3 id="properties-of-matrix-multiplication">Properties of Matrix
+Multiplication</h3>
+<ol type="1">
+<li><span class="math inline">\(A(BC)=(AB)C\)</span></li>
+<li><span class="math inline">\(A(B+C)=AB+AC\)</span></li>
+<li><span class="math inline">\((B+C)A=BA+CA\)</span></li>
+<li><span class="math inline">\(\forall r,\space
+r(AB)=(rA)B=A(rB)\)</span></li>
 </ol>
-<p>The real meaning of matrix multiplication will be discussed after we introduce linear transformation.</p>
+<p>The real meaning of matrix multiplication will be discussed after we
+introduce linear transformation.</p>
 </div>
-<h2 id="The-Matrix-Equation-Ax-b"><a href="#The-Matrix-Equation-Ax-b" class="headerlink" title="The Matrix Equation $Ax=b$"></a>The Matrix Equation $Ax=b$</h2><p>A fundamental idea in linear algebra is to view a linear combination of vectors as the product of a matrix and a vector. Therefore, we can immediately write linear equations into a matrix equation:</p>
-<div class="note "><p>Suppose that $x=[x_1,x_2,\cdots,x_n]^T$ and $A= [a_{11},a_{12},\cdots,a_{1n}]^T$, then the linear equation can be written as:</p>
-<script type="math/tex; mode=display">
-Ax=b</script></div>
-<p>Now we have turned a linear equation into a matrix equation. The target has become a simple $x$. To take advantage of this equation, we need <strong>inverse matrices</strong>.</p>
-<h2 id="Inverse-Matrices"><a href="#Inverse-Matrices" class="headerlink" title="Inverse Matrices"></a>Inverse Matrices</h2><p>Suppose $A$ is a square matrix (so we can deal with it more easily). The <strong>inverse matrix</strong> of $A$ is denoted as $A^{-1}$, which undoes whatever $A$ does. There product should be identity matrix $I$, doing nothing to the original matrix. We have the following relation </p>
-<div class="note "><h3 id="Inverse-Matrices"><a href="#Inverse-Matrices" class="headerlink" title="Inverse Matrices"></a><strong>Inverse Matrices</strong></h3><p>The matrix $A$ is invertible if there exists a matrix $A^{-1}$ that “inverts” $A$.</p>
-<script type="math/tex; mode=display">
-A^{-1}A=I=AA^{-1}</script></div>
-<p>There are also some properties of inverse matrices and matrix multiplications:</p>
-<div class="note "><h3 id="Reverse-of-product"><a href="#Reverse-of-product" class="headerlink" title="Reverse of product"></a><strong>Reverse of product</strong></h3><script type="math/tex; mode=display">
-(AB)^{-1}=B^{-1}A^{-1}</script></div>
-<div class="note success"><p><strong>Proof:</strong></p>
-<script type="math/tex; mode=display">
-(AB)(B^{-1}A^{-1})=AIA^{-1}=I</script><p>To prove a “reverse equation”, a practical method is to take the both side of the equation together.</p>
+<h2 id="the-matrix-equation-axb">The Matrix Equation <span
+class="math inline">\(Ax=b\)</span></h2>
+<p>A fundamental idea in linear algebra is to view a linear combination
+of vectors as the product of a matrix and a vector. Therefore, we can
+immediately write linear equations into a matrix equation:</p>
+<div class="note "><p>Suppose that <span
+class="math inline">\(x=[x_1,x_2,\cdots,x_n]^T\)</span> and <span
+class="math inline">\(A= [a_{11},a_{12},\cdots,a_{1n}]^T\)</span>, then
+the linear equation can be written as: <span class="math display">\[
+Ax=b
+\]</span></p>
 </div>
-<h2 id="The-solution-of-Ax-b"><a href="#The-solution-of-Ax-b" class="headerlink" title="The solution of $Ax=b$"></a>The solution of $Ax=b$</h2><p>With the help of inverse matrices, we can immediately get $x$</p>
-<script type="math/tex; mode=display">
+<p>Now we have turned a linear equation into a matrix equation. The
+target has become a simple <span class="math inline">\(x\)</span>. To
+take advantage of this equation, we need <strong>inverse
+matrices</strong>.</p>
+<h2 id="inverse-matrices">Inverse Matrices</h2>
+<p>Suppose <span class="math inline">\(A\)</span> is a square matrix (so
+we can deal with it more easily). The <strong>inverse matrix</strong> of
+<span class="math inline">\(A\)</span> is denoted as <span
+class="math inline">\(A^{-1}\)</span>, which undoes whatever <span
+class="math inline">\(A\)</span> does. There product should be identity
+matrix <span class="math inline">\(I\)</span>, doing nothing to the
+original matrix. We have the following relation</p>
+<div class="note "><h3 id="inverse-matrices"><strong>Inverse Matrices</strong></h3>
+<p>The matrix <span class="math inline">\(A\)</span> is invertible if
+there exists a matrix <span class="math inline">\(A^{-1}\)</span> that
+"inverts" <span class="math inline">\(A\)</span>. <span
+class="math display">\[
+A^{-1}A=I=AA^{-1}
+\]</span></p>
+</div>
+<p>There are also some properties of inverse matrices and matrix
+multiplications:</p>
+<div class="note "><h3 id="reverse-of-product"><strong>Reverse of product</strong></h3>
+<p><span class="math display">\[
+(AB)^{-1}=B^{-1}A^{-1}
+\]</span></p>
+</div>
+<div class="note success"><p><strong>Proof:</strong> <span class="math display">\[
+(AB)(B^{-1}A^{-1})=AIA^{-1}=I
+\]</span> To prove a "reverse equation", a practical method is to take
+the both side of the equation together.</p>
+</div>
+<h2 id="the-solution-of-axb">The solution of <span
+class="math inline">\(Ax=b\)</span></h2>
+<p>With the help of inverse matrices, we can immediately get <span
+class="math inline">\(x\)</span> <span class="math display">\[
 A^{-1}Ax=A^{-1}b\\
-x=A^{-1}b</script><p>As $b$ is something we know, so the whole problem has changed from “find $x$” to “find $A^{-1}$”. However, not all matrices have inverses. Here are some notes about $A^{-1}$.</p>
-<div class="note "><h3 id="Notes-for-the-solution-A-1"><a href="#Notes-for-the-solution-A-1" class="headerlink" title="Notes for the solution $A^{-1}$:"></a>Notes for the solution $A^{-1}$:</h3><ol>
-<li><p>The inverse exists if and only if elimination prodces $n$ pivots.</p>
-</li>
-<li><p>The matrix $A$ Cannot have two “solutions”. </p>
-<p>Suppose there exists another inverse $B$, then </p>
-<script type="math/tex; mode=display">
-B(AA^{-1})=(BA)A^{-1}\Rightarrow BI=IA^{-1}\Rightarrow B=A^{-1}</script></li>
-<li><p>Suppose there is a nonzero vector $x$ such that $Ax=0$, Then $A$ cannot have an inverse. If $A$ is invertible, then $Ax=0$ can only have the zero solution $x=A^{-1}0=0$.</p>
-</li>
-<li><p>A 2 by 2 matrix is invertible if and only if $ad-bc$, the $\det A$ is not zero. And the inverse interchanges the leading diagonal and add “$-$” to the minus diagonal.</p>
-</li>
+x=A^{-1}b
+\]</span> As <span class="math inline">\(b\)</span> is something we
+know, so the whole problem has changed from "find <span
+class="math inline">\(x\)</span>" to "find <span
+class="math inline">\(A^{-1}\)</span>". However, not all matrices have
+inverses. Here are some notes about <span
+class="math inline">\(A^{-1}\)</span>.</p>
+<div class="note "><h3 id="notes-for-the-solution-a-1">Notes for the solution <span
+class="math inline">\(A^{-1}\)</span>:</h3>
+<ol type="1">
+<li><p>The inverse exists if and only if elimination prodces <span
+class="math inline">\(n\)</span> pivots.</p></li>
+<li><p>The matrix <span class="math inline">\(A\)</span> Cannot have two
+"solutions".</p>
+<p>Suppose there exists another inverse <span
+class="math inline">\(B\)</span>, then <span class="math display">\[
+B(AA^{-1})=(BA)A^{-1}\Rightarrow BI=IA^{-1}\Rightarrow B=A^{-1}
+\]</span></p></li>
+<li><p>Suppose there is a nonzero vector <span
+class="math inline">\(x\)</span> such that <span
+class="math inline">\(Ax=0\)</span>, Then <span
+class="math inline">\(A\)</span> cannot have an inverse. If <span
+class="math inline">\(A\)</span> is invertible, then <span
+class="math inline">\(Ax=0\)</span> can only have the zero solution
+<span class="math inline">\(x=A^{-1}0=0\)</span>.</p></li>
+<li><p>A 2 by 2 matrix is invertible if and only if <span
+class="math inline">\(ad-bc\)</span>, the <span
+class="math inline">\(\det A\)</span> is not zero. And the inverse
+interchanges the leading diagonal and add "<span
+class="math inline">\(-\)</span>" to the minus diagonal.</p></li>
 </ol>
-<script type="math/tex; mode=display">
+<p><span class="math display">\[
 \begin{bmatrix}
-a&b\\
-c&d\\
+a&amp;b\\
+c&amp;d\\
 \end{bmatrix}
 ^{-1}=\dfrac{1}{ad-bc}
 \left[ \begin{array}{rrrr}
-d&-b\\
--c&a\\
-\end{array} \right]</script></div>
-<h3 id="Gauss-Jordan-Elimination"><a href="#Gauss-Jordan-Elimination" class="headerlink" title="Gauss-Jordan Elimination"></a><strong>Gauss-Jordan Elimination</strong></h3><p>Matrix $A$ multiplies the first column of $A^{-1}$ (call that $x_{1}$) to give the first column of $I$ (call that $e_1$). This our equation $Ax_1=e_1=(1,0,0)$. Then for a 3 by 3 matrix, we have:</p>
-<script type="math/tex; mode=display">
-AA^{-1}=A[x_1,x_2,x_3]=[e_1,e_2,e_3]=I.</script><p>This is how Gauss-Jordan finds $A^{-1}$.</p>
-<div class="note info no-icon"><p><strong>Example:</strong></p>
-<script type="math/tex; mode=display">
+d&amp;-b\\
+-c&amp;a\\
+\end{array} \right]
+\]</span></p>
+</div>
+<h3 id="gauss-jordan-elimination"><strong>Gauss-Jordan
+Elimination</strong></h3>
+<p>Matrix <span class="math inline">\(A\)</span> multiplies the first
+column of <span class="math inline">\(A^{-1}\)</span> (call that <span
+class="math inline">\(x_{1}\)</span>) to give the first column of <span
+class="math inline">\(I\)</span> (call that <span
+class="math inline">\(e_1\)</span>). This our equation <span
+class="math inline">\(Ax_1=e_1=(1,0,0)\)</span>. Then for a 3 by 3
+matrix, we have: <span class="math display">\[
+AA^{-1}=A[x_1,x_2,x_3]=[e_1,e_2,e_3]=I.
+\]</span> This is how Gauss-Jordan finds <span
+class="math inline">\(A^{-1}\)</span>.</p>
+<div class="note info no-icon"><p><strong>Example:</strong> <span class="math display">\[
 \begin{array}{rrrr}
-[A&e_1&e_2&e_3]
+[A&amp;e_1&amp;e_2&amp;e_3]
 \end{array}=
 \left[ \begin{array}{rrrr}
-2&-1&0&1&0&0\\
--1&2&-1&0&1&0\\
-0&-1&2&0&0&1\\
-\end{array} \right]</script><div class="note success"><p>Our goal is to make a matrix like this:</p>
-<script type="math/tex; mode=display">
-\left[ \begin{array}{rrrr}
-1&0&0&\cdots&\cdots&\cdots\\
-0&1&0&\cdots&\cdots&\cdots\\
-0&0&1&\cdots&\cdots&\cdots\\
-\end{array} \right]</script><script type="math/tex; mode=display">
-\left[ \begin{array}{rrrr}
-2&-1&0&1&0&0\\
--1&2&-1&0&1&0\\
-0&-1&2&0&0&1\\
+2&amp;-1&amp;0&amp;1&amp;0&amp;0\\
+-1&amp;2&amp;-1&amp;0&amp;1&amp;0\\
+0&amp;-1&amp;2&amp;0&amp;0&amp;1\\
 \end{array} \right]
-\overset{row2=\frac{1}{2}\times row1+row2}{=\!=\!=\!=\!=\!=\!=\!=\!=\!=\!=}
-\left[ \begin{array}{rrrr}
-2&-1&0&1&0&0\\
-0&\frac{3}{2}&-1&\frac{1}{2}&1&0\\
-0&-1&2&0&0&1\\
-\end{array} \right]</script><script type="math/tex; mode=display">
-\left[ \begin{array}{rrrr}
-2&-1&0&1&0&0\\
-0&\frac{3}{2}&-1&\frac{1}{2}&1&0\\
-0&-1&2&0&0&1\\
-\end{array} \right]
-\overset{row3=\frac{2}{3}\times row2+row3}{=\!=\!=\!=\!=\!=\!=\!=\!=\!=\!=}
-\left[ \begin{array}{rrrr}
-2&-1&0&1&0&0\\
-0&\frac{3}{2}&-1&\frac{1}{2}&1&0\\
-0&0&\frac{4}{3}&\frac{1}{3}&\frac{2}{3}&1\\
-\end{array} \right]</script><script type="math/tex; mode=display">
-\left[ \begin{array}{rrrr}
-2&-1&0&1&0&0\\
-0&\frac{3}{2}&-1&\frac{1}{2}&1&0\\
-0&0&\frac{4}{3}&\frac{1}{3}&\frac{2}{3}&1\\
-\end{array} \right]
-\overset{row2=\frac{3}{4}\times row3+row2}{=\!=\!=\!=\!=\!=\!=\!=\!=\!=\!=}
-\left[ \begin{array}{rrrr}
-2&-1&0&1&0&0\\
-0&\frac{3}{2}&0&\frac{3}{4}&\frac{3}{2}&\frac{3}{4}\\
-0&0&\frac{4}{3}&\frac{1}{3}&\frac{2}{3}&1\\
-\end{array} \right]</script><script type="math/tex; mode=display">
-\left[ \begin{array}{rrrr}
-2&-1&0&1&0&0\\
-0&\frac{3}{2}&0&\frac{3}{4}&\frac{3}{2}&\frac{3}{4}\\
-0&0&\frac{4}{3}&\frac{1}{3}&\frac{2}{3}&1\\
-\end{array} \right]
-\overset{row1=\frac{2}{3}\times row2+row1}{=\!=\!=\!=\!=\!=\!=\!=\!=\!=\!=}
-\left[ \begin{array}{rrrr}
-2&0&0&\frac{3}{2}&1&\frac{1}{2}\\
-0&\frac{3}{2}&0&\frac{3}{4}&\frac{3}{2}&\frac{3}{4}\\
-0&0&\frac{4}{3}&\frac{1}{3}&\frac{2}{3}&1\\
-\end{array} \right]</script><script type="math/tex; mode=display">
-\left[ \begin{array}{rrrr}
-2&0&0&\frac{3}{2}&1&\frac{1}{2}\\
-0&\frac{3}{2}&0&\frac{3}{4}&\frac{3}{2}&\frac{3}{4}\\
-0&0&\frac{4}{3}&\frac{1}{3}&\frac{2}{3}&1\\
-\end{array} \right]
-\overset{row1\times\frac{1}{2},\space row2\times\frac{2}{3},\space row3\times\frac{3}{4}}{=\!=\!=\!=\!=\!=\!=\!=\!=\!=\!=\!=\!=\!=}
-\left[ \begin{array}{rrrr}
-1&0&0&\frac{3}{4}&\frac{1}{2}&\frac{1}{4}\\
-0&1&0&\frac{1}{2}&1&\frac{1}{2}\\
-0&0&1&\frac{1}{4}&\frac{1}{2}&\frac{3}{4}\\
-\end{array} \right]</script><p>So $A^{-1}$ is $\left[ \begin{array}{rrrr}<br>\frac{3}{4}&amp;\frac{1}{2}&amp;\frac{1}{4}\\<br>\frac{1}{2}&amp;1&amp;\frac{1}{2}\\<br>\frac{1}{4}&amp;\frac{1}{2}&amp;\frac{3}{4}\\<br>\end{array} \right]$.</p>
-</div></div>
+\]</span></p>
+<div class="note success">
+<p>
+Our goal is to make a matrix like this: <span class="math display">[
+]</span>
+</p>
+<p>
+<span class="math display">[ ]</span>
+</p>
+<p>
+<span class="math display">[ ]</span>
+</p>
+<p>
+<span class="math display">[ ]</span>
+</p>
+<p>
+<span class="math display">[ ]</span>
+</p>
+<p>
+<span class="math display">[ ]</span>
+</p>
+<p>
+So <span class="math inline">(A^{-1})</span> is <span
+class="math inline">()</span>.
+</p>
+</div>
+</div>
 
     </div>
 
@@ -613,13 +696,13 @@ AA^{-1}=A[x_1,x_2,x_3]=[e_1,e_2,e_3]=I.</script><p>This is how Gauss-Jordan find
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">55k</span>
+    <span title="Word count total">53k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">50 mins.</span>
+    <span title="Reading time total">48 mins.</span>
   </span>
 </div>
 <div class="busuanzi-count">
