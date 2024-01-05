@@ -154,7 +154,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -165,7 +165,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -228,14 +228,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2023-01-16 21:17:50" itemprop="dateCreated datePublished" datetime="2023-01-16T21:17:50+08:00">2023-01-16</time>
+      <time title="Created: 2023-01-16 21:17:50" itemprop="dateCreated datePublished" datetime="2023-01-16T21:17:50+13:00">2023-01-16</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-12-30 23:44:06" itemprop="dateModified" datetime="2023-12-30T23:44:06+08:00">2023-12-30</time>
+      <time title="Modified: 2023-12-31 04:44:06" itemprop="dateModified" datetime="2023-12-31T04:44:06+13:00">2023-12-31</time>
     </span>
 
   
@@ -299,6 +299,167 @@ decorating my blog site to make it warm and sweet.</p>
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/30/490_Notes_1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.JPG">
+      <meta itemprop="name" content="Leejiawen">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Lee's Blog">
+      <meta itemprop="description" content="UM-SJTUer 26‘">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Lee's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/12/30/490_Notes_1/" class="post-title-link" itemprop="url">490 Knowledge Transfer Notes 1</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2023-12-30 00:00:00" itemprop="dateCreated datePublished" datetime="2023-12-30T00:00:00+13:00">2023-12-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2024-01-01 01:18:45" itemprop="dateModified" datetime="2024-01-01T01:18:45+13:00">2024-01-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Notes/" itemprop="url" rel="index"><span itemprop="name">Notes</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Word count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Word count in article: </span>
+      <span>1.4k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+	  
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="notes">490 Notes</h1>
+<h3
+id="综述-transfer-learning-in-deep-reinforcement-learning-a-survey-by-zhu-et.-al.">1.
+综述： Transfer Learning in Deep Reinforcement Learning: A Survey by Zhu
+et. al.</h3>
+<ul>
+<li><h3
+id="reinforcement-and-transfer-learning-basics"><strong>Reinforcement
+and Transfer Learning Basics</strong></h3></li>
+</ul>
+<ol type="1">
+<li><strong>Markov Decision Process</strong> (MDP): <span
+class="math inline">\(M =(\mu_0,S,A,T,\gamma,R)\)</span></li>
+</ol>
+<p><span class="math inline">\(\mu_0\)</span>, initial states, <span
+class="math inline">\(S\)</span> is the current state. <span
+class="math inline">\(A\)</span> is the action based on current
+state,</p>
+<p><span class="math inline">\(T\)</span> is the transition probability
+distribution, namely <span class="math inline">\(T(s&#39;|s,a)\)</span>,
+specifying the probability od the state transitioning to <span
+class="math inline">\(s&#39;\)</span> upon taking action <span
+class="math inline">\(a\)</span> from state <span
+class="math inline">\(s\)</span>.</p>
+<p><span class="math inline">\(R\)</span> is the reward distribution,
+namely <span class="math inline">\(R(s,a,s&#39;)\)</span> is the award
+that an agent can get by taking action a from state s with the next
+state being s'.</p>
+<ol start="2" type="1">
+<li><p><strong>Policy function</strong> <span
+class="math inline">\(\pi(a|s)\)</span>, denotes the probability of
+taking action <span class="math inline">\(a\)</span> from state <span
+class="math inline">\(s\)</span>.</p></li>
+<li><p><strong>Value function</strong> <span
+class="math inline">\(V_M^\pi(s)=\mathrm{E}[\sum_{i=0}\gamma^ir_i;\pi;s]\)</span>,
+estimates the quality of being in state <span
+class="math inline">\(s\)</span>.</p></li>
+<li><p><strong>Q-function</strong>, similar to the value
+function.</p></li>
+<li><p><strong>RL goals:</strong> maximizing the expected return: <span
+class="math inline">\(J(\pi) = \mathrm{E}_{(s,a)~\mu^\pi
+(s_a)}[\sum_{i=0}\gamma^ir_i]\)</span></p></li>
+<li><p><strong>Common algorithms:</strong> Monte-Carlo, Temporal
+Difference, Poliy Gradient</p></li>
+<li><p><strong>Transfer Learning:</strong> aims to learn an optimal
+polict <span class="math inline">\(\pi^*\)</span> for the target domain
+<span class="math inline">\(M_t\)</span> by using information <span
+class="math inline">\(I_s\)</span> from source domain <span
+class="math inline">\(M_s\)</span>:</p></li>
+</ol>
+<p><span class="math display">\[
+\pi^* = \mathrm{arg max}_{\pi}\mathrm{E}[Q_M^\pi(s,a)]
+\]</span></p>
+<p>where <span class="math inline">\(\pi\)</span> is a policy learned
+for the target domain based on information from both <span
+class="math inline">\(I_t\)</span> and <span
+class="math inline">\(I_s\)</span></p>
+<ul>
+<li><h3 id="transfer-learning-approaches">Transfer learning
+approaches</h3></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
     <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/30/2023-12-30-Probability-and-Statistics-(Part1.-Intro-to-Probability)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -327,9 +488,15 @@ decorating my blog site to make it warm and sweet.</p>
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2023-12-30 00:00:00 / Modified: 23:31:35" itemprop="dateCreated datePublished" datetime="2023-12-30T00:00:00+08:00">2023-12-30</time>
+      <time title="Created: 2023-12-30 00:00:00" itemprop="dateCreated datePublished" datetime="2023-12-30T00:00:00+13:00">2023-12-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2023-12-31 04:31:35" itemprop="dateModified" datetime="2023-12-31T04:31:35+13:00">2023-12-31</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -348,7 +515,7 @@ decorating my blog site to make it warm and sweet.</p>
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>629</span>
+      <span>619</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -367,9 +534,19 @@ decorating my blog site to make it warm and sweet.</p>
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img src="https://raw.githubusercontent.com/leeJiawen/blog-img/main/dice.png" alt=""></p>
-<p>Probability and statistics is an essential tool to analyze and study data and construct mathematical models to make decisions and evaluations. This note will encompass a wide range of probability and statictical problems related to real-life applications by refering to several classical probability textbooks and materials, for example, <em>A First Course to Probability</em> by Sheldon M. Ross, <em>An Introduction to Mathematical Statistics and Its Applications</em> by Richard J. Larsen, <em>Probability and Mathematical Statistics</em> by Chen Xiru, <em>VE401 Engineering Approach to Probability slides</em> by Horst, and so on.</p>
-<p>And it’s time to roll the dice.</p>
+          <p><img
+src="https://raw.githubusercontent.com/leeJiawen/blog-img/main/dice.png" /></p>
+<p>Probability and statistics is an essential tool to analyze and study
+data and construct mathematical models to make decisions and
+evaluations. This note will encompass a wide range of probability and
+statictical problems related to real-life applications by refering to
+several classical probability textbooks and materials, for example,
+<em>A First Course to Probability</em> by Sheldon M. Ross, <em>An
+Introduction to Mathematical Statistics and Its Applications</em> by
+Richard J. Larsen, <em>Probability and Mathematical Statistics</em> by
+Chen Xiru, <em>VE401 Engineering Approach to Probability slides</em> by
+Horst, and so on.</p>
+<p>And it's time to roll the dice.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/12/30/2023-12-30-Probability-and-Statistics-(Part1.-Intro-to-Probability)/#more" rel="contents">
@@ -432,14 +609,14 @@ decorating my blog site to make it warm and sweet.</p>
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2023-02-05 00:00:00" itemprop="dateCreated datePublished" datetime="2023-02-05T00:00:00+08:00">2023-02-05</time>
+      <time title="Created: 2023-02-05 00:00:00" itemprop="dateCreated datePublished" datetime="2023-02-05T00:00:00+13:00">2023-02-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-03-17 11:14:01" itemprop="dateModified" datetime="2023-03-17T11:14:01+08:00">2023-03-17</time>
+      <time title="Modified: 2023-03-17 16:14:01" itemprop="dateModified" datetime="2023-03-17T16:14:01+13:00">2023-03-17</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -458,7 +635,7 @@ decorating my blog site to make it warm and sweet.</p>
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>6.4k</span>
+      <span>6.8k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -478,7 +655,9 @@ decorating my blog site to make it warm and sweet.</p>
     
     <div class="post-body" itemprop="articleBody">
           <p><img src="https://raw.githubusercontent.com/leeJiawen/blog-img/main/vector.png" style="zoom: 20%;" /></p>
-<p>Having intoduceed some basic operations and concepts of matrices and linear equations, we can now move into the core part of linear algebra.</p>
+<p>Having intoduceed some basic operations and concepts of matrices and
+linear equations, we can now move into the core part of linear
+algebra.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/02/05/2023-2-5-Linear-Algebra-(Part-II.-Vector-Spaces)/#more" rel="contents">
@@ -541,14 +720,14 @@ decorating my blog site to make it warm and sweet.</p>
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2023-02-05 00:00:00" itemprop="dateCreated datePublished" datetime="2023-02-05T00:00:00+08:00">2023-02-05</time>
+      <time title="Created: 2023-02-05 00:00:00" itemprop="dateCreated datePublished" datetime="2023-02-05T00:00:00+13:00">2023-02-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-12-30 01:48:02" itemprop="dateModified" datetime="2023-12-30T01:48:02+08:00">2023-12-30</time>
+      <time title="Modified: 2023-12-31 00:15:35" itemprop="dateModified" datetime="2023-12-31T00:15:35+13:00">2023-12-31</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -655,14 +834,14 @@ analyzed with linear algebra.</p>
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2023-02-05 00:00:00" itemprop="dateCreated datePublished" datetime="2023-02-05T00:00:00+08:00">2023-02-05</time>
+      <time title="Created: 2023-02-05 00:00:00" itemprop="dateCreated datePublished" datetime="2023-02-05T00:00:00+13:00">2023-02-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-02-21 00:17:54" itemprop="dateModified" datetime="2023-02-21T00:17:54+08:00">2023-02-21</time>
+      <time title="Modified: 2023-02-21 05:17:54" itemprop="dateModified" datetime="2023-02-21T05:17:54+13:00">2023-02-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -700,9 +879,11 @@ analyzed with linear algebra.</p>
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img src="https://raw.githubusercontent.com/leeJiawen/blog-img/main/%E6%94%BF%E6%B2%BB%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%94%E8%AE%B0%E5%B0%81%E9%9D%A2.png" alt=""></p>
+          <p><img
+src="https://raw.githubusercontent.com/leeJiawen/blog-img/main/%E6%94%BF%E6%B2%BB%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%94%E8%AE%B0%E5%B0%81%E9%9D%A2.png" /></p>
 <blockquote>
-<p>One of the penalties for refusing to participate in politics is that you end up being governed by your inferiors. </p>
+<p>One of the penalties for refusing to participate in politics is that
+you end up being governed by your inferiors.</p>
 <p>Plato</p>
 </blockquote>
           <!--noindex-->
@@ -767,14 +948,14 @@ analyzed with linear algebra.</p>
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2022-11-29 14:37:09" itemprop="dateCreated datePublished" datetime="2022-11-29T14:37:09+08:00">2022-11-29</time>
+      <time title="Created: 2022-11-29 19:37:09" itemprop="dateCreated datePublished" datetime="2022-11-29T19:37:09+13:00">2022-11-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-02-05 19:20:29" itemprop="dateModified" datetime="2023-02-05T19:20:29+08:00">2023-02-05</time>
+      <time title="Modified: 2023-02-06 00:20:29" itemprop="dateModified" datetime="2023-02-06T00:20:29+13:00">2023-02-06</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -812,8 +993,11 @@ analyzed with linear algebra.</p>
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img src="https://raw.githubusercontent.com/leeJiawen/blog-img/main/Coding-vs-programming.jpeg" alt=""></p>
-<p>With the second midterm gradually approaching, it is necessary to make an exam Lifesaver, so as to get through the knowledged we’ve just learned and to get prepare for the exam.</p>
+          <p><img
+src="https://raw.githubusercontent.com/leeJiawen/blog-img/main/Coding-vs-programming.jpeg" /></p>
+<p>With the second midterm gradually approaching, it is necessary to
+make an exam Lifesaver, so as to get through the knowledged we've just
+learned and to get prepare for the exam.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/11/29/Midterm2%20LifeSaver/#more" rel="contents">
@@ -876,14 +1060,14 @@ analyzed with linear algebra.</p>
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2022-11-29 00:00:00" itemprop="dateCreated datePublished" datetime="2022-11-29T00:00:00+08:00">2022-11-29</time>
+      <time title="Created: 2022-11-29 00:00:00" itemprop="dateCreated datePublished" datetime="2022-11-29T00:00:00+13:00">2022-11-29</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-12-30 01:56:48" itemprop="dateModified" datetime="2023-12-30T01:56:48+08:00">2023-12-30</time>
+      <time title="Modified: 2023-12-30 06:56:48" itemprop="dateModified" datetime="2023-12-30T06:56:48+13:00">2023-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -989,14 +1173,14 @@ class</em>.*</p>
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2022-11-04 12:12:28" itemprop="dateCreated datePublished" datetime="2022-11-04T12:12:28+08:00">2022-11-04</time>
+      <time title="Created: 2022-11-04 17:12:28" itemprop="dateCreated datePublished" datetime="2022-11-04T17:12:28+13:00">2022-11-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-12-30 01:28:40" itemprop="dateModified" datetime="2023-12-30T01:28:40+08:00">2023-12-30</time>
+      <time title="Modified: 2023-12-30 06:28:40" itemprop="dateModified" datetime="2023-12-30T06:28:40+13:00">2023-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1072,7 +1256,7 @@ does.</p>
 
 <div class="copyright">
   &copy; 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -1083,13 +1267,13 @@ does.</p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">53k</span>
+    <span title="Word count total">55k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">48 mins.</span>
+    <span title="Reading time total">50 mins.</span>
   </span>
 </div>
 <div class="busuanzi-count">
