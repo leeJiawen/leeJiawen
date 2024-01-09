@@ -28,7 +28,7 @@
 <meta property="og:description" content="Probability and statistics is an essential tool to analyze and study data and construct mathematical models to make decisions and evaluations. This note will encompass a wide range of probability and">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-12-29T11:00:00.000Z">
-<meta property="article:modified_time" content="2023-12-30T15:31:35.911Z">
+<meta property="article:modified_time" content="2024-01-07T23:25:03.867Z">
 <meta property="article:author" content="Leejiawen">
 <meta property="article:tag" content="Maths">
 <meta name="twitter:card" content="summary">
@@ -143,7 +143,8 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#section"><span class="nav-number">1.</span> <span class="nav-text"></span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#elementary-probability"><span class="nav-number">1.</span> <span class="nav-text">Elementary Probability</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#basic-principles-of-counting"><span class="nav-number">1.1.</span> <span class="nav-text">Basic Principles of Counting</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#permutation-and-combination"><span class="nav-number">1.1.1.</span> <span class="nav-text">Permutation and Combination</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#probability-measures-and-spaces"><span class="nav-number">1.1.2.</span> <span class="nav-text">Probability Measures and
+Spaces</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#goodness-of-fit"><span class="nav-number">2.</span> <span class="nav-text">Goodness of Fit</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#foundations"><span class="nav-number">2.1.</span> <span class="nav-text">Foundations</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -237,7 +238,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2023-12-31 04:31:35" itemprop="dateModified" datetime="2023-12-31T04:31:35+13:00">2023-12-31</time>
+      <time title="Modified: 2024-01-08 12:25:03" itemprop="dateModified" datetime="2024-01-08T12:25:03+13:00">2024-01-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -263,14 +264,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>619</span>
+      <span>3k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
+      <span>3 mins.</span>
     </span>
 </div>
 
@@ -296,7 +297,88 @@ Chen Xiru, <em>VE401 Engineering Approach to Probability slides</em> by
 Horst, and so on.</p>
 <p>And it's time to roll the dice.</p>
 <span id="more"></span>
-<h1 id="section"></h1>
+<h2 id="elementary-probability">Elementary Probability</h2>
+<h3 id="basic-principles-of-counting">Basic Principles of Counting</h3>
+<h4 id="permutation-and-combination">Permutation and Combination</h4>
+<p>Given <span class="math inline">\(n\)</span> objects,</p>
+<p>Permutation of <span class="math inline">\(k\)</span> objects: <span
+class="math inline">\(A^n_k=\dfrac{n!}{(n-k)!}\)</span></p>
+<p>Combination of <span class="math inline">\(k\)</span> objects: <span
+class="math inline">\(\tbinom{n}{k}=\dfrac{n!}{(n-k)!k!}=\dfrac{k(k-1)(k-2)...(k-n+1)}{n!}\)</span></p>
+<h4 id="probability-measures-and-spaces">Probability Measures and
+Spaces</h4>
+<div class="note "><p><strong>Def:</strong> Let <span class="math inline">\(S\)</span> be a
+sample space and <em><span class="math inline">\(F\)</span></em> a
+sigma-field on <span class="math inline">\(S\)</span>. Then a function
+<span class="math display">\[
+P:F\rightarrow[0,1],\space\space\space A\rightarrow P[A],\nonumber
+\]</span> is called a probability measure on <span
+class="math inline">\(S\)</span> if</p>
+<ol type="1">
+<li><span class="math inline">\(P[S]=1\)</span>.</li>
+</ol>
+<p>and (2) For any set of events <span
+class="math inline">\({A_k}\)</span> such that $A_jA_k = $ for <span
+class="math inline">\(j\neq k\)</span>, <span class="math display">\[
+P[\bigcup_kA_k]=\sum_kP[A_k]\nonumber
+\]</span> Then <span class="math inline">\(S\)</span> is called a
+<strong>probability space</strong></p>
+</div>
+<p>This is a formal defination of a probability measures and spaces in
+an aximatic approach to ensure . Here sigma field is defined as a
+collection of sets which hold following properties:</p>
+<ul>
+<li>If the subset <span class="math inline">\(A\)</span> is in the
+sigma-field, then so is its complement <span
+class="math inline">\(A^c\)</span>.</li>
+<li>If <span class="math inline">\(A_n\)</span> are countably infinitely
+many subsets from the sigma-field, then both the intersection and union
+of all of these sets is also in the sigma-field.</li>
+</ul>
+<p>Read More: <a
+target="_blank" rel="noopener" href="https://www.thoughtco.com/sigma-field-3126572">sigma-field</a></p>
+<p>Moreover, every element <span class="math inline">\(s\)</span> in
+<span class="math inline">\(S\)</span> is a <strong>basic
+event</strong>, and <span class="math inline">\(F\)</span> is a
+collection of <span class="math inline">\(s\)</span>, which represents
+<strong>"events"</strong>. In probability, it's important to clarify
+"basic event" and "event". For example, we consider rolling a dice, then
+<span class="math inline">\(1,2,3,4,5,6\)</span> are called "basic
+events", the combinations of which are called events. In an axiatic
+approach, we can write: <span class="math display">\[
+S= \{1,2,3,4,5,6\}\nonumber
+\]</span> <span class="math inline">\(F\)</span> is the collection of
+all the subsets of <span class="math inline">\(S\)</span>. Suppose <span
+class="math inline">\(A=\{2,3,5\}\)</span>, then <span
+class="math inline">\(P[A] = P[2]+P[3]+P[5]\)</span>.</p>
+<p><strong>Motivation:</strong> Why we need the above definition?
+Classic probability defines the probability of event <span
+class="math inline">\(E\)</span> as <span
+class="math inline">\(P[E]=M/N\)</span>, where <span
+class="math inline">\(M\)</span> is the possible results contained in
+<span class="math inline">\(M\)</span> and <span
+class="math inline">\(N\)</span> is all the possible results. However,
+such definition will encounter problem in terms of <span
+class="math inline">\(\mathrm{R}\)</span> or infinity. Consider the
+following example.</p>
+<h2 id="goodness-of-fit">Goodness of Fit</h2>
+<h3 id="foundations">Foundations</h3>
+<p>Consider <span class="math inline">\(g(\theta_i) =
+\mathbf{X}\mathbf{\beta}\)</span></p>
+<ol type="1">
+<li>Add additional explanatory terms to deisgn matrix <span
+class="math inline">\(\mathbf{X}\)</span></li>
+<li>The model will be more complex</li>
+</ol>
+<p>For a more complexed model, we have <span class="math display">\[
+\mathrm{RSS}_{complex}&lt;=\mathrm{RSS}_{simple}\nonumber
+\]</span></p>
+<p><strong>Deviance</strong></p>
+<p>Deviance is twice the difference between the maximised log-likelihood
+of the saturated model and the log-likelihood of the fitted model: <span
+class="math display">\[
+D = 2(l_s-l)\nonumber
+\]</span> deviance is analogous to residual sum of squares.</p>
 
     </div>
 
@@ -313,14 +395,11 @@ Horst, and so on.</p>
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/02/05/2023-2-5-Linear-Algebra-(Part-II.-Vector-Spaces)/" rel="prev" title="Linear Algebra (Part II. Spaces)">
-                  <i class="fa fa-chevron-left"></i> Linear Algebra (Part II. Spaces)
+                <a href="/2023/12/30/490_Notes_1/" rel="prev" title="490 Knowledge Transfer Notes 1">
+                  <i class="fa fa-chevron-left"></i> 490 Knowledge Transfer Notes 1
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/12/30/490_Notes_1/" rel="next" title="490 Knowledge Transfer Notes 1">
-                  490 Knowledge Transfer Notes 1 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -352,13 +431,13 @@ Horst, and so on.</p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">55k</span>
+    <span title="Word count total">57k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">50 mins.</span>
+    <span title="Reading time total">52 mins.</span>
   </span>
 </div>
 <div class="busuanzi-count">
