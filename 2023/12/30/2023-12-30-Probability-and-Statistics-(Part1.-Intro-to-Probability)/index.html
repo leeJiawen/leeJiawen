@@ -28,7 +28,7 @@
 <meta property="og:description" content="Probability and statistics is an essential tool to analyze and study data and construct mathematical models to make decisions and evaluations. This note will encompass a wide range of probability and">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-12-29T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-03-05T08:48:46.838Z">
+<meta property="article:modified_time" content="2024-03-05T11:38:57.289Z">
 <meta property="article:author" content="Leejiawen">
 <meta property="article:tag" content="Maths">
 <meta name="twitter:card" content="summary">
@@ -146,7 +146,7 @@
             <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#elementary-probability"><span class="nav-number">1.</span> <span class="nav-text">Elementary Probability</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#basic-principles-of-counting"><span class="nav-number">1.1.</span> <span class="nav-text">Basic Principles of Counting</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#permutation-and-combination"><span class="nav-number">1.1.1.</span> <span class="nav-text">Permutation and Combination</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#story-proof-of-combination-identies"><span class="nav-number">1.1.2.</span> <span class="nav-text">Story proof of combination
 identies</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#birthday-problem-naive-probability-theory"><span class="nav-number">1.1.3.</span> <span class="nav-text">Birthday Problem
 (naive probability theory)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#probability-measures-and-spaces"><span class="nav-number">1.2.</span> <span class="nav-text">Probability Measures and
-Spaces</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#goodness-of-fit"><span class="nav-number">2.</span> <span class="nav-text">Goodness of Fit</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#foundations"><span class="nav-number">2.1.</span> <span class="nav-text">Foundations</span></a></li></ol></li></ol></div>
+Spaces</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#inclusion-and-exclusion"><span class="nav-number">1.3.</span> <span class="nav-text">Inclusion and Exclusion</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#de-mentmorts-problem-1713"><span class="nav-number">1.3.1.</span> <span class="nav-text">de Mentmort&#39;s Problem (1713)</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -240,7 +240,7 @@ Spaces</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-l
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-05 16:48:46" itemprop="dateModified" datetime="2024-03-05T16:48:46+08:00">2024-03-05</time>
+      <time title="Modified: 2024-03-05 19:38:57" itemprop="dateModified" datetime="2024-03-05T19:38:57+08:00">2024-03-05</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -266,14 +266,14 @@ Spaces</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-l
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>5.3k</span>
+      <span>6.1k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>5 mins.</span>
+      <span>6 mins.</span>
     </span>
 </div>
 
@@ -330,7 +330,7 @@ Pick total <span class="math inline">\(k\)</span> items from 2 groups,
 one with <span class="math inline">\(m\)</span> items and the other with
 <span class="math inline">\(n\)</span>.</li>
 </ol>
-<h4 id="birthday-problem-naive-probability-theory">Birthday Problem
+<div class="note success"><h4 id="birthday-problem-naive-probability-theory">Birthday Problem
 (naive probability theory)</h4>
 <p>How big the group should be if the probability of at least two people
 in the group have the same birthday? Assume the group has <span
@@ -345,14 +345,15 @@ people select the box (birthday) one by one.</li>
 class="math inline">\(P(\mathrm{no-match})=\dfrac{365}{365}\dfrac{364}{365}\dfrac{363}{365}...\dfrac{365-k+1}{365}\)</span></p>
 <p><span
 class="math inline">\(P(\mathrm{match})=1-\dfrac{365...(365-k+1)}{365^k}\)</span></p>
-<p><strong>simulation</strong></p>
+</div>
+<p><strong>Simulation:</strong></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">birthday</span>(<span class="params">k</span>):</span><br><span class="line">    birthday=[<span class="number">0</span>]*<span class="number">365</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(k):</span><br><span class="line">        birthday[random.randint(<span class="number">0</span>,<span class="number">364</span>)]+=<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">365</span>):</span><br><span class="line">        <span class="keyword">if</span> (birthday[i] &gt;= <span class="number">2</span>):</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">simulation</span>(<span class="params">times,k</span>):</span><br><span class="line">    success=<span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(times):</span><br><span class="line">        success += birthday(k)</span><br><span class="line">    <span class="keyword">return</span> success/times</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">plot_sim</span>(<span class="params">times,k_max</span>):</span><br><span class="line">    k_list = <span class="built_in">range</span>(k_max)</span><br><span class="line">    sim_list = [<span class="number">0</span>]*k_max</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(k_max):</span><br><span class="line">        sim_list[i] = simulation(times,k_list[i])</span><br><span class="line">    plt.plot(k_list,sim_list)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:  </span><br><span class="line">    plot_sim(<span class="number">1000</span>,<span class="number">200</span>)</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
 <p><img
 src="https://raw.githubusercontent.com/leeJiawen/blog-img/main/sim1.png" />
-The probability is almost one after k goes over 75.</p>
+The probability is almost one after k goes over 50.</p>
 <h3 id="probability-measures-and-spaces">Probability Measures and
 Spaces</h3>
-<div class="note info"><p><strong>Def:</strong> Let <span class="math inline">\(S\)</span> be a
+<p><strong>Def:</strong> Let <span class="math inline">\(S\)</span> be a
 sample space and <em><span class="math inline">\(F\)</span></em> a
 sigma-field on <span class="math inline">\(S\)</span>. Then a function
 <span class="math display">\[
@@ -368,8 +369,7 @@ class="math inline">\(j\neq k\)</span>, <span class="math display">\[
 P[\bigcup_kA_k]=\sum_kP[A_k]\nonumber
 \]</span> Then <span class="math inline">\(S\)</span> is called a
 <strong>probability space</strong></p>
-</div>
-<p>This is a formal defination of a probability measures and spaces in
+<div class="note info"><p>This is a formal defination of a probability measures and spaces in
 an aximatic approach. Here <strong>sigma field</strong> is defined as a
 collection of sets which hold following properties:</p>
 <ul>
@@ -382,6 +382,7 @@ of all of these sets is also in the sigma-field.</li>
 </ul>
 <p>Read More: <a
 target="_blank" rel="noopener" href="https://www.thoughtco.com/sigma-field-3126572">sigma-field</a></p>
+</div>
 <p>Moreover, every element <span class="math inline">\(s\)</span> in
 <span class="math inline">\(S\)</span> is a <strong>basic
 event</strong>, and <span class="math inline">\(F\)</span> is a
@@ -423,29 +424,43 @@ B)\geq P(A)\)</span>, as <span class="math inline">\(P(A^c\cap B)\geq
 <li><p><span class="math inline">\(P(A\cup B)=P(A)+P(B)-P(A\cap
 B).\)</span></p>
 <p><em>proof</em>: <span class="math inline">\(P(A\cup B)=P(A^c\cap B
-\cup A) = P(A) + P(A^c \cap B)\)</span>. <span
-class="math inline">\(\Box\)</span></p>
+\cup A) = P(A) + P(A^c \cap B)\)</span>.</p>
 <p>$P(A B)+P(A^c B)=P((A B)(A^c B))=P(B) $. <span
 class="math inline">\(\Box\)</span></p></li>
 </ol>
-<h2 id="goodness-of-fit">Goodness of Fit</h2>
-<h3 id="foundations">Foundations</h3>
-<p>Consider <span class="math inline">\(g(\theta_i) =
-\mathbf{X}\mathbf{\beta}\)</span></p>
-<ol type="1">
-<li>Add additional explanatory terms to deisgn matrix <span
-class="math inline">\(\mathbf{X}\)</span></li>
-<li>The model will be more complex</li>
-</ol>
-<p>For a more complexed model, we have <span class="math display">\[
-\mathrm{RSS}_{complex}&lt;=\mathrm{RSS}_{simple}\nonumber
+<h3 id="inclusion-and-exclusion">Inclusion and Exclusion</h3>
+<p><span class="math display">\[
+P(A_1 \cup A_2 ... \cup A_n)=\sum_{j=1}^nP(A_j)-\sum_{i&lt;j}P(A_i\cap
+A_j)+\sum_{1&lt;j&lt;k}P(A_1\cap A_j\cap A_k)+(-1)^{n+1}P(A_1\cap...\cap
+A_n).
 \]</span></p>
-<p><strong>Deviance</strong></p>
-<p>Deviance is twice the difference between the maximised log-likelihood
-of the saturated model and the log-likelihood of the fitted model: <span
-class="math display">\[
-D = 2(l_s-l)\nonumber
-\]</span> deviance is analogous to residual sum of squares.</p>
+<p>The practical way of using the terrible equation above is to
+calculate each term seperately and pay attention to the pattern of the
+middle joint terms. It is oftern used in "matching problems", and it
+divides a big problem into smaller ones.</p>
+<p><div class="note success"><h4 id="de-mentmorts-problem-1713">de Mentmort's Problem (1713)</h4>
+<p>The probability of the position of one card is exactly the number on
+it? Consider a deck of shuffled cards.</p>
+<p>Let <span class="math inline">\(A_j\)</span> be the event that "jth
+card matches". Then we are interested in <span class="math display">\[
+P(\bigcup_{j=1}^n A_j)=?
+\]</span> Consider separete events. The simpler problem can be
+interpreted as "the probability of the card with number j sitts on the
+jth position". <span class="math display">\[
+\begin{align}
+&amp;P(A_j)=\dfrac{1}{n}, &amp;P(A_1\cap
+A_2)=\dfrac{1}{n(n-1)},&amp;&amp;P(A_1\cap A_2 ...\cap
+A_k)=\dfrac{1}{n(n-k+1)}&amp;\nonumber
+\end{align}
+\]</span> Then consider the coefficients: the summation symbol can be
+written as: <span class="math inline">\(\tbinom{n}{k}\)</span>, then we
+have: <span class="math display">\[
+P(\bigcup_{j=1}^n
+A_j)=n\cdot\dfrac{1}{n}-\dfrac{n(n-1)}{2!}\dfrac{1}{n(n-1)}+\dfrac{n(n-1)(n-2)}{3!}\dfrac{1}{n(n-1)(n-2)}+...\\
+=1-\dfrac{1}{2!}+\dfrac{1}{3!}-...+(-1)^n\dfrac{1}{n!}=1-\dfrac{1}{e}
+\]</span> The last equation holds as <span
+class="math inline">\(n\)</span> is large enough from Taylor Series.</p>
+</div></p>
 
     </div>
 
@@ -504,7 +519,7 @@ D = 2(l_s-l)\nonumber
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">54 mins.</span>
+    <span title="Reading time total">55 mins.</span>
   </span>
 </div>
 <div class="busuanzi-count">
