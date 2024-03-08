@@ -27,14 +27,11 @@
 <meta property="og:site_name" content="Lee&#39;s Blog">
 <meta property="og:description" content="Probability and statistics is an essential tool to analyze and study data and construct mathematical models to make decisions and evaluations. This note will encompass a wide range of probability and">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://raw.githubusercontent.com/leeJiawen/blog-img/main/dice.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/leeJiawen/blog-img/main/sim1.png">
 <meta property="article:published_time" content="2023-12-29T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-03-08T15:57:19.560Z">
+<meta property="article:modified_time" content="2024-03-08T16:00:37.508Z">
 <meta property="article:author" content="Leejiawen">
 <meta property="article:tag" content="Maths">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/leeJiawen/blog-img/main/dice.png">
 
 
 <link rel="canonical" href="http://example.com/2023/12/30/2023-12-30-Probability-and-Statistics-(Part1.-Intro-to-Probability)/">
@@ -146,7 +143,10 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Elementary-Probability"><span class="nav-number">1.</span> <span class="nav-text">Elementary Probability</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Basic-Principles-of-Counting"><span class="nav-number">1.1.</span> <span class="nav-text">Basic Principles of Counting</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Permutation-and-Combination"><span class="nav-number">1.1.1.</span> <span class="nav-text">Permutation and Combination</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Story-proof-of-combination-identies"><span class="nav-number">1.1.2.</span> <span class="nav-text">Story proof of combination identies</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Birthday-Problem-naive-probability-theory"><span class="nav-number">1.1.3.</span> <span class="nav-text">Birthday Problem (naive probability theory)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Probability-Measures-and-Spaces"><span class="nav-number">1.2.</span> <span class="nav-text">Probability Measures and Spaces</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inclusion-and-Exclusion"><span class="nav-number">1.3.</span> <span class="nav-text">Inclusion  and Exclusion</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#de-Montmort%E2%80%99s-Problem-1713"><span class="nav-number">1.3.1.</span> <span class="nav-text">de Montmort’s Problem (1713)</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#elementary-probability"><span class="nav-number">1.</span> <span class="nav-text">Elementary Probability</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#basic-principles-of-counting"><span class="nav-number">1.1.</span> <span class="nav-text">Basic Principles of Counting</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#permutation-and-combination"><span class="nav-number">1.1.1.</span> <span class="nav-text">Permutation and Combination</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#story-proof-of-combination-identies"><span class="nav-number">1.1.2.</span> <span class="nav-text">Story proof of combination
+identies</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#birthday-problem-naive-probability-theory"><span class="nav-number">1.1.3.</span> <span class="nav-text">Birthday Problem
+(naive probability theory)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#probability-measures-and-spaces"><span class="nav-number">1.2.</span> <span class="nav-text">Probability Measures and
+Spaces</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#inclusion-and-exclusion"><span class="nav-number">1.3.</span> <span class="nav-text">Inclusion and Exclusion</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#de-montmorts-problem-1713"><span class="nav-number">1.3.1.</span> <span class="nav-text">de Montmort&#39;s Problem (1713)</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -240,7 +240,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-08 23:57:19" itemprop="dateModified" datetime="2024-03-08T23:57:19+08:00">2024-03-08</time>
+      <time title="Modified: 2024-03-09 00:00:37" itemprop="dateModified" datetime="2024-03-09T00:00:37+08:00">2024-03-09</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -266,14 +266,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>5.1k</span>
+      <span>6.6k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>5 mins.</span>
+      <span>6 mins.</span>
     </span>
 </div>
 
@@ -285,72 +285,189 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p><img src="https://raw.githubusercontent.com/leeJiawen/blog-img/main/dice.png" alt=""></p>
-<p>Probability and statistics is an essential tool to analyze and study data and construct mathematical models to make decisions and evaluations. This note will encompass a wide range of probability and statictical problems related to real-life applications by refering to several classical probability textbooks and materials, for example, <em>A First Course to Probability</em> by Sheldon M. Ross, <em>An Introduction to Mathematical Statistics and Its Applications</em> by Richard J. Larsen, <em>Probability and Mathematical Statistics</em> by Chen Xiru, <em>VE401 Engineering Approach to Probability slides</em> by Horst, and so on.</p>
-<p>And it’s time to roll the dice.</p>
+        <p><img
+src="https://raw.githubusercontent.com/leeJiawen/blog-img/main/dice.png" /></p>
+<p>Probability and statistics is an essential tool to analyze and study
+data and construct mathematical models to make decisions and
+evaluations. This note will encompass a wide range of probability and
+statictical problems related to real-life applications by refering to
+several classical probability textbooks and materials, for example,
+<em>A First Course to Probability</em> by Sheldon M. Ross, <em>An
+Introduction to Mathematical Statistics and Its Applications</em> by
+Richard J. Larsen, <em>Probability and Mathematical Statistics</em> by
+Chen Xiru, <em>VE401 Engineering Approach to Probability slides</em> by
+Horst, and so on.</p>
+<p>And it's time to roll the dice.</p>
 <span id="more"></span>
-<h2 id="Elementary-Probability"><a href="#Elementary-Probability" class="headerlink" title="Elementary Probability"></a>Elementary Probability</h2><h3 id="Basic-Principles-of-Counting"><a href="#Basic-Principles-of-Counting" class="headerlink" title="Basic Principles of Counting"></a>Basic Principles of Counting</h3><h4 id="Permutation-and-Combination"><a href="#Permutation-and-Combination" class="headerlink" title="Permutation and Combination"></a>Permutation and Combination</h4><p>Given $n$ objects,</p>
-<p>Permutation of $k$ objects: $A^n_k=\dfrac{n!}{(n-k)!}$</p>
-<p>Combination of $k$ objects: $\tbinom{n}{k}=\dfrac{n!}{(n-k)!k!}=\dfrac{k(k-1)(k-2)…(k-n+1)}{n!}$</p>
-<h4 id="Story-proof-of-combination-identies"><a href="#Story-proof-of-combination-identies" class="headerlink" title="Story proof of combination identies"></a>Story proof of combination identies</h4><ol>
-<li>$\tbinom{n}{k}k=n\tbinom{n-1}{k-1}$. Pick $k$ people out of $n$ with 1 desginated as the President.</li>
+<h2 id="elementary-probability">Elementary Probability</h2>
+<h3 id="basic-principles-of-counting">Basic Principles of Counting</h3>
+<h4 id="permutation-and-combination">Permutation and Combination</h4>
+<p>Given <span class="math inline">\(n\)</span> objects,</p>
+<p>Permutation of <span class="math inline">\(k\)</span> objects: <span
+class="math inline">\(A^n_k=\dfrac{n!}{(n-k)!}\)</span></p>
+<p>Combination of <span class="math inline">\(k\)</span> objects: <span
+class="math inline">\(\tbinom{n}{k}=\dfrac{n!}{(n-k)!k!}=\dfrac{k(k-1)(k-2)...(k-n+1)}{n!}\)</span></p>
+<h4 id="story-proof-of-combination-identies">Story proof of combination
+identies</h4>
+<ol type="1">
+<li><span
+class="math inline">\(\tbinom{n}{k}k=n\tbinom{n-1}{k-1}\)</span>. Pick
+<span class="math inline">\(k\)</span> people out of <span
+class="math inline">\(n\)</span> with 1 desginated as the
+President.</li>
 </ol>
-<p>The left hand side means”first pick $k$ people out of $n$ then choose the President, while the right hand side says “first pick a President then pick $k-1$ people from $n-1$ remaining people, grouped with he selected President. They are equivalent.</p>
-<ol>
-<li>Vandermende’s Identity: $\tbinom{m+n}{k}=\sum_{j=0}^k\tbinom{m}{j}\tbinom{n}{k-j}$. Pick total $k$ items from 2 groups, one with $m$ items and the other with $n$.</li>
+<p>The left hand side means"first pick <span
+class="math inline">\(k\)</span> people out of <span
+class="math inline">\(n\)</span> then choose the President, while the
+right hand side says "first pick a President then pick <span
+class="math inline">\(k-1\)</span> people from <span
+class="math inline">\(n-1\)</span> remaining people, grouped with he
+selected President. They are equivalent.</p>
+<ol start="2" type="1">
+<li>Vandermende's Identity: <span
+class="math inline">\(\tbinom{m+n}{k}=\sum_{j=0}^k\tbinom{m}{j}\tbinom{n}{k-j}\)</span>.
+Pick total <span class="math inline">\(k\)</span> items from 2 groups,
+one with <span class="math inline">\(m\)</span> items and the other with
+<span class="math inline">\(n\)</span>.</li>
 </ol>
-<div class="note success"><h4 id="Birthday-Problem-naive-probability-theory"><a href="#Birthday-Problem-naive-probability-theory" class="headerlink" title="Birthday Problem (naive probability theory)"></a>Birthday Problem (naive probability theory)</h4><p>How big the group should be if the probability of at least two people in the group have the same birthday? Assume the group has $k$ people in total.</p>
+<div class="note success"><h4 id="birthday-problem-naive-probability-theory">Birthday Problem
+(naive probability theory)</h4>
+<p>How big the group should be if the probability of at least two people
+in the group have the same birthday? Assume the group has <span
+class="math inline">\(k\)</span> people in total.</p>
 <ul>
-<li>if $k&gt;365$, $P = 1$.</li>
-<li><p>if k&lt; 365, consider 365 boxes representing the dates, then the people select the box (birthday) one by one.</p>
-<p>$P(\mathrm{no-match})=\dfrac{365}{365}\dfrac{364}{365}\dfrac{363}{365}…\dfrac{365-k+1}{365}$</p>
-</li>
+<li>if <span class="math inline">\(k&gt;365\)</span>, <span
+class="math inline">\(P = 1\)</span>.</li>
+<li>if k&lt; 365, consider 365 boxes representing the dates, then the
+people select the box (birthday) one by one.</li>
 </ul>
-<p>$P(\mathrm{match})=1-\dfrac{365…(365-k+1)}{365^k}$</p>
+<p><span
+class="math inline">\(P(\mathrm{no-match})=\dfrac{365}{365}\dfrac{364}{365}\dfrac{363}{365}...\dfrac{365-k+1}{365}\)</span></p>
+<p><span
+class="math inline">\(P(\mathrm{match})=1-\dfrac{365...(365-k+1)}{365^k}\)</span></p>
 </div>
 <p><strong>Simulation:</strong></p>
-<div class="tabs" id="forth_uniquename"><ul class="nav-tabs"><li class="tab active"><a href="#forth_uniquename-1">Python</a></li><li class="tab"><a href="#forth_uniquename-2">R</a></li></ul><div class="tab-content"><div class="tab-pane active" id="forth_uniquename-1"><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">birthday</span>(<span class="params">k</span>):</span><br><span class="line">    birthday=[<span class="number">0</span>]*<span class="number">365</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(k):</span><br><span class="line">        birthday[random.randint(<span class="number">0</span>,<span class="number">364</span>)]+=<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">365</span>):</span><br><span class="line">        <span class="keyword">if</span> (birthday[i] &gt;= <span class="number">2</span>):</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">simulation</span>(<span class="params">times,k</span>):</span><br><span class="line">    success=<span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(times):</span><br><span class="line">        success += birthday(k)</span><br><span class="line">    <span class="keyword">return</span> success/times</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">plot_sim</span>(<span class="params">times,k_max</span>):</span><br><span class="line">    k_list = <span class="built_in">range</span>(k_max)</span><br><span class="line">    sim_list = [<span class="number">0</span>]*k_max</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(k_max):</span><br><span class="line">        sim_list[i] = simulation(times,k_list[i])</span><br><span class="line">    plt.plot(k_list,sim_list)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:  </span><br><span class="line">    plot_sim(<span class="number">1000</span>,<span class="number">200</span>)</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="forth_uniquename-2"><p>replicate the experiment for 10^4 times, for each time, we tabulate the sample result of $P^{365}_{23}.$ If the maximum number in the tabulated table is bigger than 2, then it is counted as success.</p>
+<div class="tabs" id="forth_uniquename"><ul class="nav-tabs"><li class="tab active"><a href="#forth_uniquename-1">Python</a></li><li class="tab"><a href="#forth_uniquename-2">R</a></li></ul><div class="tab-content"><div class="tab-pane active" id="forth_uniquename-1"><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">birthday</span>(<span class="params">k</span>):</span><br><span class="line">    birthday=[<span class="number">0</span>]*<span class="number">365</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(k):</span><br><span class="line">        birthday[random.randint(<span class="number">0</span>,<span class="number">364</span>)]+=<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">365</span>):</span><br><span class="line">        <span class="keyword">if</span> (birthday[i] &gt;= <span class="number">2</span>):</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">simulation</span>(<span class="params">times,k</span>):</span><br><span class="line">    success=<span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(times):</span><br><span class="line">        success += birthday(k)</span><br><span class="line">    <span class="keyword">return</span> success/times</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">plot_sim</span>(<span class="params">times,k_max</span>):</span><br><span class="line">    k_list = <span class="built_in">range</span>(k_max)</span><br><span class="line">    sim_list = [<span class="number">0</span>]*k_max</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(k_max):</span><br><span class="line">        sim_list[i] = simulation(times,k_list[i])</span><br><span class="line">    plt.plot(k_list,sim_list)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:  </span><br><span class="line">    plot_sim(<span class="number">1000</span>,<span class="number">200</span>)</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="forth_uniquename-2"><p>replicate the experiment for 10^4 times, for each time, we tabulate
+the sample result of <span class="math inline">\(P^{365}_{23}.\)</span>
+If the maximum number in the tabulated table is bigger than 2, then it
+is counted as success.</p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r <span class="operator">&lt;-</span> replicate<span class="punctuation">(</span><span class="number">10</span><span class="operator">^</span><span class="number">4</span><span class="punctuation">,</span> <span class="built_in">max</span><span class="punctuation">(</span>tabulate<span class="punctuation">(</span>sample<span class="punctuation">(</span><span class="number">1</span><span class="operator">:</span><span class="number">365</span><span class="punctuation">,</span><span class="number">23</span><span class="punctuation">,</span>replace<span class="operator">=</span><span class="literal">TRUE</span><span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">)</span><span class="punctuation">)</span></span><br><span class="line"><span class="built_in">sum</span><span class="punctuation">(</span>r<span class="operator">&gt;=</span><span class="number">2</span><span class="punctuation">)</span><span class="operator">/</span><span class="number">10</span><span class="operator">^</span><span class="number">4</span></span><br></pre></td></tr></table></figure></div></div></div>
-<p><img src="https://raw.githubusercontent.com/leeJiawen/blog-img/main/sim1.png" alt=""><br>The probability is almost one after k goes over 50.</p>
-<h3 id="Probability-Measures-and-Spaces"><a href="#Probability-Measures-and-Spaces" class="headerlink" title="Probability Measures and Spaces"></a>Probability Measures and Spaces</h3><p><strong>Def:</strong> Let $S$ be a sample space and <em>$F$</em> a sigma-field on $S$. Then a function</p>
-<script type="math/tex; mode=display">
-P:F\rightarrow[0,1],\space\space\space A\rightarrow P[A],\nonumber</script><p>is called a probability measure on $S$ if </p>
-<p>(1) $P[S]=1$.</p>
-<p>and (2) For any set of events ${A_k}$ such that $A_j\bigcap A_k = \emptyset $ for $j\neq k$, </p>
-<script type="math/tex; mode=display">
-P[\bigcup_kA_k]=\sum_kP[A_k]\nonumber</script><p>Then $S$ is called a <strong>probability space</strong></p>
-<div class="note info"><p>This is a formal defination of a probability measures and spaces in an aximatic approach. Here <strong>sigma field</strong> is defined as a collection of sets which hold following properties:</p>
-<ul>
-<li>If the subset $A$  is in the sigma-field, then so is its complement $A^c$.</li>
-<li>If $A_n$ are countably infinitely many subsets from the sigma-field, then both the intersection and union of all of these sets is also in the sigma-field.</li>
-</ul>
-<p>Read More: <a target="_blank" rel="noopener" href="https://www.thoughtco.com/sigma-field-3126572">sigma-field</a></p>
-</div>
-<p>Moreover, every element $s$ in $S$ is a <strong>basic event</strong>, and $F$ is a collection of $s$, which represents <strong>“events”</strong>. In probability, it’s important to clarify “basic event” and “event”. For example, we consider rolling a dice, then $1,2,3,4,5,6$  are called “basic events”, the combinations of which are called events. In an axiatic approach, we can write:</p>
-<script type="math/tex; mode=display">
-S= \{1,2,3,4,5,6\}\nonumber</script><p>$F$ is the collection of all the subsets of $S$. Suppose $A=\{2,3,5\}$, then $P[A] = P[2]+P[3]+P[5]$.</p>
-<p><strong>Motivation:</strong> Why we need the above definition? Classic probability defines the probability of event $E$ as $P[E]=M/N$, where $M$ is the possible results contained in $M$ and $N$ is all the possible results. However, such definition will encounter problem in terms of $\mathrm{R}$ or infinity. The axiom definition can deal with this situation and brings following properties:</p>
-<ol>
-<li><p>$P(A^c)=1-P(A)$.</p>
-<p><em>proof</em>: $S = A \cup A^c.$$P(S)=1=P(A\cup A_c)=P(A)+P(A^c)$.</p>
-</li>
-<li><p>If $A\subseteq B$, (if A occurs, then B will definitely occur), then $P(A)\leq P(B)$.   $\Box$</p>
-<p><em>proof</em>: <strong>strategy: “disjointification”</strong></p>
-<p>$P(B)=P((A^c\cap B) \cup A)=P(A)+P(A^c\cap B)\geq P(A)$, as $P(A^c\cap B)\geq 0$.   $\Box$</p>
-</li>
-<li><p>$P(A\cup B)=P(A)+P(B)-P(A\cap B).$</p>
-<p><em>proof</em>: $P(A\cup B)=P(A^c\cap B \cup A) = P(A) + P(A^c \cap B)$.  </p>
-<p>$P(A \cap B)+P(A^c \cap B)=P((A \cap B)\cup (A^c \cap B))=P(B) $.    $\Box$</p>
-</li>
+<p><img
+src="https://raw.githubusercontent.com/leeJiawen/blog-img/main/sim1.png" />
+The probability is almost one after k goes over 50.</p>
+<h3 id="probability-measures-and-spaces">Probability Measures and
+Spaces</h3>
+<p><strong>Def:</strong> Let <span class="math inline">\(S\)</span> be a
+sample space and <em><span class="math inline">\(F\)</span></em> a
+sigma-field on <span class="math inline">\(S\)</span>. Then a function
+<span class="math display">\[
+P:F\rightarrow[0,1],\space\space\space A\rightarrow P[A],\nonumber
+\]</span> is called a probability measure on <span
+class="math inline">\(S\)</span> if</p>
+<ol type="1">
+<li><span class="math inline">\(P[S]=1\)</span>.</li>
 </ol>
-<h3 id="Inclusion-and-Exclusion"><a href="#Inclusion-and-Exclusion" class="headerlink" title="Inclusion  and Exclusion"></a>Inclusion  and Exclusion</h3><script type="math/tex; mode=display">P(A_1 \cup A_2 ... \cup A_n)=\sum_{j=1}^nP(A_j)-\sum_{i<j}P(A_i\cap A_j)+\sum_{1<j<k}P(A_1\cap A_j\cap A_k)+(-1)^{n+1}P(A_1\cap...\cap A_n).</script><p>The practical way of using the terrible equation above is to calculate each term seperately and pay attention to the pattern of the middle joint terms.  It is oftern used in “matching problems”, and it divides a big problem into smaller ones.</p>
- <div class="note success"><h4 id="de-Montmort’s-Problem-1713"><a href="#de-Montmort’s-Problem-1713" class="headerlink" title="de Montmort’s Problem (1713)"></a>de Montmort’s Problem (1713)</h4><p>Consider a well shuffled deck of n cards labelled 1 through n. You flip over the cards one by one, saying the numbers 1 through n as you do so. You win the game if, at some point, the number you say aloud is the same as the number on the number on the card being flipped over (for example, if the 8th card in the deck has the label 8). What is the probability of winning?</p>
-<p>Let $A_j$ be the event that “jth card matches”. Then we are interested in </p>
-<script type="math/tex; mode=display">
-P(\bigcup_{j=1}^n A_j)=?</script><p>Consider separete events. The simpler problem can be interpreted as “the probability of the card with number j sitts on the jth position”.</p>
-<script type="math/tex; mode=display">P(A_j)=\dfrac{1}{n}, \quad P(A_1\cap A_2)=\dfrac{1}{ n(n-1) },\quad P(A_1\cap A_2 ...\cap A_k)=\dfrac{1}{ n(n-k+1) }\nonumber</script><p>Then consider the coefficients: the summation symbol can be written as: $\tbinom{n}{k}$, then we have:</p>
-<script type="math/tex; mode=display">P(\bigcup_{j=1}^n A_j)=n\cdot\dfrac{1}{n}-\dfrac{n(n-1)}{2!}\dfrac{1}{ n(n-1) }+\dfrac{ n(n-1)(n-2) }{3!}\dfrac{1}{ n(n-1)(n-2) }+...=1-\dfrac{1}{2!}+\dfrac{1}{3!}-...+(-1)^n\dfrac{1}{n!}=1-\dfrac{1}{e}</script><p>The last equation holds as $n$ is large enough from Taylor Series.</p>
+<p>and (2) For any set of events <span
+class="math inline">\({A_k}\)</span> such that $A_jA_k = $ for <span
+class="math inline">\(j\neq k\)</span>, <span class="math display">\[
+P[\bigcup_kA_k]=\sum_kP[A_k]\nonumber
+\]</span> Then <span class="math inline">\(S\)</span> is called a
+<strong>probability space</strong></p>
+<div class="note info"><p>This is a formal defination of a probability measures and spaces in
+an aximatic approach. Here <strong>sigma field</strong> is defined as a
+collection of sets which hold following properties:</p>
+<ul>
+<li>If the subset <span class="math inline">\(A\)</span> is in the
+sigma-field, then so is its complement <span
+class="math inline">\(A^c\)</span>.</li>
+<li>If <span class="math inline">\(A_n\)</span> are countably infinitely
+many subsets from the sigma-field, then both the intersection and union
+of all of these sets is also in the sigma-field.</li>
+</ul>
+<p>Read More: <a
+target="_blank" rel="noopener" href="https://www.thoughtco.com/sigma-field-3126572">sigma-field</a></p>
 </div>
+<p>Moreover, every element <span class="math inline">\(s\)</span> in
+<span class="math inline">\(S\)</span> is a <strong>basic
+event</strong>, and <span class="math inline">\(F\)</span> is a
+collection of <span class="math inline">\(s\)</span>, which represents
+<strong>"events"</strong>. In probability, it's important to clarify
+"basic event" and "event". For example, we consider rolling a dice, then
+<span class="math inline">\(1,2,3,4,5,6\)</span> are called "basic
+events", the combinations of which are called events. In an axiatic
+approach, we can write: <span class="math display">\[
+S= \{1,2,3,4,5,6\}\nonumber
+\]</span> <span class="math inline">\(F\)</span> is the collection of
+all the subsets of <span class="math inline">\(S\)</span>. Suppose <span
+class="math inline">\(A=\{2,3,5\}\)</span>, then <span
+class="math inline">\(P[A] = P[2]+P[3]+P[5]\)</span>.</p>
+<p><strong>Motivation:</strong> Why we need the above definition?
+Classic probability defines the probability of event <span
+class="math inline">\(E\)</span> as <span
+class="math inline">\(P[E]=M/N\)</span>, where <span
+class="math inline">\(M\)</span> is the possible results contained in
+<span class="math inline">\(M\)</span> and <span
+class="math inline">\(N\)</span> is all the possible results. However,
+such definition will encounter problem in terms of <span
+class="math inline">\(\mathrm{R}\)</span> or infinity. The axiom
+definition can deal with this situation and brings following
+properties:</p>
+<ol type="1">
+<li><p><span class="math inline">\(P(A^c)=1-P(A)\)</span>.</p>
+<p><em>proof</em>: <span class="math inline">\(S = A \cup
+A^c.\)</span><span class="math inline">\(P(S)=1=P(A\cup
+A_c)=P(A)+P(A^c)\)</span>.</p></li>
+<li><p>If <span class="math inline">\(A\subseteq B\)</span>, (if A
+occurs, then B will definitely occur), then <span
+class="math inline">\(P(A)\leq P(B)\)</span>. <span
+class="math inline">\(\Box\)</span></p>
+<p><em>proof</em>: <strong>strategy: "disjointification"</strong></p>
+<p><span class="math inline">\(P(B)=P((A^c\cap B) \cup A)=P(A)+P(A^c\cap
+B)\geq P(A)\)</span>, as <span class="math inline">\(P(A^c\cap B)\geq
+0\)</span>. <span class="math inline">\(\Box\)</span></p></li>
+<li><p><span class="math inline">\(P(A\cup B)=P(A)+P(B)-P(A\cap
+B).\)</span></p>
+<p><em>proof</em>: <span class="math inline">\(P(A\cup B)=P(A^c\cap B
+\cup A) = P(A) + P(A^c \cap B)\)</span>.</p>
+<p>$P(A B)+P(A^c B)=P((A B)(A^c B))=P(B) $. <span
+class="math inline">\(\Box\)</span></p></li>
+</ol>
+<h3 id="inclusion-and-exclusion">Inclusion and Exclusion</h3>
+<p><span class="math display">\[P(A_1 \cup A_2 ... \cup
+A_n)=\sum_{j=1}^nP(A_j)-\sum_{i&lt;j}P(A_i\cap
+A_j)+\sum_{1&lt;j&lt;k}P(A_1\cap A_j\cap A_k)+(-1)^{n+1}P(A_1\cap...\cap
+A_n).\]</span></p>
+<p>The practical way of using the terrible equation above is to
+calculate each term seperately and pay attention to the pattern of the
+middle joint terms. It is oftern used in "matching problems", and it
+divides a big problem into smaller ones.</p>
+<p><div class="note success"><h4 id="de-montmorts-problem-1713">de Montmort's Problem (1713)</h4>
+<p>Consider a well shuffled deck of n cards labelled 1 through n. You
+flip over the cards one by one, saying the numbers 1 through n as you do
+so. You win the game if, at some point, the number you say aloud is the
+same as the number on the number on the card being flipped over (for
+example, if the 8th card in the deck has the label 8). What is the
+probability of winning?</p>
+<p>Let <span class="math inline">\(A_j\)</span> be the event that "jth
+card matches". Then we are interested in <span class="math display">\[
+P(\bigcup_{j=1}^n A_j)=?
+\]</span> Consider separete events. The simpler problem can be
+interpreted as "the probability of the card with number j sitts on the
+jth position".</p>
+<p><span class="math display">\[P(A_j)=\dfrac{1}{n}, \quad P(A_1\cap
+A_2)=\dfrac{1}{ n (n-1) },\quad P(A_1\cap A_2 ...\cap A_k)=\dfrac{1}{ n
+(n-k+1) }\nonumber\]</span></p>
+<p>Then consider the coefficients: the summation symbol can be written
+as: <span class="math inline">\(\tbinom{n}{k}\)</span>, then we
+have:</p>
+<p><span class="math display">\[P(\bigcup_{j=1}^n
+A_j)=n\cdot\dfrac{1}{n}-\dfrac{n(n-1)}{2! }\dfrac{1}{ n(n-1) }+\dfrac{
+n(n-1)(n-2) }{3!}\dfrac{1}{ n(n-1)(n-2) }+...=1-\dfrac{1}{2!
+}+\dfrac{1}{3!}-...+(-1)^n\dfrac{1}{n! }=1-\dfrac{1}{e}\]</span></p>
+<p>The last equation holds as <span class="math inline">\(n\)</span> is
+large enough from Taylor Series.</p>
+</div></p>
+
     </div>
 
     
@@ -402,13 +519,13 @@ P(\bigcup_{j=1}^n A_j)=?</script><p>Consider separete events. The simpler proble
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">58k</span>
+    <span title="Word count total">60k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">53 mins.</span>
+    <span title="Reading time total">54 mins.</span>
   </span>
 </div>
 <div class="busuanzi-count">
