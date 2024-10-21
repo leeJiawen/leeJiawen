@@ -28,8 +28,8 @@
 <meta property="og:description" content="Probability and statistics is an essential tool to analyze and study data and construct mathematical models to make decisions and evaluations. This note will encompass a wide range of probability and">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://raw.githubusercontent.com/leeJiawen/blog-img/main/%E5%9B%BE%E5%83%8F.jpg">
-<meta property="article:published_time" content="2023-12-29T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-03-18T10:34:15.147Z">
+<meta property="article:published_time" content="2023-12-30T05:00:00.000Z">
+<meta property="article:modified_time" content="2024-09-20T01:39:44.091Z">
 <meta property="article:author" content="Leejiawen">
 <meta property="article:tag" content="Maths">
 <meta name="twitter:card" content="summary">
@@ -164,7 +164,7 @@ Probability</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" 
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -175,7 +175,7 @@ Probability</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" 
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -236,14 +236,14 @@ Probability</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" 
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2023-12-30 00:00:00" itemprop="dateCreated datePublished" datetime="2023-12-30T00:00:00+08:00">2023-12-30</time>
+      <time title="Created: 2023-12-30 00:00:00" itemprop="dateCreated datePublished" datetime="2023-12-30T00:00:00-05:00">2023-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-03-18 18:34:15" itemprop="dateModified" datetime="2024-03-18T18:34:15+08:00">2024-03-18</time>
+      <time title="Modified: 2024-09-19 21:39:44" itemprop="dateModified" datetime="2024-09-19T21:39:44-04:00">2024-09-19</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -327,13 +327,23 @@ class="math inline">\(k-1\)</span> people from <span
 class="math inline">\(n-1\)</span> remaining people, grouped with he
 selected President. They are equivalent.</p>
 <ol start="2" type="1">
-<li>Vandermende's Identity: <span
+<li><p>Vandermende's Identity: <span
 class="math inline">\(\tbinom{m+n}{k}=\sum_{j=0}^k\tbinom{m}{j}\tbinom{n}{k-j}\)</span>.
 Pick total <span class="math inline">\(k\)</span> items from 2 groups,
 one with <span class="math inline">\(m\)</span> items and the other with
-<span class="math inline">\(n\)</span>.</li>
+<span class="math inline">\(n\)</span>.</p></li>
+<li><p><span class="math inline">\(\tbinom{n}{r} = \tbinom{n-1}{r-1} +
+\tbinom{n-1}{r}\)</span></p></li>
+<li><p>Induction proof of <strong>binomial theorem</strong>:</p></li>
 </ol>
-<div class="note success"><h4 id="birthday-problem-naive-probability-theory">Birthday Problem
+<div class="note success"><p>n entries m 1s</p>
+<p>m = 2</p>
+<p>1 _ _ _ _ _ n-2</p>
+<p>_ 1 _ _ _ _ n-3</p>
+<p>_ _ 1 _ _ _ n-3</p>
+<p>_ _ <em>1 </em> _ _</p>
+<p>(n-2) (n-3) + (n-2)*2 = (n-2)(n-1)</p>
+<h4 id="birthday-problem-naive-probability-theory">Birthday Problem
 (naive probability theory)</h4>
 <p>How big the group should be if the probability of at least two people
 in the group have the same birthday? Assume the group has <span
@@ -376,9 +386,9 @@ class="math inline">\(j\neq k\)</span>, <span class="math display">\[
 P[\bigcup_kA_k]=\sum_kP[A_k]\nonumber
 \]</span> Then <span class="math inline">\(S\)</span> is called a
 <strong>probability space</strong></p>
-<div class="note info"><p>This is a formal defination of a probability measures and spaces in
-an aximatic approach. Here <strong>sigma field</strong> is defined as a
-collection of sets which hold following properties:</p>
+<div class="note info"><p>This is a formal definition of a probability measures and spaces in
+an axiomatic approach. Here <strong>sigma field</strong> is defined as a
+collection of sets that hold following properties:</p>
 <ul>
 <li>If the subset <span class="math inline">\(A\)</span> is in the
 sigma-field, then so is its complement <span
@@ -397,7 +407,7 @@ collection of <span class="math inline">\(s\)</span>, which represents
 <strong>"events"</strong>. In probability, it's important to clarify
 "basic event" and "event". For example, we consider rolling a dice, then
 <span class="math inline">\(1,2,3,4,5,6\)</span> are called "basic
-events", the combinations of which are called events. In an axiatic
+events", the combinations of which are called events. In an axiomatic
 approach, we can write: <span class="math display">\[
 S= \{1,2,3,4,5,6\}\nonumber
 \]</span> <span class="math inline">\(F\)</span> is the collection of
@@ -405,7 +415,7 @@ all the subsets of <span class="math inline">\(S\)</span>. Suppose <span
 class="math inline">\(A=\{2,3,5\}\)</span>, then <span
 class="math inline">\(P[A] = P[2]+P[3]+P[5]\)</span>.</p>
 <p><strong>Motivation:</strong> Why we need the above definition?
-Classic probability defines the probability of event <span
+Classic probability defines the probability of an event <span
 class="math inline">\(E\)</span> as <span
 class="math inline">\(P[E]=M/N\)</span>, where <span
 class="math inline">\(M\)</span> is the possible results contained in
@@ -545,6 +555,9 @@ graph to show the whole process.</p>
 <h5 id="simulation">Simulation</h5>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> choice</span><br><span class="line"><span class="keyword">import</span> matplotlib <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">monty_hall</span>(<span class="params">n_door</span>):</span><br><span class="line"><span class="comment"># setup</span></span><br><span class="line">    car_index = random.randint(<span class="number">0</span>,n_door-<span class="number">1</span>)</span><br><span class="line">    choose_index = random.randint(<span class="number">0</span>,n_door-<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">choose</span>(<span class="params">n_door, chosen_index, choose_index, <span class="built_in">list</span></span>):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,n_door):</span><br><span class="line">            <span class="keyword">if</span> i != chosen_index <span class="keyword">and</span> i != choose_index:</span><br><span class="line">                <span class="built_in">list</span>.append(i)</span><br><span class="line">        <span class="keyword">return</span> choice(<span class="built_in">list</span>)</span><br><span class="line"></span><br><span class="line">    open_index_list = []</span><br><span class="line">    monty_index = choose(n_door, car_index, choose_index, open_index_list)</span><br><span class="line">    switch_index_list = []</span><br><span class="line">    switch_index = choose(n_door, monty_index, choose_index, switch_index_list)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> <span class="keyword">if</span> switch_index == car_index <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">simulation</span>(<span class="params">time</span>):</span><br><span class="line">    success = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(time):</span><br><span class="line">        success += monty_hall(<span class="number">3</span>)</span><br><span class="line">    <span class="keyword">return</span> success/time</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    <span class="built_in">print</span>(simulation(<span class="number">10000</span>))</span><br><span class="line">    </span><br><span class="line"><span class="number">0.6722</span></span><br></pre></td></tr></table></figure>
 </div></p>
+<p><span class="math display">\[\begin{align}
+
+\end{align}\]</span></p>
 
     </div>
 
@@ -566,6 +579,9 @@ graph to show the whole process.</p>
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2024/06/13/M-CURL%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/" rel="next" title="M-CURL云服务器配置指南">
+                  M-CURL云服务器配置指南 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -597,13 +613,13 @@ graph to show the whole process.</p>
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Word count total">63k</span>
+    <span title="Word count total">72k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">57 mins.</span>
+    <span title="Reading time total">1:06</span>
   </span>
 </div>
 <div class="busuanzi-count">
