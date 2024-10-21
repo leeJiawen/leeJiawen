@@ -20,15 +20,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="M-CURL云服务器配置指南 Prerequisite: 矩池云服务器与Linux配置 新手指南： https:&#x2F;&#x2F;matpool.com&#x2F;supports&#x2F;doc-quick-start&#x2F; 团队版指南： https:&#x2F;&#x2F;matpool.com&#x2F;supports&#x2F;doc-use-team-on-matpool&#x2F; 网盘操作： https:&#x2F;&#x2F;matpool.com&#x2F;supports&#x2F;doc-use">
+    <meta name="description" content="M-CURL云服务器配置指南Prerequisite: 矩池云服务器与Linux配置新手指南： https:&#x2F;&#x2F;matpool.com&#x2F;supports&#x2F;doc-quick-start&#x2F; 团队版指南： https:&#x2F;&#x2F;matpool.com&#x2F;supports&#x2F;doc-use-team-on-matpool&#x2F; 网盘操作： https:&#x2F;&#x2F;matpool.com&#x2F;supports&#x2F;doc-use-ma">
 <meta property="og:type" content="article">
 <meta property="og:title" content="M-CURL云服务器配置指南">
 <meta property="og:url" content="http://example.com/2024/06/13/M-CURL%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/index.html">
 <meta property="og:site_name" content="Lee&#39;s Blog">
-<meta property="og:description" content="M-CURL云服务器配置指南 Prerequisite: 矩池云服务器与Linux配置 新手指南： https:&#x2F;&#x2F;matpool.com&#x2F;supports&#x2F;doc-quick-start&#x2F; 团队版指南： https:&#x2F;&#x2F;matpool.com&#x2F;supports&#x2F;doc-use-team-on-matpool&#x2F; 网盘操作： https:&#x2F;&#x2F;matpool.com&#x2F;supports&#x2F;doc-use">
+<meta property="og:description" content="M-CURL云服务器配置指南Prerequisite: 矩池云服务器与Linux配置新手指南： https:&#x2F;&#x2F;matpool.com&#x2F;supports&#x2F;doc-quick-start&#x2F; 团队版指南： https:&#x2F;&#x2F;matpool.com&#x2F;supports&#x2F;doc-use-team-on-matpool&#x2F; 网盘操作： https:&#x2F;&#x2F;matpool.com&#x2F;supports&#x2F;doc-use-ma">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-06-13T04:00:00.000Z">
-<meta property="article:modified_time" content="2024-10-21T15:11:52.818Z">
+<meta property="article:modified_time" content="2024-10-21T15:19:23.475Z">
 <meta property="article:author" content="Leejiawen">
 <meta property="article:tag" content="Environment Setup">
 <meta name="twitter:card" content="summary">
@@ -143,8 +143,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#m-curl%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97"><span class="nav-number">1.</span> <span class="nav-text">M-CURL云服务器配置指南</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#prerequisite-%E7%9F%A9%E6%B1%A0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8Elinux%E9%85%8D%E7%BD%AE"><span class="nav-number">1.1.</span> <span class="nav-text">Prerequisite:
-矩池云服务器与Linux配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#conda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-number">1.2.</span> <span class="nav-text">Conda环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#create-mcurl-environment"><span class="nav-number">1.3.</span> <span class="nav-text">Create mcurl Environment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#install-mujoco"><span class="nav-number">1.4.</span> <span class="nav-text">Install mujoco</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#install-dmc2gym%E4%B8%8Edm_control"><span class="nav-number">1.5.</span> <span class="nav-text">Install dmc2gym与dm_control</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E4%B8%8E%E4%BF%AE%E6%94%B9python%E4%BB%A3%E7%A0%81"><span class="nav-number">1.6.</span> <span class="nav-text">运行与修改python代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dmc2gym%E5%86%8D%E6%AC%A1%E9%85%8D%E7%BD%AE"><span class="nav-number">1.7.</span> <span class="nav-text">dmc2gym再次配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cuda%E5%92%8Cpytorch"><span class="nav-number">1.8.</span> <span class="nav-text">CUDA和Pytorch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E7%8E%B0%E7%BB%93%E6%9E%9C"><span class="nav-number">1.9.</span> <span class="nav-text">复现结果</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#M-CURL%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97"><span class="nav-number">1.</span> <span class="nav-text">M-CURL云服务器配置指南</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Prerequisite-%E7%9F%A9%E6%B1%A0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8ELinux%E9%85%8D%E7%BD%AE"><span class="nav-number">1.1.</span> <span class="nav-text">Prerequisite: 矩池云服务器与Linux配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conda%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-number">1.2.</span> <span class="nav-text">Conda环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-mcurl-Environment"><span class="nav-number">1.3.</span> <span class="nav-text">Create mcurl Environment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-mujoco"><span class="nav-number">1.4.</span> <span class="nav-text">Install mujoco</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-dmc2gym%E4%B8%8Edm-control"><span class="nav-number">1.5.</span> <span class="nav-text">Install dmc2gym与dm_control</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C%E4%B8%8E%E4%BF%AE%E6%94%B9python%E4%BB%A3%E7%A0%81"><span class="nav-number">1.6.</span> <span class="nav-text">运行与修改python代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dmc2gym%E5%86%8D%E6%AC%A1%E9%85%8D%E7%BD%AE"><span class="nav-number">1.7.</span> <span class="nav-text">dmc2gym再次配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CUDA%E5%92%8CPytorch"><span class="nav-number">1.8.</span> <span class="nav-text">CUDA和Pytorch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%8D%E7%8E%B0%E7%BB%93%E6%9E%9C"><span class="nav-number">1.9.</span> <span class="nav-text">复现结果</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -238,7 +237,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2024-10-21 11:11:52" itemprop="dateModified" datetime="2024-10-21T11:11:52-04:00">2024-10-21</time>
+      <time title="Modified: 2024-10-21 11:19:23" itemprop="dateModified" datetime="2024-10-21T11:19:23-04:00">2024-10-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -264,7 +263,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Word count in article: </span>
-      <span>8.9k</span>
+      <span>9k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -283,47 +282,30 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <span id="more"></span>
-<h1 id="m-curl云服务器配置指南">M-CURL云服务器配置指南</h1>
-<h2 id="prerequisite-矩池云服务器与linux配置">Prerequisite:
-矩池云服务器与Linux配置</h2>
-<p>新手指南： https://matpool.com/supports/doc-quick-start/</p>
-<p>团队版指南：
-https://matpool.com/supports/doc-use-team-on-matpool/</p>
-<p>网盘操作：
-https://matpool.com/supports/doc-use-matbox-on-matpool/</p>
-<p>FAQ： https://matpool.com/supports/reference/faqs/</p>
-<p>VScode连接服务器：https://matpool.com/supports/doc-vscode-connect-matpool/</p>
-<p>Pycharm连接服务器：
-https://matpool.com/supports/doc-pycharm-connect-matpool/</p>
-<!--more-->
-<p><strong>请使用VNC远程桌面连接服务器</strong>！！：https://matpool.com/supports/doc-vnc-connect-matpool/</p>
+        <h1 id="M-CURL云服务器配置指南"><a href="#M-CURL云服务器配置指南" class="headerlink" title="M-CURL云服务器配置指南"></a>M-CURL云服务器配置指南</h1><h2 id="Prerequisite-矩池云服务器与Linux配置"><a href="#Prerequisite-矩池云服务器与Linux配置" class="headerlink" title="Prerequisite: 矩池云服务器与Linux配置"></a>Prerequisite: 矩池云服务器与Linux配置</h2><p>新手指南： <a target="_blank" rel="noopener" href="https://matpool.com/supports/doc-quick-start/">https://matpool.com/supports/doc-quick-start/</a></p>
+<p>团队版指南： <a target="_blank" rel="noopener" href="https://matpool.com/supports/doc-use-team-on-matpool/">https://matpool.com/supports/doc-use-team-on-matpool/</a></p>
+<p>网盘操作： <a target="_blank" rel="noopener" href="https://matpool.com/supports/doc-use-matbox-on-matpool/">https://matpool.com/supports/doc-use-matbox-on-matpool/</a></p>
+<p>FAQ： <a target="_blank" rel="noopener" href="https://matpool.com/supports/reference/faqs/">https://matpool.com/supports/reference/faqs/</a></p>
+<p>VScode连接服务器：<a target="_blank" rel="noopener" href="https://matpool.com/supports/doc-vscode-connect-matpool/">https://matpool.com/supports/doc-vscode-connect-matpool/</a></p>
+<p>Pycharm连接服务器： <a target="_blank" rel="noopener" href="https://matpool.com/supports/doc-pycharm-connect-matpool/">https://matpool.com/supports/doc-pycharm-connect-matpool/</a></p>
+<span id="more"></span>
+<p><strong>请使用VNC远程桌面连接服务器</strong>！！：<a target="_blank" rel="noopener" href="https://matpool.com/supports/doc-vnc-connect-matpool/">https://matpool.com/supports/doc-vnc-connect-matpool/</a></p>
 <blockquote>
-<p>Note:
-VScode连接服务器只能通过终端与linux命令进行操作，而vnc提供可视化桌面，并且支持screen
-display，与vscode连接的headless
-machine有区别。（为后文配置gym埋下伏笔）</p>
+<p>Note: VScode连接服务器只能通过终端与linux命令进行操作，而vnc提供可视化桌面，并且支持screen display，与vscode连接的headless machine有区别。（为后文配置gym埋下伏笔）</p>
 </blockquote>
-<p>Linux 常用命令
-https://matpool.com/supports/reference/common-cmds/</p>
-<p>服务器的linux系统可能不带文本编辑器，因此推荐</p>
-<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nano</span><br></pre></td></tr></table></figure></p>
-<p>将在设置环境变量时产生重要作用.</p>
-<h2 id="conda环境配置">Conda环境配置</h2>
-<h2 id="create-mcurl-environment">Create mcurl Environment</h2>
-<p>首先创造mcurl项目的独有环境，与其他环境区分开互不干扰。我们通过.yml的配置文件进行初始配置</p>
+<p> Linux 常用命令 <a target="_blank" rel="noopener" href="https://matpool.com/supports/reference/common-cmds/">https://matpool.com/supports/reference/common-cmds/</a></p>
+<p> 服务器的linux系统可能不带文本编辑器，因此推荐</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nano</span><br></pre></td></tr></table></figure>
+<p> 将在设置环境变量时产生重要作用.</p>
+<h2 id="Conda环境配置"><a href="#Conda环境配置" class="headerlink" title="Conda环境配置"></a>Conda环境配置</h2><h2 id="Create-mcurl-Environment"><a href="#Create-mcurl-Environment" class="headerlink" title="Create mcurl Environment"></a>Create mcurl Environment</h2><p>首先创造mcurl项目的独有环境，与其他环境区分开互不干扰。我们通过.yml的配置文件进行初始配置</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env create -f environment.yml</span><br></pre></td></tr></table></figure>
-<p>然后conda会自动下载yml文件中的设置，然而多数情况下，yml中的pip
-install部分会失败。但是pytorch等将成功安装。注意此时的pytorch版本应该是新版本，将在之后设置cuba时进行参考。</p>
+<p>然后conda会自动下载yml文件中的设置，然而多数情况下，yml中的pip install部分会失败。但是pytorch等将成功安装。注意此时的pytorch版本应该是新版本，将在之后设置cuba时进行参考。</p>
 <p>然后记得</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda activate environment_name</span><br></pre></td></tr></table></figure>
 <p>进入conda环境。同时，在vscode的python中记得把右下角的configuration改为之前配置好的conda环境。</p>
-<h2 id="install-mujoco">Install mujoco</h2>
-<p>可以参考https://zhuanlan.zhihu.com/p/352304615</p>
+<h2 id="Install-mujoco"><a href="#Install-mujoco" class="headerlink" title="Install mujoco"></a>Install mujoco</h2><p>可以参考<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/352304615">https://zhuanlan.zhihu.com/p/352304615</a></p>
 <p>mujoco是一个物理模拟平台，mcurl基于此运行。</p>
-<p>首先在<strong>本地电脑</strong>前往官网https://www.roboti.us/index.html下载mujoco软件包以及licence
-key
-https://www.roboti.us/license.html。压缩后打包上传至<strong>服务器的对应网盘</strong>。</p>
+<p>首先在<strong>本地电脑</strong>前往官网<a target="_blank" rel="noopener" href="https://www.roboti.us/index.html下载mujoco软件包以及licence">https://www.roboti.us/index.html下载mujoco软件包以及licence</a> key <a target="_blank" rel="noopener" href="https://www.roboti.us/license.html。压缩后打包上传至**服务器的对应网盘**。">https://www.roboti.us/license.html。压缩后打包上传至**服务器的对应网盘**。</a></p>
 <p>然后通过终端进入云服务器系统，输入ls可以看到系统的文件结构。</p>
 <p>之后在home目录下，创建隐藏文件夹/mujoco，然后将自己的mjkey.txt拷贝到.mujoco文件夹中</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> ~/.mujoco  <span class="comment">#创建隐藏文件夹/mujoco</span></span><br><span class="line"><span class="built_in">cp</span> mujoco200_linux.zip ~/.mujoco   </span><br><span class="line"><span class="built_in">cd</span> ~/.mujoco     </span><br><span class="line">unzip mujoco200_linux.zip		<span class="comment">#解压mujoco软件包</span></span><br><span class="line"><span class="built_in">mv</span> mujoco200_linux mujoco200</span><br><span class="line"><span class="built_in">cd</span> .. <span class="comment">#回到mnt的上级目录</span></span><br><span class="line"><span class="built_in">cp</span> mjkey.txt ~/.mujoco</span><br><span class="line"><span class="built_in">cp</span> mjkey.txt ~/.mujoco/mujoco200/bin</span><br></pre></td></tr></table></figure>
@@ -339,69 +321,51 @@ https://www.roboti.us/license.html。压缩后打包上传至<strong>服务器�
 <p>然后control X, Y, Enter, 退出保存文件，最后记得</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
 <p>保存更改的环境变量文件。</p>
-<h2 id="install-dmc2gym与dm_control">Install dmc2gym与dm_control</h2>
-<p>dmc2gym和mujoco一起提供模拟物理环境。然而这里最容易出现奇怪的问题。</p>
+<h2 id="Install-dmc2gym与dm-control"><a href="#Install-dmc2gym与dm-control" class="headerlink" title="Install dmc2gym与dm_control"></a>Install dmc2gym与dm_control</h2><p>dmc2gym和mujoco一起提供模拟物理环境。然而这里最容易出现奇怪的问题。</p>
 <p>首先考虑<code>pip install dmc2gym</code>，如果成功那最好，</p>
 <p>但是如果出现“exit 128”</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">pip install git+git://github.com/denisyarats/dmc2gym.git</span><br><span class="line">Collecting git+git://github.com/denisyarats/dmc2gym.git</span><br><span class="line">  Cloning git://github.com/denisyarats/dmc2gym.git to /tmp/pip-req-build-ahuyx_q5</span><br><span class="line">  Running command git clone -q git://github.com/denisyarats/dmc2gym.git /tmp/pip-req-build-ahuyx_q5</span><br><span class="line">  fatal: unable to connect to github.com:</span><br><span class="line">  github.com[0: 140.82.121.4]: errno=Connection timed out</span><br><span class="line"></span><br><span class="line">WARNING: Discarding git+git://github.com/denisyarats/dmc2gym.git. Command errored out with exit status 128: git clone -q git://github.com/denisyarats/dmc2gym.git /tmp/pip-req-build-ahuyx_q5 Check the logs for full command output.</span><br><span class="line">ERROR: Command errored out with exit status 128: git clone -q git://github.com/denisyarats/dmc2gym.git /tmp/pip-req-build-ahuyx_q5 Check the logs for full command output.</span><br></pre></td></tr></table></figure>
 <p>那么就考虑</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install git+https://github.com/denisyarats/dmc2gym.git</span><br></pre></td></tr></table></figure>
-<p>如果还是不行，有可能是云服务器的网络不太对，那么再尝试在clone链接前面增加
-<code>https://mirror.ghproxy.com/</code></p>
+<p>如果还是不行，有可能是云服务器的网络不太对，那么再尝试在clone链接前面增加 <code>https://mirror.ghproxy.com/</code></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install git+`=https://mirror.ghproxy.com/https://github.com/denisyarats/dmc2gym.git</span><br></pre></td></tr></table></figure>
-<p>https://matpool.com/supports/reference/faqs/#%E5%A6%82%E4%BD%95%E5%8A%A0%E9%80%9F-github-%E4%B8%8B%E8%BD%BD%EF%BC%9F</p>
+<p><a target="_blank" rel="noopener" href="https://matpool.com/supports/reference/faqs/#%E5%A6%82%E4%BD%95%E5%8A%A0%E9%80%9F-github-%E4%B8%8B%E8%BD%BD%EF%BC%9F">https://matpool.com/supports/reference/faqs/#%E5%A6%82%E4%BD%95%E5%8A%A0%E9%80%9F-github-%E4%B8%8B%E8%BD%BD%EF%BC%9F</a></p>
 <p>如果不行那就多试几次: )</p>
-<p>然后通过类似的方法安装dm_control，从github源码安装稳定的3.6版本：https://github.com/google-deepmind/dm_control/tree/python3.6_eol?tab=readme-ov-file</p>
-<h2 id="运行与修改python代码">运行与修改python代码</h2>
-<p>为了方便起见，我们直接放弃通过sh脚本运行python，而是直接运行train.py来实现。然而运行train.py之前，可能会有划黄线的库，那么就把他安装好，典型的有
-color 库以及 sci-image库， 网上都能找到安装命令，一般不会出问题。</p>
+<p>然后通过类似的方法安装dm_control，从github源码安装稳定的3.6版本：<a target="_blank" rel="noopener" href="https://github.com/google-deepmind/dm_control/tree/python3.6_eol?tab=readme-ov-file">https://github.com/google-deepmind/dm_control/tree/python3.6_eol?tab=readme-ov-file</a> </p>
+<h2 id="运行与修改python代码"><a href="#运行与修改python代码" class="headerlink" title="运行与修改python代码"></a>运行与修改python代码</h2><p>为了方便起见，我们直接放弃通过sh脚本运行python，而是直接运行train.py来实现。然而运行train.py之前，可能会有划黄线的库，那么就把他安装好，典型的有 color 库以及 sci-image库， 网上都能找到安装命令，一般不会出问题。</p>
 <p>在运行之前，更改部分argument的default参数就可以调参。注意可以把save_video调成false可以少de一些bug.</p>
 <p>然后直接在终端中运行train.py（能跑起来就有鬼了），会遇见各种小问题，直接去对应的<strong>库文件</strong>中按照报错修改。典型的有</p>
-<ol type="1">
-<li><code>AttributeError: 'dict' object has no attribute 'env_specs'</code></li>
+<ol>
+<li><code>AttributeError: &#39;dict&#39; object has no attribute &#39;env_specs&#39;</code></li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">File &quot;train.py&quot;, line 318, in &lt;module&gt;</span><br><span class="line">   main()</span><br><span class="line"> File &quot;train.py&quot;, line 200, in main</span><br><span class="line">   frame_skip=args.action_repeat</span><br><span class="line"> File &quot;/home/anavani/anaconda3/envs/rad/lib/python3.7/site-packages/dmc2gym/__init__.py&quot;, line 28, in make</span><br><span class="line">   if not env_id in gym.envs.registry.env_specs:</span><br><span class="line">AttributeError: &#x27;dict&#x27; object has no attribute &#x27;env_specs&#x27;</span><br></pre></td></tr></table></figure>
-<p>那就把gym.envs.registry.env_specs后面的env_specs删掉就好了。https://github.com/openai/gym/issues/3097</p>
-<ol start="2" type="1">
+<p>那就把gym.envs.registry.env_specs后面的env_specs删掉就好了。<a target="_blank" rel="noopener" href="https://github.com/openai/gym/issues/3097">https://github.com/openai/gym/issues/3097</a></p>
+<ol>
 <li><code>ValueError: not enough values to unpack (expected 5, got 4)</code></li>
 </ol>
 <p>参考gpt：</p>
 <blockquote>
-<p>根据您提供的 <code>train.py</code> 和 <code>utils.py</code>
-代码，报错信息指出在 <code>train.py</code> 文件的 <code>evaluate</code>
-函数中，<code>env.step(action)</code> 返回的是一个包含 4
-个元素的元组，但是在解包时期望得到 5 个元素。</p>
-<p>问题出现在 <code>train.py</code> 文件的 <code>evaluate</code>
-函数中：</p>
+<p>根据您提供的 <code>train.py</code> 和 <code>utils.py</code> 代码，报错信息指出在 <code>train.py</code> 文件的 <code>evaluate</code> 函数中，<code>env.step(action)</code> 返回的是一个包含 4 个元素的元组，但是在解包时期望得到 5 个元素。</p>
+<p>问题出现在 <code>train.py</code> 文件的 <code>evaluate</code> 函数中：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obs, reward, terminated, truncated, info = env.step(action)</span><br></pre></td></tr></table></figure>
-<p>在这行代码中，您尝试从 <code>env.step(action)</code> 的返回值中解包出
-5 个变量，但实际上 <code>env.step(action)</code> 只返回了 4
-个值（<code>obs</code>, <code>reward</code>, <code>terminated</code>,
-<code>truncated</code>），没有 <code>info</code>。</p>
-<p>要解决这个问题，我们需要找到 <code>env.step(action)</code>
-的实际返回值，并相应地调整代码。以下是可能的解决方案：</p>
-<p>您可以在 <code>train.py</code>
-中修改解包操作，以匹配实际返回的值：</p>
+<p>在这行代码中，您尝试从 <code>env.step(action)</code> 的返回值中解包出 5 个变量，但实际上 <code>env.step(action)</code> 只返回了 4 个值（<code>obs</code>, <code>reward</code>, <code>terminated</code>, <code>truncated</code>），没有 <code>info</code>。</p>
+<p>要解决这个问题，我们需要找到 <code>env.step(action)</code> 的实际返回值，并相应地调整代码。以下是可能的解决方案：</p>
+<p>您可以在 <code>train.py</code> 中修改解包操作，以匹配实际返回的值：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在 train.py 的 evaluate 函数中</span></span><br><span class="line">obs, reward, terminated, truncated = env.step(action)</span><br><span class="line">done = terminated <span class="keyword">or</span> truncated  <span class="comment"># 使用 terminated 或 truncated 作为 done 的条件</span></span><br></pre></td></tr></table></figure>
 <p>这样，您只解包 4 个值，并且手动创建 <code>done</code> 变量。</p>
-<p>在进行上述任何更改之前，最好添加一些调试语句来验证
-<code>env.step(action)</code> 的实际返回值。这可以通过在
-<code>train.py</code> 中打印 <code>env.step(action)</code>
-的返回值来实现：</p>
+<p>在进行上述任何更改之前，最好添加一些调试语句来验证 <code>env.step(action)</code> 的实际返回值。这可以通过在 <code>train.py</code> 中打印 <code>env.step(action)</code> 的返回值来实现：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在 train.py 的 evaluate 函数中</span></span><br><span class="line">result = env.step(action)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Step returned:&quot;</span>, result)  <span class="comment"># 调试语句</span></span><br><span class="line">obs, reward, terminated, truncated = result</span><br><span class="line">done = terminated <span class="keyword">or</span> truncated</span><br></pre></td></tr></table></figure>
-<p>这将帮助您确认 <code>env.step(action)</code>
-的实际行为，并确保您的更改是正确的。</p>
+<p>这将帮助您确认 <code>env.step(action)</code> 的实际行为，并确保您的更改是正确的。</p>
 <p>选择适合您代码库和环境的解决方案，并确保在进行更改后充分测试代码以验证问题是否已经解决。</p>
 </blockquote>
 <p>不过我们已经有修改好的代码，这个仅供自己独立复现时参考</p>
-<ol start="3" type="1">
-<li>根据报错修改ctmr_sac.py文件中两个前馈层，通过clone而不是直接在x上原地操作，修改后的.py文件参考cz的文档https://sjtu.feishu.cn/docx/HCnPdRRiEoxOzGxjzI9cggLMnsb?from=from_copylink</li>
+<ol>
+<li>根据报错修改ctmr_sac.py文件中两个前馈层，通过clone而不是直接在x上原地操作，修改后的.py文件参考cz的文档<a target="_blank" rel="noopener" href="https://sjtu.feishu.cn/docx/HCnPdRRiEoxOzGxjzI9cggLMnsb?from=from_copylink">https://sjtu.feishu.cn/docx/HCnPdRRiEoxOzGxjzI9cggLMnsb?from=from_copylink</a></li>
 </ol>
 <p>这时候理论上python代码部分已经没有bug了，如果还有那就再自己找解决方案（）</p>
-<h2 id="dmc2gym再次配置">dmc2gym再次配置</h2>
-<p>这时候如果你在用vscode那就进行不下去了。请移步vnc虚拟桌面进行操作。在vnc虚拟桌面中首先尝试运行train.py文件，可能会出现</p>
+<h2 id="dmc2gym再次配置"><a href="#dmc2gym再次配置" class="headerlink" title="dmc2gym再次配置"></a>dmc2gym再次配置</h2><p>这时候如果你在用vscode那就进行不下去了。请移步vnc虚拟桌面进行操作。在vnc虚拟桌面中首先尝试运行train.py文件，可能会出现</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree       </span><br><span class="line">Reading state information... Done</span><br><span class="line">libgl1-mesa-glx is already the newest version (20.0.8-0ubuntu1~18.04.1).</span><br><span class="line">libgl1-mesa-glx set to manually installed.</span><br><span class="line">You might want to run &#x27;apt --fix-broken install&#x27; to correct these.</span><br><span class="line">The following packages have unmet dependencies:</span><br><span class="line"> cuda-drivers-530 : Depends: nvidia-compute-utils-530 (&gt;= 530.30.02) but it is not going to be installed</span><br><span class="line">                    Depends: nvidia-utils-530 (&gt;= 530.30.02) but it is not going to be installed</span><br><span class="line"> nvidia-driver-530 : Depends: nvidia-compute-utils-530 (= 530.30.02-0ubuntu1) but it is not going to be installed</span><br><span class="line">                     Depends: nvidia-utils-530 (= 530.30.02-0ubuntu1) but it is not going to be installed</span><br><span class="line">                     Recommends: libnvidia-compute-530:i386 (= 530.30.02-0ubuntu1)</span><br><span class="line">                     Recommends: libnvidia-decode-530:i386 (= 530.30.02-0ubuntu1)</span><br><span class="line">                     Recommends: libnvidia-encode-530:i386 (= 530.30.02-0ubuntu1)</span><br><span class="line">                     Recommends: libnvidia-fbc1-530:i386 (= 530.30.02-0ubuntu1)</span><br><span class="line">                     Recommends: libnvidia-gl-530:i386 (= 530.30.02-0ubuntu1)</span><br><span class="line">E: Unmet dependencies. Try &#x27;apt --fix-broken install&#x27; with no packages (or specify a solution).</span><br></pre></td></tr></table></figure>
-<p>这个报错，参考这个大爹https://blog.xiunian.wang/?p=1867以及gpt的解释，解决方案如下：</p>
+<p>这个报错，参考这个大爹<a target="_blank" rel="noopener" href="https://blog.xiunian.wang/?p=1867以及gpt的解释，解决方案如下：">https://blog.xiunian.wang/?p=1867以及gpt的解释，解决方案如下：</a></p>
 <blockquote>
 <p><strong>编辑 <code>LD_LIBRARY_PATH</code></strong>：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sh</span><br><span class="line">复制代码</span><br><span class="line">export LD_LIBRARY_PATH=/root/miniconda3/envs/mcurl/lib/python3.11/site-packages/nvidia/cudnn/lib:/root/miniconda3/envs/mcurl/lib/python3.11/site-packages/torch/lib:/usr/local/cuda-11.8/lib64:/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/usr/local/cuda/lib64:/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH</span><br></pre></td></tr></table></figure>
@@ -412,20 +376,15 @@ color 库以及 sci-image库， 网上都能找到安装命令，一般不会出
 <p><strong>重新运行 <code>ldd</code> 命令</strong>：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sh</span><br><span class="line">复制代码</span><br><span class="line">ldd /root/miniconda3/envs/mcurl/lib/python3.11/site-packages/torch/lib/../../nvidia/cudnn/lib/libcudnn_cnn_infer.so.8</span><br></pre></td></tr></table></figure>
 <p>这样应该能够正确解析和显示库文件的依赖关系。</p>
-<p><strong>持久化设置</strong>： 如果以上步骤没有问题，可以将
-<code>export LD_LIBRARY_PATH=...</code> 添加到你的 <code>.bashrc</code>
-或其他 Shell 配置文件中，确保每次登录时环境变量都能正确设置。</p>
+<p><strong>持久化设置</strong>： 如果以上步骤没有问题，可以将 <code>export LD_LIBRARY_PATH=...</code> 添加到你的 <code>.bashrc</code> 或其他 Shell 配置文件中，确保每次登录时环境变量都能正确设置。</p>
 </blockquote>
 <p>这时候，dmc2gym配置完成，程序理论上能跑。</p>
-<h2 id="cuda和pytorch">CUDA和Pytorch</h2>
-<p>如果你的程序成功运行却发现gpu占用率为0，那么说明CUDA没有正确配置与启用。要配置cuda，<strong>首先要知道cuda与pytorch版本的对应关系</strong>
-https://pytorch.org/get-started/previous-versions/，然后按照网站上的命令安装对应的cuda。</p>
+<h2 id="CUDA和Pytorch"><a href="#CUDA和Pytorch" class="headerlink" title="CUDA和Pytorch"></a>CUDA和Pytorch</h2><p>如果你的程序成功运行却发现gpu占用率为0，那么说明CUDA没有正确配置与启用。要配置cuda，<strong>首先要知道cuda与pytorch版本的对应关系</strong> <a target="_blank" rel="noopener" href="https://pytorch.org/get-started/previous-versions/，然后按照网站上的命令安装对应的cuda。">https://pytorch.org/get-started/previous-versions/，然后按照网站上的命令安装对应的cuda。</a></p>
 <p>强烈建议先通过这个程序进行检查</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="built_in">print</span>(torch.__version__)</span><br><span class="line"><span class="built_in">print</span>(torch.cuda.is_available())</span><br></pre></td></tr></table></figure>
 <p>如果是False那就说明cuda版本不匹配，一定要下载<strong>安装匹配的版本</strong></p>
-<p>也可以参考https://matpool.com/supports/doc-public-data/#cuda-%E5%AE%89%E8%A3%85，但是官网提供的cuda版本有限，一定要和pytorch做好对应！</p>
-<h2 id="复现结果">复现结果</h2>
-<p>通过gpu云服务器进行快速traning，会在train.py所在目录中生成对应训练游戏项目为名字的文件夹，文件夹中包括存储的buffer、model，video与训练日志。训练日志格式如下：</p>
+<p>也可以参考<a target="_blank" rel="noopener" href="https://matpool.com/supports/doc-public-data/#cuda-%E5%AE%89%E8%A3%85，但是官网提供的cuda版本有限，一定要和pytorch做好对应！">https://matpool.com/supports/doc-public-data/#cuda-%E5%AE%89%E8%A3%85，但是官网提供的cuda版本有限，一定要和pytorch做好对应！</a></p>
+<h2 id="复现结果"><a href="#复现结果" class="headerlink" title="复现结果"></a>复现结果</h2><p>通过gpu云服务器进行快速traning，会在train.py所在目录中生成对应训练游戏项目为名字的文件夹，文件夹中包括存储的buffer、model，video与训练日志。训练日志格式如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;episode_reward&quot;: 0.0, &quot;episode&quot;: 1.0, &quot;duration&quot;: 2.1876120567321777, &quot;step&quot;: 500&#125;</span><br><span class="line">&#123;&quot;episode_reward&quot;: 105.28541183262065, &quot;episode&quot;: 5.0, &quot;duration&quot;: 1.9116880893707275, &quot;step&quot;: 1000&#125;</span><br><span class="line">&#123;&quot;episode_reward&quot;: 141.84056755671332, &quot;episode&quot;: 9.0, &quot;batch_reward&quot;: 0.9721407055854797, &quot;critic_loss&quot;: 33.874087238311766, &quot;actor_loss&quot;: -10.513817775249482, &quot;actor_target_entropy&quot;: -1.0, &quot;actor_entropy&quot;: 0.47874767780303956, &quot;alpha_loss&quot;: 0.052578425779938695, &quot;alpha_value&quot;: 0.09913411643684729, &quot;ctmr_loss&quot;: 7.322355401992798, &quot;ctmr_cpc_lr&quot;: 8.395825000000003e-05, &quot;duration&quot;: 74.88283920288086, &quot;step&quot;: 1500&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
