@@ -20,12 +20,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.14.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="M-CURL Server Setup Tutorial This article takes M-CURL reinforcement learning algorithm as an example to show how to setup a machine learning environment on a cloud server to accelerate training and i">
+    <meta name="description" content="M-CURL Server Setup TutorialThis article takes M-CURL reinforcement learning algorithm as an example to show how to setup a machine learning environment on a cloud server to accelerate training and im">
 <meta property="og:type" content="article">
 <meta property="og:title" content="M-CURL Server Setup Tutorial">
-<meta property="og:url" content="http://example.com/2024/06/13/M-CURL%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:url" content="http://example.com/2024/06/13/M-CURL%20server%20guide/index.html">
 <meta property="og:site_name" content="Lee&#39;s Blog">
-<meta property="og:description" content="M-CURL Server Setup Tutorial This article takes M-CURL reinforcement learning algorithm as an example to show how to setup a machine learning environment on a cloud server to accelerate training and i">
+<meta property="og:description" content="M-CURL Server Setup TutorialThis article takes M-CURL reinforcement learning algorithm as an example to show how to setup a machine learning environment on a cloud server to accelerate training and im">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-06-13T04:00:00.000Z">
 <meta property="article:modified_time" content="2024-10-22T04:58:57.695Z">
@@ -35,11 +35,11 @@
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2024/06/13/M-CURL%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/">
+<link rel="canonical" href="http://example.com/2024/06/13/M-CURL%20server%20guide/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2024/06/13/M-CURL%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/","path":"2024/06/13/M-CURL云服务器配置指南/","title":"M-CURL Server Setup Tutorial"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://example.com/2024/06/13/M-CURL%20server%20guide/","path":"2024/06/13/M-CURL server guide/","title":"M-CURL Server Setup Tutorial"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>M-CURL Server Setup Tutorial | Lee's Blog</title>
@@ -144,10 +144,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#m-curl-server-setup-tutorial"><span class="nav-number">1.</span> <span class="nav-text">M-CURL Server Setup Tutorial</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#prerequisite-matpool-server-and-linux-setup"><span class="nav-number">1.1.</span> <span class="nav-text">Prerequisite:
-matpool server and Linux setup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#conda-environment"><span class="nav-number">1.2.</span> <span class="nav-text">Conda Environment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#create-mcurl-environment"><span class="nav-number">1.3.</span> <span class="nav-text">Create mcurl Environment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#install-mujoco"><span class="nav-number">1.4.</span> <span class="nav-text">Install mujoco</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#install-dmc2gym-and-dm_control"><span class="nav-number">1.5.</span> <span class="nav-text">Install dmc2gym and
-dm_control</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#running-and-modifying-python-code"><span class="nav-number">1.6.</span> <span class="nav-text">Running and Modifying Python
-Code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#reconfiguring-dmc2gym"><span class="nav-number">1.7.</span> <span class="nav-text">Reconfiguring dmc2gym</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cuda-and-pytorch"><span class="nav-number">1.8.</span> <span class="nav-text">CUDA and Pytorch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#results"><span class="nav-number">1.9.</span> <span class="nav-text">Results</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#M-CURL-Server-Setup-Tutorial"><span class="nav-number">1.</span> <span class="nav-text">M-CURL Server Setup Tutorial</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Prerequisite-matpool-server-and-Linux-setup"><span class="nav-number">1.1.</span> <span class="nav-text">Prerequisite: matpool server and Linux setup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conda-Environment"><span class="nav-number">1.2.</span> <span class="nav-text">Conda Environment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Create-mcurl-Environment"><span class="nav-number">1.3.</span> <span class="nav-text">Create mcurl Environment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-mujoco"><span class="nav-number">1.4.</span> <span class="nav-text">Install mujoco</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Install-dmc2gym-and-dm-control"><span class="nav-number">1.5.</span> <span class="nav-text">Install dmc2gym and dm_control</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Running-and-Modifying-Python-Code"><span class="nav-number">1.6.</span> <span class="nav-text">Running and Modifying Python Code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reconfiguring-dmc2gym"><span class="nav-number">1.7.</span> <span class="nav-text">Reconfiguring dmc2gym</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CUDA-and-Pytorch"><span class="nav-number">1.8.</span> <span class="nav-text">CUDA and Pytorch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Results"><span class="nav-number">1.9.</span> <span class="nav-text">Results</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -205,7 +202,7 @@ Code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/06/13/M-CURL%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/06/13/M-CURL%20server%20guide/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/touxiang.JPG">
@@ -286,166 +283,82 @@ Code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="m-curl-server-setup-tutorial">M-CURL Server Setup Tutorial</h1>
-<p>This article takes <a
-target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/abstract/document/9779589">M-CURL</a>
-reinforcement learning algorithm as an example to show how to setup a
-machine learning environment on a cloud server to accelerate training
-and improve experiment efficiency. This is part of the IPP research
-project: Knowledge Transfer for Reinforcement Learning based Robot
-Motion Planning.</p>
+        <h1 id="M-CURL-Server-Setup-Tutorial"><a href="#M-CURL-Server-Setup-Tutorial" class="headerlink" title="M-CURL Server Setup Tutorial"></a>M-CURL Server Setup Tutorial</h1><p>This article takes <a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/abstract/document/9779589">M-CURL</a> reinforcement learning algorithm as an example to show how to setup a machine learning environment on a cloud server to accelerate training and improve experiment efficiency. This is part of the IPP research project: Knowledge Transfer for Reinforcement Learning based Robot Motion Planning.</p>
 <span id="more"></span>
-<h2 id="prerequisite-matpool-server-and-linux-setup">Prerequisite:
-matpool server and Linux setup</h2>
-<p>Quick start： https://matpool.com/supports/doc-quick-start/</p>
-<p>Quick start for team work：
-https://matpool.com/supports/doc-use-team-on-matpool/</p>
-<p>Cloud disk guide：
-https://matpool.com/supports/doc-use-matbox-on-matpool/</p>
-<p>FAQ： https://matpool.com/supports/reference/faqs/</p>
-<p>VScode
-connection：https://matpool.com/supports/doc-vscode-connect-matpool/</p>
-<p>Pycharm connection：
-https://matpool.com/supports/doc-pycharm-connect-matpool/</p>
-<p>Connect server via
-VNC！：https://matpool.com/supports/doc-vnc-connect-matpool/</p>
+<h2 id="Prerequisite-matpool-server-and-Linux-setup"><a href="#Prerequisite-matpool-server-and-Linux-setup" class="headerlink" title="Prerequisite: matpool server and Linux setup"></a>Prerequisite: matpool server and Linux setup</h2><p>Quick start： <a target="_blank" rel="noopener" href="https://matpool.com/supports/doc-quick-start/">https://matpool.com/supports/doc-quick-start/</a></p>
+<p>Quick start for team work： <a target="_blank" rel="noopener" href="https://matpool.com/supports/doc-use-team-on-matpool/">https://matpool.com/supports/doc-use-team-on-matpool/</a></p>
+<p>Cloud disk guide： <a target="_blank" rel="noopener" href="https://matpool.com/supports/doc-use-matbox-on-matpool/">https://matpool.com/supports/doc-use-matbox-on-matpool/</a></p>
+<p>FAQ： <a target="_blank" rel="noopener" href="https://matpool.com/supports/reference/faqs/">https://matpool.com/supports/reference/faqs/</a></p>
+<p>VScode connection：<a target="_blank" rel="noopener" href="https://matpool.com/supports/doc-vscode-connect-matpool/">https://matpool.com/supports/doc-vscode-connect-matpool/</a></p>
+<p>Pycharm connection： <a target="_blank" rel="noopener" href="https://matpool.com/supports/doc-pycharm-connect-matpool/">https://matpool.com/supports/doc-pycharm-connect-matpool/</a></p>
+<p>Connect server via VNC！：<a target="_blank" rel="noopener" href="https://matpool.com/supports/doc-vnc-connect-matpool/">https://matpool.com/supports/doc-vnc-connect-matpool/</a></p>
 <blockquote>
-<p>Note: Connecting the server with VScode only supports operations and
-command line tools with terminal, while VNC provides graphic desktop,
-therefore supporting screen display, an important feature that would be
-used by gym environment.</p>
+<p>Note: Connecting the server with VScode only supports operations and command line tools with terminal, while VNC provides graphic desktop, therefore supporting screen display, an important feature that would be used by gym environment.</p>
 </blockquote>
-<p>Linux commands:
-https://matpool.com/supports/reference/common-cmds/</p>
-<p>The Linux system on the server does not support text editor,
-therefore I suggest you can first install nano:</p>
-<p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nano</span><br></pre></td></tr></table></figure></p>
-<p>which will play an important role in future envionmrnt setups.</p>
-<h2 id="conda-environment">Conda Environment</h2>
-<h2 id="create-mcurl-environment">Create mcurl Environment</h2>
-<p>We first create an independent environment for our MCURL project,
-where we will install all the dependencies without interefering with
-other environments. We can use the <code>.ym</code>l file provided in
-MCURL repository to do that.</p>
+<p> Linux commands: <a target="_blank" rel="noopener" href="https://matpool.com/supports/reference/common-cmds/">https://matpool.com/supports/reference/common-cmds/</a></p>
+<p> The Linux system on the server does not support text editor, therefore I suggest you can first install nano:</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nano</span><br></pre></td></tr></table></figure>
+<p> which will play an important role in future envionmrnt setups.</p>
+<h2 id="Conda-Environment"><a href="#Conda-Environment" class="headerlink" title="Conda Environment"></a>Conda Environment</h2><h2 id="Create-mcurl-Environment"><a href="#Create-mcurl-Environment" class="headerlink" title="Create mcurl Environment"></a>Create mcurl Environment</h2><p>We first create an independent environment for our MCURL project, where we will install all the dependencies without interefering with other environments. We can use the <code>.ym</code>l file provided in MCURL repository to do that.</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env create -f environment.yml</span><br></pre></td></tr></table></figure>
-<p>Then conda will automatically download the dependcies listed in the
-<code>.yml</code> file. However, in most cases, the libraries that are
-to be installed via <code>pip</code> will fail due to conflict versions.
-Nevertheless, things like <code>pytorch</code> will be installed
-successfully, and you should take a note of the version of
-<code>pytorch</code>, which will be referenced to setup
-<code>cuda</code>.</p>
-<p>After that we can use</p>
+<p>Then conda will automatically download the dependcies listed in the <code>.yml</code> file. However, in most cases, the libraries that are to be installed via <code>pip</code> will fail due to conflict versions. Nevertheless, things like <code>pytorch</code> will be installed successfully, and you should take a note of the version of <code>pytorch</code>, which will be referenced to setup <code>cuda</code>. </p>
+<p>After that we can use </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda activate environment_name</span><br></pre></td></tr></table></figure>
-<p>to enter conda environment. At the same time, remeber to change the
-configuration of python in VScode to be the conda environment we've just
-set.</p>
-<h2 id="install-mujoco">Install mujoco</h2>
-<p>You can refer to https://zhuanlan.zhihu.com/p/352304615 for more
-detailed instruction (in Chinese).</p>
-<p>Mujoco is a physical simulation platform on which MCURL is based to
-work.</p>
-<p>First, on local comouter, go to https://www.roboti.us/index.html to
-download mujoco package and related licence key
-https://www.roboti.us/license.html. Compile everything related to mujoco
-and upload to the server cloud disk.</p>
-<p>We then login to the cloud server and create a hidden folder
-<code>mujoco</code>, then copy our <code>mjkey.txt</code> into
-<code>.mujoco folder</code>, as shown in the commands below:</p>
+<p>to enter conda environment. At the same time, remeber to change the configuration of python in VScode to be the conda environment we’ve just set.</p>
+<h2 id="Install-mujoco"><a href="#Install-mujoco" class="headerlink" title="Install mujoco"></a>Install mujoco</h2><p>You can refer to <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/352304615">https://zhuanlan.zhihu.com/p/352304615</a> for more detailed instruction (in Chinese).</p>
+<p>Mujoco is a physical simulation platform on which MCURL is based to work.</p>
+<p>First, on local comouter, go to <a target="_blank" rel="noopener" href="https://www.roboti.us/index.html">https://www.roboti.us/index.html</a> to download mujoco package and related licence key  <a target="_blank" rel="noopener" href="https://www.roboti.us/license.html">https://www.roboti.us/license.html</a>. Compile everything related to mujoco and upload to the server cloud disk.</p>
+<p>We then login to the cloud server and create a hidden folder <code>mujoco</code>, then copy our <code>mjkey.txt</code> into <code>.mujoco folder</code>, as shown in the commands below:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> ~/.mujoco  <span class="comment">#create a hidden folder mujoco</span></span><br><span class="line"><span class="built_in">cp</span> mujoco200_linux.zip ~/.mujoco   </span><br><span class="line"><span class="built_in">cd</span> ~/.mujoco     </span><br><span class="line">unzip mujoco200_linux.zip		<span class="comment">#extract mujoco</span></span><br><span class="line"><span class="built_in">mv</span> mujoco200_linux mujoco200</span><br><span class="line"><span class="built_in">cd</span> .. <span class="comment">#go back to /mnt directory</span></span><br><span class="line"><span class="built_in">cp</span> mjkey.txt ~/.mujoco</span><br><span class="line"><span class="built_in">cp</span> mjkey.txt ~/.mujoco/mujoco200/bin</span><br></pre></td></tr></table></figure>
-<p>Note: <code>/.mujoco/mujoco200_linux</code> must be modified as
-<code>~/.mujoco/mujoco200</code>, otherwise
-<code>import mujoco_py</code> will raise errors.</p>
-<p>Finally, <code>mjkey.txt</code> will be under
-<code>~/.mujoco/mujoco200/bin</code>.</p>
+<p>Note: <code>/.mujoco/mujoco200_linux</code> must be modified as <code>~/.mujoco/mujoco200</code>, otherwise <code>import mujoco_py</code> will raise errors.</p>
+<p>Finally, <code>mjkey.txt</code> will be under <code>~/.mujoco/mujoco200/bin</code>.</p>
 <p>Then we need add mujoco into environment variable:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nano ~/.bashrc </span><br></pre></td></tr></table></figure>
-<p>Copy and paste the following content into the bashrc file you just
-opened.</p>
+<p>Copy and paste the following content into the bashrc file you just opened.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export LD_LIBRARY_PATH=~/.mujoco/mujoco200/bin$&#123;LD_LIBRARY_PATH:+:$&#123;LD_LIBRARY_PATH&#125;&#125; </span><br><span class="line">export MUJOCO_KEY_PATH=~/.mujoco$&#123;MUJOCO_KEY_PATH&#125;</span><br></pre></td></tr></table></figure>
-<p>Then press control X, Y, Enter, exit and save file，and finally
-remeber to</p>
+<p>Then press control X, Y, Enter, exit and save file，and finally remeber to </p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ~/.bashrc</span><br></pre></td></tr></table></figure>
-<h2 id="install-dmc2gym-and-dm_control">Install dmc2gym and
-dm_control</h2>
-<p>dmc2gym provides a physics simulation environment with Mujoco.
-However, strange issues may arise here.</p>
-<p>First, try <code>pip install dmc2gym</code>. If successful,
-great!</p>
+<h2 id="Install-dmc2gym-and-dm-control"><a href="#Install-dmc2gym-and-dm-control" class="headerlink" title="Install dmc2gym and dm_control"></a>Install dmc2gym and dm_control</h2><p>dmc2gym provides a physics simulation environment with Mujoco. However, strange issues may arise here.</p>
+<p>First, try <code>pip install dmc2gym</code>. If successful, great!</p>
 <p>But if you encounter “exit 128”:</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">pip install git+git://github.com/denisyarats/dmc2gym.git</span><br><span class="line">Collecting git+git://github.com/denisyarats/dmc2gym.git</span><br><span class="line">  Cloning git://github.com/denisyarats/dmc2gym.git to /tmp/pip-req-build-ahuyx_q5</span><br><span class="line">  Running <span class="built_in">command</span> git <span class="built_in">clone</span> -q git://github.com/denisyarats/dmc2gym.git /tmp/pip-req-build-ahuyx_q5</span><br><span class="line">  fatal: unable to connect to github.com:</span><br><span class="line">  github.com[0: 140.82.121.4]: errno=Connection timed out</span><br><span class="line"></span><br><span class="line">WARNING: Discarding git+git://github.com/denisyarats/dmc2gym.git. Command errored out with <span class="built_in">exit</span> status 128: git <span class="built_in">clone</span> -q git://github.com/denisyarats/dmc2gym.git /tmp/pip-req-build-ahuyx_q5 Check the logs <span class="keyword">for</span> full <span class="built_in">command</span> output.</span><br><span class="line">ERROR: Command errored out with <span class="built_in">exit</span> status 128: git <span class="built_in">clone</span> -q git://github.com/denisyarats/dmc2gym.git /tmp/pip-req-build-ahuyx_q5 Check the logs <span class="keyword">for</span> full <span class="built_in">command</span> output.</span><br></pre></td></tr></table></figure>
 <p>Then try:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install git+https://github.com/denisyarats/dmc2gym.git</span><br></pre></td></tr></table></figure>
-<p>If that doesn’t work, it could be a network issue on your cloud
-server, so try adding <code>https://mirror.ghproxy.com/</code> before
-the clone URL:</p>
+<p>If that doesn’t work, it could be a network issue on your cloud server, so try adding <code>https://mirror.ghproxy.com/</code> before the clone URL:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install git+https://mirror.ghproxy.com/https://github.com/denisyarats/dmc2gym.git</span><br></pre></td></tr></table></figure>
-<p>You can find more about speeding up GitHub downloads here:
-https://matpool.com/supports/reference/faqs/#%E5%A6%82%E4%BD%95%E5%8A%A0%E9%80%9F-github-%E4%B8%8B%E8%BD%BD%EF%BC%9F</p>
+<p>You can find more about speeding up GitHub downloads here: <a target="_blank" rel="noopener" href="https://matpool.com/supports/reference/faqs/#%E5%A6%82%E4%BD%95%E5%8A%A0%E9%80%9F-github-%E4%B8%8B%E8%BD%BD%EF%BC%9F">https://matpool.com/supports/reference/faqs/#%E5%A6%82%E4%BD%95%E5%8A%A0%E9%80%9F-github-%E4%B8%8B%E8%BD%BD%EF%BC%9F</a></p>
 <p>If none of this works, try again a few times :)</p>
-<p>Then, install dm_control in a similar way, using the stable 3.6
-version from GitHub:
-https://github.com/google-deepmind/dm_control/tree/python3.6_eol?tab=readme-ov-file</p>
-<h2 id="running-and-modifying-python-code">Running and Modifying Python
-Code</h2>
-<p>For simplicity, we’ll skip running Python via shell scripts and run
-<code>train.py</code> directly. However, before running
-<code>train.py</code>, there may be libraries flagged (yellow lines), so
-install them first. Common ones are the <code>color</code> library and
-the <code>sci-image</code> library. Their installation commands are easy
-to find online.</p>
-<p>Before running the code, adjust the default values of certain
-arguments to tweak settings. For example, you can set
-<code>save_video</code> to <code>false</code> to avoid certain bugs.</p>
-<p>Next, directly run <code>train.py</code> in the terminal (if it runs
-successfully, something’s wrong 😅), and you’ll encounter small issues.
-Modify the corresponding <strong>library files</strong> based on the
-errors. Common issues include:</p>
-<ol type="1">
-<li><code>AttributeError: 'dict' object has no attribute 'env_specs'</code></li>
+<p>Then, install dm_control in a similar way, using the stable 3.6 version from GitHub: <a target="_blank" rel="noopener" href="https://github.com/google-deepmind/dm_control/tree/python3.6_eol?tab=readme-ov-file">https://github.com/google-deepmind/dm_control/tree/python3.6_eol?tab=readme-ov-file</a></p>
+<h2 id="Running-and-Modifying-Python-Code"><a href="#Running-and-Modifying-Python-Code" class="headerlink" title="Running and Modifying Python Code"></a>Running and Modifying Python Code</h2><p>For simplicity, we’ll skip running Python via shell scripts and run <code>train.py</code> directly. However, before running <code>train.py</code>, there may be libraries flagged (yellow lines), so install them first. Common ones are the <code>color</code> library and the <code>sci-image</code> library. Their installation commands are easy to find online.</p>
+<p>Before running the code, adjust the default values of certain arguments to tweak settings. For example, you can set <code>save_video</code> to <code>false</code> to avoid certain bugs.</p>
+<p>Next, directly run <code>train.py</code> in the terminal (if it runs successfully, something’s wrong 😅), and you’ll encounter small issues. Modify the corresponding <strong>library files</strong> based on the errors. Common issues include:</p>
+<ol>
+<li><code>AttributeError: &#39;dict&#39; object has no attribute &#39;env_specs&#39;</code></li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">File &quot;train.py&quot;, line 318, in &lt;module&gt;</span><br><span class="line">   main()</span><br><span class="line"> File &quot;train.py&quot;, line 200, in main</span><br><span class="line">   frame_skip=args.action_repeat</span><br><span class="line"> File &quot;/home/anavani/anaconda3/envs/rad/lib/python3.7/site-packages/dmc2gym/__init__.py&quot;, line 28, in make</span><br><span class="line">   if not env_id in gym.envs.registry.env_specs:</span><br><span class="line">AttributeError: &#x27;dict&#x27; object has no attribute &#x27;env_specs&#x27;</span><br></pre></td></tr></table></figure>
-<p>Simply delete <code>env_specs</code> after
-<code>gym.envs.registry.env_specs</code>. See:
-https://github.com/openai/gym/issues/3097</p>
-<ol start="2" type="1">
+<p>Simply delete <code>env_specs</code> after <code>gym.envs.registry.env_specs</code>. See: <a target="_blank" rel="noopener" href="https://github.com/openai/gym/issues/3097">https://github.com/openai/gym/issues/3097</a></p>
+<ol>
 <li><code>ValueError: not enough values to unpack (expected 5, got 4)</code></li>
 </ol>
 <p>Refer to GPT’s suggestion:</p>
 <blockquote>
-<p>According to the <code>train.py</code> and <code>utils.py</code> code
-you provided, the error indicates that the <code>evaluate</code>
-function in <code>train.py</code> expects 5 values but
-<code>env.step(action)</code> only returns 4.</p>
-<p>In <code>train.py</code>'s <code>evaluate</code> function:</p>
+<p>According to the <code>train.py</code> and <code>utils.py</code> code you provided, the error indicates that the <code>evaluate</code> function in <code>train.py</code> expects 5 values but <code>env.step(action)</code> only returns 4.</p>
+<p>In <code>train.py</code>‘s <code>evaluate</code> function:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obs, reward, terminated, truncated, info = env.step(action)</span><br></pre></td></tr></table></figure>
-<p>It attempts to unpack 5 variables, but <code>env.step(action)</code>
-only returns 4 (<code>obs</code>, <code>reward</code>,
-<code>terminated</code>, <code>truncated</code>), missing
-<code>info</code>.</p>
+<p>It attempts to unpack 5 variables, but <code>env.step(action)</code> only returns 4 (<code>obs</code>, <code>reward</code>, <code>terminated</code>, <code>truncated</code>), missing <code>info</code>.</p>
 <p>To fix this, adjust the unpacking:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">obs, reward, terminated, truncated = env.step(action)</span><br><span class="line">done = terminated <span class="keyword">or</span> truncated  <span class="comment"># Use terminated or truncated as the done condition</span></span><br></pre></td></tr></table></figure>
-<p>Before making any changes, add a debug statement to check
-<code>env.step(action)</code>:</p>
+<p>Before making any changes, add a debug statement to check <code>env.step(action)</code>:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">result = env.step(action)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Step returned:&quot;</span>, result)  <span class="comment"># Debugging</span></span><br><span class="line">obs, reward, terminated, truncated = result</span><br><span class="line">done = terminated <span class="keyword">or</span> truncated</span><br></pre></td></tr></table></figure>
 </blockquote>
-<p>We already have modified code, but this is useful for independent
-replication.</p>
-<ol start="3" type="1">
-<li>Modify two feedforward layers in <code>ctmr_sac.py</code> based on
-errors by cloning instead of operating in place on <code>x</code>. The
-modified <code>.py</code> file can be found here:
-https://sjtu.feishu.cn/docx/HCnPdRRiEoxOzGxjzI9cggLMnsb?from=from_copylink</li>
+<p>We already have modified code, but this is useful for independent replication.</p>
+<ol>
+<li>Modify two feedforward layers in <code>ctmr_sac.py</code> based on errors by cloning instead of operating in place on <code>x</code>. The modified <code>.py</code> file can be found here: <a target="_blank" rel="noopener" href="https://sjtu.feishu.cn/docx/HCnPdRRiEoxOzGxjzI9cggLMnsb?from=from_copylink">https://sjtu.feishu.cn/docx/HCnPdRRiEoxOzGxjzI9cggLMnsb?from=from_copylink</a></li>
 </ol>
-<p>By now, the Python part should be bug-free. If there are still bugs,
-find your own solutions :)</p>
-<h2 id="reconfiguring-dmc2gym">Reconfiguring dmc2gym</h2>
-<p>If you’re using VSCode, progress may be slow at this point. Switch to
-a VNC virtual desktop to run <code>train.py</code>. You may encounter
-errors like:</p>
+<p>By now, the Python part should be bug-free. If there are still bugs, find your own solutions :)</p>
+<h2 id="Reconfiguring-dmc2gym"><a href="#Reconfiguring-dmc2gym" class="headerlink" title="Reconfiguring dmc2gym"></a>Reconfiguring dmc2gym</h2><p>If you’re using VSCode, progress may be slow at this point. Switch to a VNC virtual desktop to run <code>train.py</code>. You may encounter errors like:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Reading package lists... Done</span><br><span class="line">Building dependency tree       </span><br><span class="line">Reading state information... Done</span><br><span class="line">libgl1-mesa-glx is already the newest version (20.0.8-0ubuntu1~18.04.1).</span><br><span class="line">libgl1-mesa-glx set to manually installed.</span><br><span class="line">You might want to run &#x27;apt --fix-broken install&#x27; to correct these.</span><br><span class="line">The following packages have unmet dependencies:</span><br><span class="line"> cuda-drivers-530 : Depends: nvidia-compute-utils-530 (&gt;= 530.30.02) but it is not going to be installed</span><br><span class="line">                    Depends: nvidia-utils-530 (&gt;= 530.30.02) but it is not going to be installed</span><br><span class="line"> nvidia-driver-530 : Depends: nvidia-compute-utils-530 (= 530.30.02-0ubuntu1) but it is not going to be installed</span><br><span class="line">                     Depends: nvidia-utils-530 (= 530.30.02-0ubuntu1) but it is not going to be installed</span><br><span class="line">                     Recommends: libnvidia-compute-530:i386 (= 530.30.02-0ubuntu1)</span><br><span class="line">                     Recommends: libnvidia-decode-530:i386 (= 530.30.02-0ubuntu1)</span><br><span class="line">                     Recommends: libnvidia-encode-530:i386 (= 530.30.02-0ubuntu1)</span><br><span class="line">                     Recommends: libnvidia-fbc1-530:i386 (= 530.30.02-0ubuntu1)</span><br><span class="line">                     Recommends: libnvidia-gl-530:i386 (= 530.30.02-0ubuntu1)</span><br><span class="line">E: Unmet dependencies. Try &#x27;apt --fix-broken install&#x27; with no packages (or specify a solution).</span><br></pre></td></tr></table></figure>
-<p>Refer to this blog: https://blog.xiunian.wang/?p=1867 and GPT for a
-solution:</p>
+<p>Refer to this blog: <a target="_blank" rel="noopener" href="https://blog.xiunian.wang/?p=1867">https://blog.xiunian.wang/?p=1867</a> and GPT for a solution:</p>
 <blockquote>
 <p><strong>Edit <code>LD_LIBRARY_PATH</code></strong>:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export LD_LIBRARY_PATH=/root/miniconda3/envs/mcurl/lib/python3.11/site-packages/nvidia/cudnn/lib:/root/miniconda3/envs/mcurl/lib/python3.11/site-packages/torch/lib:/usr/local/cuda-11.8/lib64:/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/usr/local/cuda/lib64:/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH</span><br></pre></td></tr></table></figure>
@@ -454,29 +367,15 @@ solution:</p>
 <p>Ensure the output is correct.</p>
 <p><strong>Re-run the <code>ldd</code> command</strong>:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ldd /root/miniconda3/envs/mcurl/lib/python3.11/site-packages/torch/lib/../../nvidia/cudnn/lib/libcudnn_cnn_infer.so.8</span><br></pre></td></tr></table></figure>
-<p>If all works, add <code>export LD_LIBRARY_PATH=...</code> to
-<code>.bashrc</code> for persistence.</p>
+<p>If all works, add <code>export LD_LIBRARY_PATH=...</code> to <code>.bashrc</code> for persistence.</p>
 </blockquote>
-<p>By now, the dmc2gym setup should be complete, and the program should
-run.</p>
-<h2 id="cuda-and-pytorch">CUDA and Pytorch</h2>
-<p>If your program runs but the GPU usage is 0%, it means CUDA isn’t
-configured correctly. To configure CUDA, <strong>first check the CUDA
-and Pytorch version compatibility</strong> at:
-https://pytorch.org/get-started/previous-versions/, then install the
-corresponding CUDA version.</p>
+<p>By now, the dmc2gym setup should be complete, and the program should run.</p>
+<h2 id="CUDA-and-Pytorch"><a href="#CUDA-and-Pytorch" class="headerlink" title="CUDA and Pytorch"></a>CUDA and Pytorch</h2><p>If your program runs but the GPU usage is 0%, it means CUDA isn’t configured correctly. To configure CUDA, <strong>first check the CUDA and Pytorch version compatibility</strong> at: <a target="_blank" rel="noopener" href="https://pytorch.org/get-started/previous-versions/">https://pytorch.org/get-started/previous-versions/</a>, then install the corresponding CUDA version.</p>
 <p>You can check with the following code:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="built_in">print</span>(torch.__version__)</span><br><span class="line"><span class="built_in">print</span>(torch.cuda.is_available())</span><br></pre></td></tr></table></figure>
-<p>If <code>False</code>, it means the CUDA version is mismatched. Make
-sure to install the correct version.</p>
-<p>Also refer to:
-https://matpool.com/supports/doc-public-data/#cuda-%E5%AE%89%E8%A3%85</p>
-<h2 id="results">Results</h2>
-<p>Using a GPU cloud server for fast training will generate a folder
-named after the corresponding training project in the directory where
-<code>train.py</code> is located. The folder will contain the stored
-buffer, model, video, and training logs. The format of the training logs
-is as follows:</p>
+<p>If <code>False</code>, it means the CUDA version is mismatched. Make sure to install the correct version.</p>
+<p>Also refer to: <a target="_blank" rel="noopener" href="https://matpool.com/supports/doc-public-data/#cuda-%E5%AE%89%E8%A3%85">https://matpool.com/supports/doc-public-data/#cuda-%E5%AE%89%E8%A3%85</a></p>
+<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><p>Using a GPU cloud server for fast training will generate a folder named after the corresponding training project in the directory where <code>train.py</code> is located. The folder will contain the stored buffer, model, video, and training logs. The format of the training logs is as follows:</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;&quot;episode_reward&quot;: 0.0, &quot;episode&quot;: 1.0, &quot;duration&quot;: 2.1876120567321777, &quot;step&quot;: 500&#125;</span><br><span class="line">&#123;&quot;episode_reward&quot;: 105.28541183262065, &quot;episode&quot;: 5.0, &quot;duration&quot;: 1.9116880893707275, &quot;step&quot;: 1000&#125;</span><br><span class="line">&#123;&quot;episode_reward&quot;: 141.84056755671332, &quot;episode&quot;: 9.0, &quot;batch_reward&quot;: 0.9721407055854797, &quot;critic_loss&quot;: 33.874087238311766, &quot;actor_loss&quot;: -10.513817775249482, &quot;actor_target_entropy&quot;: -1.0, &quot;actor_entropy&quot;: 0.47874767780303956, &quot;alpha_loss&quot;: 0.052578425779938695, &quot;alpha_value&quot;: 0.09913411643684729, &quot;ctmr_loss&quot;: 7.322355401992798, &quot;ctmr_cpc_lr&quot;: 8.395825000000003e-05, &quot;duration&quot;: 74.88283920288086, &quot;step&quot;: 1500&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
